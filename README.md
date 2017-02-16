@@ -1,11 +1,11 @@
 CS3217 Problem Set 5
 ==
 
-**Name:** Your name
+**Name:** Luo Yuyang
 
-**Matric No:** Your matric no
+**Matric No:** A0147980U
 
-**Tutor:** Your tutor's name
+**Tutor:** Zheng Yi Tham
 
 ### Rules of Your Game
 
@@ -38,7 +38,9 @@ Please save your diagram as `class-diagram.png` in the root directory of the rep
 
 ### Problem 8: Testing
 
-Your answer here
+> #### test game flow
+> #### test bubble grid designer
+> #### test 
 
 
 ### Problem 9: The Bells & Whistles
