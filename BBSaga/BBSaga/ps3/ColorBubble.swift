@@ -24,7 +24,7 @@ class ColorBubble: Bubble {
     }
     
     override init() {
-        self.bubbleColor = .blue  // default
+        bubbleColor = .blue  // default
         super.init()
     }
     
@@ -32,7 +32,7 @@ class ColorBubble: Bubble {
     required convenience init(coder decoder: NSCoder) {
         self.init()
         let rawValue = decoder.decodeInteger(forKey: "bubbleColor")
-        self.bubbleColor = BubbleColor(rawValue: rawValue)!
+        bubbleColor = BubbleColor(rawValue: rawValue)!
     }
     
     /// conform to NSCoding to enable storing into plist
@@ -52,7 +52,7 @@ class ColorBubble: Bubble {
     /// this method should be overriden by the subclasses
     /// if they have more properties than bubbleColor
     override func replica() -> Bubble {
-        let equalBubble = ColorBubble(ofColor: self.bubbleColor)
+        let equalBubble = ColorBubble(ofColor: bubbleColor)
         return equalBubble
     }
 }

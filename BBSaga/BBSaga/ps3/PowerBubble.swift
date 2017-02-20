@@ -24,7 +24,7 @@ class PowerBubble: Bubble {
     }
     
     override init() {
-        self.bubblePower = .indestructible  // default
+        bubblePower = .indestructible  // default
         super.init()
     }
     
@@ -32,7 +32,7 @@ class PowerBubble: Bubble {
     required convenience init(coder decoder: NSCoder) {
         self.init()
         let rawValue = decoder.decodeInteger(forKey: "bubblePower")
-        self.bubblePower = BubblePower(rawValue: rawValue)!
+        bubblePower = BubblePower(rawValue: rawValue)!
     }
     
     /// conform to NSCoding to enable storing into plist
@@ -45,7 +45,7 @@ class PowerBubble: Bubble {
     }
     
     func getPower() -> BubblePower {
-        return self.bubblePower
+        return bubblePower
     }
     
     /// calling this method enable passing Bubble object by value rather than reference
