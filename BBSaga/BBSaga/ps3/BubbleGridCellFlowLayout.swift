@@ -19,7 +19,9 @@ class BubbleGridCellFlowLayout: UICollectionViewFlowLayout {
     
     var numCellsPerOddRow: Int {
         if let collectionView = collectionView {
-            return collectionView.numberOfItems(inSection: 0)  // first row is an odd row
+            if collectionView.numberOfSections > 0 {
+                return collectionView.numberOfItems(inSection: 0)  // first row is an odd row
+            }
         }
         return Setting.numCellsPerOddRow
     }

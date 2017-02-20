@@ -19,7 +19,7 @@ class StoragePanelCell: UITableViewCell {
         cellLabelView.textColor = .darkGray
         cellLabelView.textAlignment = .center
         
-        for view in contentView.subviews{
+        for view in contentView.subviews {
             view.removeFromSuperview()
         }
         

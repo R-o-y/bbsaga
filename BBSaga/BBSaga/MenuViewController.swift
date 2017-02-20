@@ -15,8 +15,8 @@ class MenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        audioPlayer.prepareBgm()
-        audioPlayer.playBgm()
+//        audioPlayer.prepareBgm()
+//        audioPlayer.playBgm()
         setUpBackground()
     }
     

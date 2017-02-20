@@ -16,6 +16,9 @@ class PlayGridCell: UICollectionViewCell {
     private var nameLabel: UILabel!
     
     override func awakeFromNib() {
+        for view in contentView.subviews {
+            view.removeFromSuperview()
+        }
         setUpBubbleGridView()
         setUpNameLabel()
         bindGestureRecognizer()
@@ -75,3 +78,11 @@ class PlayGridCell: UICollectionViewCell {
         }
     }
 }
+
+
+
+
+
+
+
+
