@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "3D57890AE2727BC1970B10EE37E8EA85A80552F7",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "3D57890AE2727BC1970B10EE37E8EA85A80552F7" : 9223372036854775807,
+    "DE9F0D385398FC7904C28DB559108328E1F2EC18" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "6945B988-14E1-4AAF-B566-2CE9F29E867A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "3D57890AE2727BC1970B10EE37E8EA85A80552F7" : "5\/",
+    "DE9F0D385398FC7904C28DB559108328E1F2EC18" : "3\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "BBSaga",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "BBSaga\/BBSaga.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/cs3217\/2017-ps5-a0147980u.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3D57890AE2727BC1970B10EE37E8EA85A80552F7"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/cs3217\/2017-ps3-a0147980u.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DE9F0D385398FC7904C28DB559108328E1F2EC18"
+    }
+  ]
+}

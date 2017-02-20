@@ -7,6 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A2E349101E5AB7B5008FECD7 /* BBSagaDesignController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E348FD1E5AB7B4008FECD7 /* BBSagaDesignController.swift */; };
+		A2E349111E5AB7B5008FECD7 /* Bubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E348FE1E5AB7B4008FECD7 /* Bubble.swift */; };
+		A2E349121E5AB7B5008FECD7 /* BubbleGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E348FF1E5AB7B4008FECD7 /* BubbleGrid.swift */; };
+		A2E349131E5AB7B5008FECD7 /* BubbleGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E349001E5AB7B4008FECD7 /* BubbleGridCell.swift */; };
+		A2E349141E5AB7B5008FECD7 /* BubbleGridCellFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E349011E5AB7B4008FECD7 /* BubbleGridCellFlowLayout.swift */; };
+		A2E349151E5AB7B5008FECD7 /* BubbleGridDesigner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E349021E5AB7B5008FECD7 /* BubbleGridDesigner.swift */; };
+		A2E349161E5AB7B5008FECD7 /* BubbleGridDisplayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E349031E5AB7B5008FECD7 /* BubbleGridDisplayController.swift */; };
+		A2E349171E5AB7B5008FECD7 /* BubbleGridForDesignController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E349041E5AB7B5008FECD7 /* BubbleGridForDesignController.swift */; };
+		A2E349181E5AB7B5008FECD7 /* ColorBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E349051E5AB7B5008FECD7 /* ColorBubble.swift */; };
+		A2E349191E5AB7B5008FECD7 /* DesignGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E349061E5AB7B5008FECD7 /* DesignGridCell.swift */; };
+		A2E3491A1E5AB7B5008FECD7 /* DesignGridCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E349071E5AB7B5008FECD7 /* DesignGridCollectionController.swift */; };
+		A2E3491B1E5AB7B5008FECD7 /* DesignGridSceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E349081E5AB7B5008FECD7 /* DesignGridSceneController.swift */; };
+		A2E3491C1E5AB7B5008FECD7 /* PowerBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E349091E5AB7B5008FECD7 /* PowerBubble.swift */; };
+		A2E3491D1E5AB7B5008FECD7 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E3490A1E5AB7B5008FECD7 /* Setting.swift */; };
+		A2E3491E1E5AB7B5008FECD7 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E3490B1E5AB7B5008FECD7 /* StorageManager.swift */; };
+		A2E3491F1E5AB7B5008FECD7 /* StoragePanelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E3490C1E5AB7B5008FECD7 /* StoragePanelCell.swift */; };
+		A2E349201E5AB7B5008FECD7 /* StoragePanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E3490D1E5AB7B5008FECD7 /* StoragePanelController.swift */; };
 		A2F7CF661E514ADC00EADAA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7CF651E514ADC00EADAA1 /* AppDelegate.swift */; };
 		A2F7CF681E514ADC00EADAA1 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7CF671E514ADC00EADAA1 /* MenuViewController.swift */; };
 		A2F7CF6B1E514ADC00EADAA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2F7CF691E514ADC00EADAA1 /* Main.storyboard */; };
@@ -16,7 +33,6 @@
 		A2F7CF861E514ADD00EADAA1 /* BBSagaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7CF851E514ADD00EADAA1 /* BBSagaUITests.swift */; };
 		A2F7CF981E52105000EADAA1 /* bgm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A2F7CF971E52105000EADAA1 /* bgm.mp3 */; };
 		A2F7CFA11E52252B00EADAA1 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7CFA01E52252B00EADAA1 /* AudioPlayer.swift */; };
-		A2F7CFA41E54414400EADAA1 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7CFA31E54414300EADAA1 /* Setting.swift */; };
 		A2F7CFA71E5441EA00EADAA1 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7CFA61E5441EA00EADAA1 /* Animation.swift */; };
 		A2F7CFA91E54420800EADAA1 /* DropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7CFA81E54420800EADAA1 /* DropView.swift */; };
 /* End PBXBuildFile section */
@@ -39,6 +55,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A2E348FD1E5AB7B4008FECD7 /* BBSagaDesignController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BBSagaDesignController.swift; path = BBSaga/ps3/BBSagaDesignController.swift; sourceTree = "<group>"; };
+		A2E348FE1E5AB7B4008FECD7 /* Bubble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Bubble.swift; path = BBSaga/ps3/Bubble.swift; sourceTree = "<group>"; };
+		A2E348FF1E5AB7B4008FECD7 /* BubbleGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BubbleGrid.swift; path = BBSaga/ps3/BubbleGrid.swift; sourceTree = "<group>"; };
+		A2E349001E5AB7B4008FECD7 /* BubbleGridCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BubbleGridCell.swift; path = ps3/BubbleGridCell.swift; sourceTree = "<group>"; };
+		A2E349011E5AB7B4008FECD7 /* BubbleGridCellFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BubbleGridCellFlowLayout.swift; path = ps3/BubbleGridCellFlowLayout.swift; sourceTree = "<group>"; };
+		A2E349021E5AB7B5008FECD7 /* BubbleGridDesigner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BubbleGridDesigner.swift; path = BBSaga/ps3/BubbleGridDesigner.swift; sourceTree = "<group>"; };
+		A2E349031E5AB7B5008FECD7 /* BubbleGridDisplayController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BubbleGridDisplayController.swift; path = ps3/BubbleGridDisplayController.swift; sourceTree = "<group>"; };
+		A2E349041E5AB7B5008FECD7 /* BubbleGridForDesignController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BubbleGridForDesignController.swift; path = BBSaga/ps3/BubbleGridForDesignController.swift; sourceTree = "<group>"; };
+		A2E349051E5AB7B5008FECD7 /* ColorBubble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorBubble.swift; path = BBSaga/ps3/ColorBubble.swift; sourceTree = "<group>"; };
+		A2E349061E5AB7B5008FECD7 /* DesignGridCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DesignGridCell.swift; path = ps3/DesignGridCell.swift; sourceTree = "<group>"; };
+		A2E349071E5AB7B5008FECD7 /* DesignGridCollectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DesignGridCollectionController.swift; path = ps3/DesignGridCollectionController.swift; sourceTree = "<group>"; };
+		A2E349081E5AB7B5008FECD7 /* DesignGridSceneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DesignGridSceneController.swift; path = ps3/DesignGridSceneController.swift; sourceTree = "<group>"; };
+		A2E349091E5AB7B5008FECD7 /* PowerBubble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PowerBubble.swift; path = BBSaga/ps3/PowerBubble.swift; sourceTree = "<group>"; };
+		A2E3490A1E5AB7B5008FECD7 /* Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Setting.swift; path = ps3/Setting.swift; sourceTree = "<group>"; };
+		A2E3490B1E5AB7B5008FECD7 /* StorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StorageManager.swift; path = BBSaga/ps3/StorageManager.swift; sourceTree = "<group>"; };
+		A2E3490C1E5AB7B5008FECD7 /* StoragePanelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoragePanelCell.swift; path = ps3/StoragePanelCell.swift; sourceTree = "<group>"; };
+		A2E3490D1E5AB7B5008FECD7 /* StoragePanelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoragePanelController.swift; path = BBSaga/ps3/StoragePanelController.swift; sourceTree = "<group>"; };
 		A2F7CF621E514ADC00EADAA1 /* BBSaga.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BBSaga.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2F7CF651E514ADC00EADAA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2F7CF671E514ADC00EADAA1 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -55,7 +88,6 @@
 		A2F7CF971E52105000EADAA1 /* bgm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgm.mp3; sourceTree = "<group>"; };
 		A2F7CF9A1E521B5400EADAA1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		A2F7CFA01E52252B00EADAA1 /* AudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
-		A2F7CFA31E54414300EADAA1 /* Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		A2F7CFA61E5441EA00EADAA1 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		A2F7CFA81E54420800EADAA1 /* DropView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,6 +117,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A2E349211E5AB80E008FECD7 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				A2E349021E5AB7B5008FECD7 /* BubbleGridDesigner.swift */,
+				A2E348FE1E5AB7B4008FECD7 /* Bubble.swift */,
+				A2E348FF1E5AB7B4008FECD7 /* BubbleGrid.swift */,
+				A2E349051E5AB7B5008FECD7 /* ColorBubble.swift */,
+				A2E349091E5AB7B5008FECD7 /* PowerBubble.swift */,
+				A2E3490B1E5AB7B5008FECD7 /* StorageManager.swift */,
+			);
+			name = models;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		A2E349221E5AB828008FECD7 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A2E348FD1E5AB7B4008FECD7 /* BBSagaDesignController.swift */,
+				A2E349041E5AB7B5008FECD7 /* BubbleGridForDesignController.swift */,
+				A2E3490D1E5AB7B5008FECD7 /* StoragePanelController.swift */,
+			);
+			name = controllers;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		A2E349241E5AB888008FECD7 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				A2E349001E5AB7B4008FECD7 /* BubbleGridCell.swift */,
+				A2E349011E5AB7B4008FECD7 /* BubbleGridCellFlowLayout.swift */,
+				A2E3490C1E5AB7B5008FECD7 /* StoragePanelCell.swift */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
+		A2E349251E5AB8A6008FECD7 /* DesignSelector */ = {
+			isa = PBXGroup;
+			children = (
+				A2E349031E5AB7B5008FECD7 /* BubbleGridDisplayController.swift */,
+				A2E349061E5AB7B5008FECD7 /* DesignGridCell.swift */,
+				A2E349071E5AB7B5008FECD7 /* DesignGridCollectionController.swift */,
+				A2E349081E5AB7B5008FECD7 /* DesignGridSceneController.swift */,
+			);
+			name = DesignSelector;
+			sourceTree = "<group>";
+		};
 		A2F7CF591E514ADC00EADAA1 = {
 			isa = PBXGroup;
 			children = (
@@ -109,11 +187,12 @@
 		A2F7CF641E514ADC00EADAA1 /* BBSaga */ = {
 			isa = PBXGroup;
 			children = (
-				A2F7CFA31E54414300EADAA1 /* Setting.swift */,
+				A2E3490A1E5AB7B5008FECD7 /* Setting.swift */,
 				A2F7CFA51E54417F00EADAA1 /* Animation */,
 				A2F7CF9F1E52251400EADAA1 /* AudioPlayer */,
 				A2F7CF951E5152F500EADAA1 /* Player */,
 				A2F7CF941E5152EE00EADAA1 /* Designer */,
+				A2E349251E5AB8A6008FECD7 /* DesignSelector */,
 				A2F7CF671E514ADC00EADAA1 /* MenuViewController.swift */,
 				A2F7CF691E514ADC00EADAA1 /* Main.storyboard */,
 				A2F7CF6C1E514ADC00EADAA1 /* Assets.xcassets */,
@@ -153,6 +232,9 @@
 		A2F7CF941E5152EE00EADAA1 /* Designer */ = {
 			isa = PBXGroup;
 			children = (
+				A2E349241E5AB888008FECD7 /* views */,
+				A2E349221E5AB828008FECD7 /* controllers */,
+				A2E349211E5AB80E008FECD7 /* models */,
 			);
 			name = Designer;
 			sourceTree = "<group>";
@@ -336,12 +418,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2E349151E5AB7B5008FECD7 /* BubbleGridDesigner.swift in Sources */,
+				A2E349161E5AB7B5008FECD7 /* BubbleGridDisplayController.swift in Sources */,
+				A2E349141E5AB7B5008FECD7 /* BubbleGridCellFlowLayout.swift in Sources */,
+				A2E349111E5AB7B5008FECD7 /* Bubble.swift in Sources */,
+				A2E3491C1E5AB7B5008FECD7 /* PowerBubble.swift in Sources */,
+				A2E3491D1E5AB7B5008FECD7 /* Setting.swift in Sources */,
+				A2E349201E5AB7B5008FECD7 /* StoragePanelController.swift in Sources */,
+				A2E349191E5AB7B5008FECD7 /* DesignGridCell.swift in Sources */,
+				A2E349101E5AB7B5008FECD7 /* BBSagaDesignController.swift in Sources */,
 				A2F7CF681E514ADC00EADAA1 /* MenuViewController.swift in Sources */,
+				A2E349181E5AB7B5008FECD7 /* ColorBubble.swift in Sources */,
 				A2F7CF661E514ADC00EADAA1 /* AppDelegate.swift in Sources */,
-				A2F7CFA41E54414400EADAA1 /* Setting.swift in Sources */,
 				A2F7CFA71E5441EA00EADAA1 /* Animation.swift in Sources */,
+				A2E3491B1E5AB7B5008FECD7 /* DesignGridSceneController.swift in Sources */,
+				A2E349121E5AB7B5008FECD7 /* BubbleGrid.swift in Sources */,
 				A2F7CFA11E52252B00EADAA1 /* AudioPlayer.swift in Sources */,
+				A2E3491A1E5AB7B5008FECD7 /* DesignGridCollectionController.swift in Sources */,
+				A2E349131E5AB7B5008FECD7 /* BubbleGridCell.swift in Sources */,
+				A2E349171E5AB7B5008FECD7 /* BubbleGridForDesignController.swift in Sources */,
 				A2F7CFA91E54420800EADAA1 /* DropView.swift in Sources */,
+				A2E3491F1E5AB7B5008FECD7 /* StoragePanelCell.swift in Sources */,
+				A2E3491E1E5AB7B5008FECD7 /* StorageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
