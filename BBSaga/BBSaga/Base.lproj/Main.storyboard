@@ -44,7 +44,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Design" image="sharingan-button"/>
                                 <connections>
-                                    <segue destination="Oe4-O1-AZR" kind="show" animates="NO" id="hon-Ak-2di"/>
+                                    <segue destination="90W-kk-VCR" kind="show" id="oNZ-KP-D4H"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EZK-ca-dqP">
@@ -132,7 +132,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R78-YZ-x2T">
-                                <rect key="frame" x="302" y="974" width="60" height="32"/>
+                                <rect key="frame" x="302" y="975" width="60" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="R78-YZ-x2T" secondAttribute="height" multiplier="118:61" id="4k1-Fl-gW7"/>
                                 </constraints>
@@ -302,29 +302,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Za-uC-jpX" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="673" y="-520"/>
-        </scene>
-        <!--Design Grid Scene Controller-->
-        <scene sceneID="2xx-Is-qgE">
-            <objects>
-                <viewController id="Oe4-O1-AZR" customClass="DesignGridSceneController" customModule="BBSaga" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ow8-i5-pqO"/>
-                        <viewControllerLayoutGuide type="bottom" id="y1v-zU-ojm"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="fDQ-q1-wVh">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <segue destination="90W-kk-VCR" kind="show" identifier="segueToDesigner" animates="NO" id="65y-9M-HLk">
-                            <nil key="action"/>
-                        </segue>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="es8-EO-lWa" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-108" y="-520"/>
         </scene>
         <!--Play Grid Scene Controller-->
         <scene sceneID="x6z-JR-slP">

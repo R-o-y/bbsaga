@@ -16,9 +16,6 @@
 		A2E349161E5AB7B5008FECD7 /* BubbleGridController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E349031E5AB7B5008FECD7 /* BubbleGridController.swift */; };
 		A2E349171E5AB7B5008FECD7 /* BubbleGridForDesignController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E349041E5AB7B5008FECD7 /* BubbleGridForDesignController.swift */; };
 		A2E349181E5AB7B5008FECD7 /* ColorBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E349051E5AB7B5008FECD7 /* ColorBubble.swift */; };
-		A2E349191E5AB7B5008FECD7 /* DesignGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E349061E5AB7B5008FECD7 /* DesignGridCell.swift */; };
-		A2E3491A1E5AB7B5008FECD7 /* DesignGridCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E349071E5AB7B5008FECD7 /* DesignGridCollectionController.swift */; };
-		A2E3491B1E5AB7B5008FECD7 /* DesignGridSceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E349081E5AB7B5008FECD7 /* DesignGridSceneController.swift */; };
 		A2E3491C1E5AB7B5008FECD7 /* PowerBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E349091E5AB7B5008FECD7 /* PowerBubble.swift */; };
 		A2E3491D1E5AB7B5008FECD7 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E3490A1E5AB7B5008FECD7 /* Setting.swift */; };
 		A2E3491E1E5AB7B5008FECD7 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E3490B1E5AB7B5008FECD7 /* StorageManager.swift */; };
@@ -78,12 +75,9 @@
 		A2E349001E5AB7B4008FECD7 /* BubbleGridCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BubbleGridCell.swift; path = ps3/BubbleGridCell.swift; sourceTree = "<group>"; };
 		A2E349011E5AB7B4008FECD7 /* BubbleGridCellFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BubbleGridCellFlowLayout.swift; path = ps3/BubbleGridCellFlowLayout.swift; sourceTree = "<group>"; };
 		A2E349021E5AB7B5008FECD7 /* BubbleGridDesigner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BubbleGridDesigner.swift; path = BBSaga/ps3/BubbleGridDesigner.swift; sourceTree = "<group>"; };
-		A2E349031E5AB7B5008FECD7 /* BubbleGridController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BubbleGridController.swift; path = ps3/BubbleGridController.swift; sourceTree = "<group>"; };
+		A2E349031E5AB7B5008FECD7 /* BubbleGridController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BubbleGridController.swift; path = BBSaga/ps3/BubbleGridController.swift; sourceTree = "<group>"; };
 		A2E349041E5AB7B5008FECD7 /* BubbleGridForDesignController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BubbleGridForDesignController.swift; path = BBSaga/ps3/BubbleGridForDesignController.swift; sourceTree = "<group>"; };
 		A2E349051E5AB7B5008FECD7 /* ColorBubble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorBubble.swift; path = BBSaga/ps3/ColorBubble.swift; sourceTree = "<group>"; };
-		A2E349061E5AB7B5008FECD7 /* DesignGridCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DesignGridCell.swift; path = ps3/DesignGridCell.swift; sourceTree = "<group>"; };
-		A2E349071E5AB7B5008FECD7 /* DesignGridCollectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DesignGridCollectionController.swift; path = ps3/DesignGridCollectionController.swift; sourceTree = "<group>"; };
-		A2E349081E5AB7B5008FECD7 /* DesignGridSceneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DesignGridSceneController.swift; path = ps3/DesignGridSceneController.swift; sourceTree = "<group>"; };
 		A2E349091E5AB7B5008FECD7 /* PowerBubble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PowerBubble.swift; path = BBSaga/ps3/PowerBubble.swift; sourceTree = "<group>"; };
 		A2E3490A1E5AB7B5008FECD7 /* Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Setting.swift; path = ps3/Setting.swift; sourceTree = "<group>"; };
 		A2E3490B1E5AB7B5008FECD7 /* StorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StorageManager.swift; path = BBSaga/ps3/StorageManager.swift; sourceTree = "<group>"; };
@@ -169,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				A2E348FD1E5AB7B4008FECD7 /* BBSagaDesignController.swift */,
+				A2E349031E5AB7B5008FECD7 /* BubbleGridController.swift */,
 				A2E349041E5AB7B5008FECD7 /* BubbleGridForDesignController.swift */,
 				A2E3490D1E5AB7B5008FECD7 /* StoragePanelController.swift */,
 			);
@@ -184,17 +179,6 @@
 				A2E3490C1E5AB7B5008FECD7 /* StoragePanelCell.swift */,
 			);
 			name = views;
-			sourceTree = "<group>";
-		};
-		A2E349251E5AB8A6008FECD7 /* DesignSelector */ = {
-			isa = PBXGroup;
-			children = (
-				A2E349081E5AB7B5008FECD7 /* DesignGridSceneController.swift */,
-				A2E349071E5AB7B5008FECD7 /* DesignGridCollectionController.swift */,
-				A2E349061E5AB7B5008FECD7 /* DesignGridCell.swift */,
-				A2E349031E5AB7B5008FECD7 /* BubbleGridController.swift */,
-			);
-			name = DesignSelector;
 			sourceTree = "<group>";
 		};
 		A2E349621E5ABC23008FECD7 /* supporting extensions */ = {
@@ -264,7 +248,6 @@
 				A2E3490A1E5AB7B5008FECD7 /* Setting.swift */,
 				A2F7CFA51E54417F00EADAA1 /* Animation */,
 				A2F7CF9F1E52251400EADAA1 /* AudioPlayer */,
-				A2E349251E5AB8A6008FECD7 /* DesignSelector */,
 				A2F7CF941E5152EE00EADAA1 /* Designer */,
 				A2E349651E5AC8BA008FECD7 /* PlaySelector */,
 				A2F7CF951E5152F500EADAA1 /* Player */,
@@ -510,7 +493,6 @@
 				A2E3491C1E5AB7B5008FECD7 /* PowerBubble.swift in Sources */,
 				A2E3491D1E5AB7B5008FECD7 /* Setting.swift in Sources */,
 				A2E349201E5AB7B5008FECD7 /* StoragePanelController.swift in Sources */,
-				A2E349191E5AB7B5008FECD7 /* DesignGridCell.swift in Sources */,
 				A2E3496B1E5ACA80008FECD7 /* PlayGridCell.swift in Sources */,
 				A2E349531E5ABB28008FECD7 /* CollisionDetector.swift in Sources */,
 				A2E349611E5ABB28008FECD7 /* World.swift in Sources */,
@@ -524,11 +506,9 @@
 				A2E3495D1E5ABB28008FECD7 /* RigidBody.swift in Sources */,
 				A2F7CF661E514ADC00EADAA1 /* AppDelegate.swift in Sources */,
 				A2F7CFA71E5441EA00EADAA1 /* Animation.swift in Sources */,
-				A2E3491B1E5AB7B5008FECD7 /* DesignGridSceneController.swift in Sources */,
 				A2E349121E5AB7B5008FECD7 /* BubbleGrid.swift in Sources */,
 				A2E349601E5ABB28008FECD7 /* Shape.swift in Sources */,
 				A2F7CFA11E52252B00EADAA1 /* AudioPlayer.swift in Sources */,
-				A2E3491A1E5AB7B5008FECD7 /* DesignGridCollectionController.swift in Sources */,
 				A2E349131E5AB7B5008FECD7 /* BubbleGridCell.swift in Sources */,
 				A2E349171E5AB7B5008FECD7 /* BubbleGridForDesignController.swift in Sources */,
 				A2F7CFA91E54420800EADAA1 /* DropView.swift in Sources */,
