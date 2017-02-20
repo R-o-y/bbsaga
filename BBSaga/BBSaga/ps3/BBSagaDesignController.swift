@@ -99,9 +99,10 @@ class BBSagaDesignController: UIViewController {
         storagePanelController = StoragePanelController()
         storagePanel.register(StoragePanelCell.self,
                               forCellReuseIdentifier: Setting.storagePanelCellIdentifier)
-        storagePanel.isHidden = true
-        
         storagePanelController.tableView = storagePanel
+        
+        storagePanel.isHidden = true
+        storagePanel.separatorStyle = .none
         
         view.addSubview(storagePanel)
         self.addChildViewController(storagePanelController)

@@ -80,9 +80,9 @@
 		A2E349051E5AB7B5008FECD7 /* ColorBubble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorBubble.swift; path = BBSaga/ps3/ColorBubble.swift; sourceTree = "<group>"; };
 		A2E349091E5AB7B5008FECD7 /* PowerBubble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PowerBubble.swift; path = BBSaga/ps3/PowerBubble.swift; sourceTree = "<group>"; };
 		A2E3490A1E5AB7B5008FECD7 /* Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Setting.swift; path = ps3/Setting.swift; sourceTree = "<group>"; };
-		A2E3490B1E5AB7B5008FECD7 /* StorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StorageManager.swift; path = BBSaga/ps3/StorageManager.swift; sourceTree = "<group>"; };
+		A2E3490B1E5AB7B5008FECD7 /* StorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StorageManager.swift; path = ps3/StorageManager.swift; sourceTree = "<group>"; };
 		A2E3490C1E5AB7B5008FECD7 /* StoragePanelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoragePanelCell.swift; path = ps3/StoragePanelCell.swift; sourceTree = "<group>"; };
-		A2E3490D1E5AB7B5008FECD7 /* StoragePanelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoragePanelController.swift; path = BBSaga/ps3/StoragePanelController.swift; sourceTree = "<group>"; };
+		A2E3490D1E5AB7B5008FECD7 /* StoragePanelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoragePanelController.swift; path = ps3/StoragePanelController.swift; sourceTree = "<group>"; };
 		A2E349291E5ABB28008FECD7 /* ArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArrayExtension.swift; path = ps4/ArrayExtension.swift; sourceTree = "<group>"; };
 		A2E349301E5ABB28008FECD7 /* BubbleGridControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BubbleGridControllerExtension.swift; path = ps4/BubbleGridControllerExtension.swift; sourceTree = "<group>"; };
 		A2E349321E5ABB28008FECD7 /* BubbleGridExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BubbleGridExtension.swift; path = ps4/BubbleGridExtension.swift; sourceTree = "<group>"; };
@@ -153,7 +153,6 @@
 				A2E348FF1E5AB7B4008FECD7 /* BubbleGrid.swift */,
 				A2E349051E5AB7B5008FECD7 /* ColorBubble.swift */,
 				A2E349091E5AB7B5008FECD7 /* PowerBubble.swift */,
-				A2E3490B1E5AB7B5008FECD7 /* StorageManager.swift */,
 			);
 			name = models;
 			path = ..;
@@ -165,7 +164,6 @@
 				A2E348FD1E5AB7B4008FECD7 /* BBSagaDesignController.swift */,
 				A2E349031E5AB7B5008FECD7 /* BubbleGridController.swift */,
 				A2E349041E5AB7B5008FECD7 /* BubbleGridForDesignController.swift */,
-				A2E3490D1E5AB7B5008FECD7 /* StoragePanelController.swift */,
 			);
 			name = controllers;
 			path = ..;
@@ -176,7 +174,6 @@
 			children = (
 				A2E349001E5AB7B4008FECD7 /* BubbleGridCell.swift */,
 				A2E349011E5AB7B4008FECD7 /* BubbleGridCellFlowLayout.swift */,
-				A2E3490C1E5AB7B5008FECD7 /* StoragePanelCell.swift */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -219,6 +216,16 @@
 				A2E3496A1E5ACA80008FECD7 /* PlayGridCell.swift */,
 			);
 			name = PlaySelector;
+			sourceTree = "<group>";
+		};
+		A2E3496C1E5B09CD008FECD7 /* storagePanel */ = {
+			isa = PBXGroup;
+			children = (
+				A2E3490D1E5AB7B5008FECD7 /* StoragePanelController.swift */,
+				A2E3490C1E5AB7B5008FECD7 /* StoragePanelCell.swift */,
+				A2E3490B1E5AB7B5008FECD7 /* StorageManager.swift */,
+			);
+			name = storagePanel;
 			sourceTree = "<group>";
 		};
 		A2F7CF591E514ADC00EADAA1 = {
@@ -290,6 +297,7 @@
 		A2F7CF941E5152EE00EADAA1 /* Designer */ = {
 			isa = PBXGroup;
 			children = (
+				A2E3496C1E5B09CD008FECD7 /* storagePanel */,
 				A2E349241E5AB888008FECD7 /* views */,
 				A2E349221E5AB828008FECD7 /* controllers */,
 				A2E349211E5AB80E008FECD7 /* models */,

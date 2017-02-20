@@ -100,7 +100,7 @@ class StoragePanelController: UITableViewController {
         guard let storedBubbleGridURLs = storageManager.loadBubbleGridFileURLs() else {
             return cell
         }
-        cell.setText(to: storedBubbleGridURLs[indexPath.row].lastPathComponent)
+        cell.setText(to: getURLName(of: storedBubbleGridURLs[indexPath.row]))
         return cell
     }
     
@@ -157,7 +157,7 @@ class StoragePanelController: UITableViewController {
                 }
                 if let loadedBubbleGrid = loadedDic["bubbleGrid"] as? BubbleGrid {
                     let message = confirmLoadQuestion +
-                                    selectedURL.lastPathComponent +
+                                    getURLName(of: selectedURL) +
                                     loadOverwrittenWarning
                     let handler: ((UIAlertAction) -> Void) = { _ in
                         designController.setBubbleGrid(to: loadedBubbleGrid)
@@ -165,7 +165,7 @@ class StoragePanelController: UITableViewController {
                     confirmAndHandle(message: message, handler: handler)
                 }
             case .save:
-                let message = confirmSaveQuestion + selectedURL.lastPathComponent
+                let message = confirmSaveQuestion + getURLName(of: selectedURL)
                 let handler: ((UIAlertAction) -> Void) = { _ in
                     guard let currentBubbleGrid = designController.getCurrentBubbleGrid() else {
                         return
@@ -175,7 +175,7 @@ class StoragePanelController: UITableViewController {
                                              into: selectedURL)
                     self.alertMessage(title: "",
                                       message: "save into " +
-                                        selectedURL.lastPathComponent +
+                                        self.getURLName(of: selectedURL) +
                         "\nsuccessfully")
                 }
                 confirmAndHandle(title: "", message: message, handler: handler)
@@ -201,7 +201,7 @@ class StoragePanelController: UITableViewController {
             }
             let selectedURL = storedBubbleGridURLs[indexPath.row]
             
-            let message = confirmRemoveQuestion + selectedURL.lastPathComponent
+            let message = confirmRemoveQuestion + getURLName(of: selectedURL)
             let handler: ((UIAlertAction) -> Void) = { _ in
                 self.storageManager.removePlist(at: selectedURL)
                 storagePanel.reloadData()
@@ -241,6 +241,11 @@ class StoragePanelController: UITableViewController {
     /// this is a function to be called by its parentController to change the mode of storage manager
     func setMode(to mode: StorageManagerMode) {
         storageManager.setMode(to: mode)
+    }
+    
+    /// helper function to get the name without path and extension of a URL
+    private func getURLName(of url: URL) -> String {
+        return url.lastPathComponent.components(separatedBy: ".")[0]
     }
 }
 

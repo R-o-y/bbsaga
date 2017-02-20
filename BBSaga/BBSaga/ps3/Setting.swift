@@ -11,7 +11,11 @@ import UIKit
 
 struct Setting {
     static let statusBarHeight: Double = 20
-    
+    static let backGroundImageName = "background"
+}
+
+/// storage panel
+extension Setting {
     static let storagePanelHeightInPercentage: CGFloat = 0.38  // relative to the main view
     static let storagePanelWidthInPercentage: CGFloat = 0.48  // relative to the main view
     
@@ -25,8 +29,6 @@ struct Setting {
     static let confirmRemoveQuestion = "remove the following file?\n\n"
     static let inputNamePlaceholder = "name, repetition NOT allowed"
     static let loadOverwrittenWarning = "\n\nthe current grid will be overwritten"
-    
-    static let backGroundImageName = "background"
 }
 
 /// bubble grid selection scene
