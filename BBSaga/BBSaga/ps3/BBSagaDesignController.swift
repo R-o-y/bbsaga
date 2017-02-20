@@ -268,6 +268,12 @@ class BBSagaDesignController: UIViewController {
         }
         return bubbleGridForDesignController.currentBubbleGrid
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let playController = segue.destination as? GamePlayController {
+            playController.loadedBubbleGrid = getCurrentBubbleGrid()
+        }
+    }
 }
 
 

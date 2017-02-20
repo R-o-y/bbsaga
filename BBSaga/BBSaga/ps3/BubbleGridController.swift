@@ -1,5 +1,5 @@
 //
-//  BubbleGridDisplayController.swift
+//  BubbleGridController.swift
 //  LevelDesigner
 //
 //  Created by luoyuyang on 19/02/17.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class BubbleGridDisplayController: UICollectionViewController {
+class BubbleGridController: UICollectionViewController {
     private(set) var currentBubbleGrid = BubbleGrid()
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {

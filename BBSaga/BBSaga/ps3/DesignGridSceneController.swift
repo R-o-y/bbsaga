@@ -21,7 +21,7 @@ class DesignGridSceneController: UIViewController {
     private func startObservingSegueToDesignerRequest() {
         let name = NSNotification.Name(rawValue: Setting.segueToDesignerNotificationName)
         NotificationCenter.default.addObserver(forName: name, object: nil, queue: nil, using: { notification in
-            if let senderBubbleGridController = notification.object as? BubbleGridDisplayController {
+            if let senderBubbleGridController = notification.object as? BubbleGridController {
                 self.performSegue(withIdentifier: Setting.segueToDesignerIdentifier, sender: senderBubbleGridController)
             }
         })
@@ -61,7 +61,7 @@ class DesignGridSceneController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Setting.segueToDesignerIdentifier {
-            guard let senderBubbleGridController = sender as? BubbleGridDisplayController else {
+            guard let senderBubbleGridController = sender as? BubbleGridController else {
                 return
             }
             if let designController = segue.destination as? BBSagaDesignController {

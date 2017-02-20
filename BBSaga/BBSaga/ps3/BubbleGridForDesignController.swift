@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class BubbleGridForDesignController: BubbleGridDisplayController {
+class BubbleGridForDesignController: BubbleGridController {
     private var cellBorderWidth = Setting.cellBorderWidth
     private var numRows = Setting.numRows
     private var numCellsPerOddRow = Setting.numCellsPerOddRow

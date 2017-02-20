@@ -11,7 +11,7 @@ import UIKit
 
 class DesignGridCell: UICollectionViewCell {
     private var bubbleGridView: UICollectionView!
-    private var bubbleGridController: BubbleGridDisplayController!
+    private var bubbleGridController: BubbleGridController!
     private var editButton: UIButton!
     private var nameLabel: UILabel!
     
@@ -23,7 +23,7 @@ class DesignGridCell: UICollectionViewCell {
     
     private func setUpBubbleGridView() {
         let layout = BubbleGridCellFlowLayout()
-        bubbleGridController = BubbleGridDisplayController(collectionViewLayout: layout)
+        bubbleGridController = BubbleGridController(collectionViewLayout: layout)
         
         guard let bubbleGridControllerCollectionView = bubbleGridController.collectionView else {
             return

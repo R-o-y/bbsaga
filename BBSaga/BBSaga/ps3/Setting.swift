@@ -100,18 +100,6 @@ extension Setting {
     static let leftSlideInDefaultDuration = 0.38
 }
 
-/// game engine
-extension Setting {
-    static let bubbleProjectileSpeed: CGFloat = 1200
-    static let framePerSecond = 60
-    static let minimumShootingVerticalComponent: CGFloat = -18
-    
-    static let dropViewGravityMagnitude: CGFloat = 1.2
-    static let dropViewElasticity: CGFloat = 0.66
-    static let dropViewFadeOutDuration = 2.8
-}
-
-
 
 
 
