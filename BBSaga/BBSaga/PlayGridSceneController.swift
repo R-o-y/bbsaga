@@ -1,44 +1,44 @@
 //
-//  DesignGridSceneController.swift
-//  LevelDesigner
+//  PlayGridSceneController.swift
+//  BBSaga
 //
-//  Created by luoyuyang on 19/02/17.
+//  Created by luoyuyang on 20/02/17.
 //  Copyright © 2017年 nus.cs3217.a0147980u. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class DesignGridSceneController: UIViewController {
-    private var designGridCollectionView: UICollectionView!
-    private var designGridCollectionViewController: DesignGridCollectionController!
+class PlayGridSceneController: UIViewController {
+    private var playGridCollectionView: UICollectionView!
+    private var playGridCollectionViewController: PlayGridCollectionController!
     
     override func viewDidLoad() {
         setUpGridsViewAndController()
-        startObservingSegueToDesignerRequest()
+        startObservingSegueToPlayerRequest()
     }
     
-    private func startObservingSegueToDesignerRequest() {
-        let name = NSNotification.Name(rawValue: Setting.segueToDesignerNotificationName)
+    private func startObservingSegueToPlayerRequest() {
+        let name = NSNotification.Name(rawValue: Setting.segueToPlayerNotificationName)
         NotificationCenter.default.addObserver(forName: name, object: nil, queue: nil, using: { [weak self] notification in
             if let senderBubbleGridController = notification.object as? BubbleGridController {
-                self?.performSegue(withIdentifier: Setting.segueToDesignerIdentifier, sender: senderBubbleGridController)
+                self?.performSegue(withIdentifier: Setting.segueToPlayerIdentifier, sender: senderBubbleGridController)
             }
         })
     }
     
     private func setUpGridsViewAndController() {
         let layout = getGridCollectionLayout()
-        designGridCollectionViewController = DesignGridCollectionController(collectionViewLayout: layout)
-        self.addChildViewController(designGridCollectionViewController)
-    
-        guard let designGridCollectionViewControllerCollectionView = designGridCollectionViewController.collectionView else {
-        return
+        playGridCollectionViewController = PlayGridCollectionController(collectionViewLayout: layout)
+        self.addChildViewController(playGridCollectionViewController)
+        
+        guard let playGridCollectionViewControllerCollectionView = playGridCollectionViewController.collectionView else {
+            return
         }
-        designGridCollectionView = designGridCollectionViewControllerCollectionView
-        designGridCollectionView.frame = view.frame
-        designGridCollectionView.register(DesignGridCell.self, forCellWithReuseIdentifier: Setting.designGridCellIdentifier)
-        view.addSubview(designGridCollectionView)
+        playGridCollectionView = playGridCollectionViewControllerCollectionView
+        playGridCollectionView.frame = view.frame
+        playGridCollectionView.register(PlayGridCell.self, forCellWithReuseIdentifier: Setting.playGridCellIdentifier)
+        view.addSubview(playGridCollectionView)
     }
     
     private func getGridCollectionLayout() -> UICollectionViewFlowLayout {
@@ -56,17 +56,23 @@ class DesignGridSceneController: UIViewController {
     
     /// Animation: grids fall into view
     override func viewDidAppear(_ animated: Bool) {
-        Animation.animateCollectionFallingCells(designGridCollectionView)
+        Animation.animateCollectionFallingCells(playGridCollectionView)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == Setting.segueToDesignerIdentifier {
+        if segue.identifier == Setting.segueToPlayerIdentifier {
             guard let senderBubbleGridController = sender as? BubbleGridController else {
                 return
             }
-            if let designController = segue.destination as? BBSagaDesignController {
-                designController.loadedBubbleGrid = senderBubbleGridController.currentBubbleGrid
+            if let playController = segue.destination as? GamePlayController {
+                playController.loadedBubbleGrid = senderBubbleGridController.currentBubbleGrid
             }
         }
     }
 }
+
+
+
+
+
+

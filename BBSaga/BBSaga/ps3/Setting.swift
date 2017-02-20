@@ -29,13 +29,14 @@ struct Setting {
     static let backGroundImageName = "background"
 }
 
-/// bubble grid selection scene
+/// bubble grid design selection scene
 extension Setting {
     static let numGridsPerRow = 2
     
     static let bubbleGridCellIdentifier = "BubbleGridCell"
     static let storagePanelCellIdentifier = "StoragePanelCell"
     static let designGridCellIdentifier = "DesignGridCell"
+    static let playGridCellIdentifier = "PlayGridCell"
     
     static let segueToDesignerIdentifier = "segueToDesigner"
     static let segueToDesignerNotificationName = "segueToDesigner"
@@ -48,6 +49,12 @@ extension Setting {
     
     // grid cell
     static let gridThumbnailFooterHeightRatio: CGFloat = 0.1
+}
+
+/// bubble grid play selection scene
+extension Setting {
+    static let segueToPlayerIdentifier = "segueToPlayer"
+    static let segueToPlayerNotificationName = "segueToPlayer"
 }
 
 /// bubble grid view
@@ -100,7 +107,24 @@ extension Setting {
     static let leftSlideInDefaultDuration = 0.38
 }
 
-
+/// game play
+extension Setting {
+    static let bubbleProjectileSpeed: CGFloat = 1200
+    static let framePerSecond = 60
+    static let minimumShootingVerticalComponent: CGFloat = -18
+    
+    // Animation
+    static let dropViewGravityMagnitude: CGFloat = 1.2
+    static let dropViewElasticity: CGFloat = 0.66
+    static let dropViewFadeOutDuration = 2.8
+    
+    static let bubbleBurstAnimationImageName = "bubble-burst"
+    static let bubbleBurstAnimationRowNum = 1
+    static let bubbleBurstAnimationColNum = 4
+    static let bubbleBurstAnimationRepeatCount = 1
+    static let bubbleBurstAnimationFinalScale: CGFloat = 1.2
+    static let bubbleBurstAnimationDuration = 0.12
+}
 
 
 
