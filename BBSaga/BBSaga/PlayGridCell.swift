@@ -12,7 +12,6 @@ import UIKit
 class PlayGridCell: UICollectionViewCell {
     private var bubbleGridView: UICollectionView!
     private(set) var bubbleGridController: BubbleGridController!
-    private var editButton: UIButton!
     private var nameLabel: UILabel!
     
     override func awakeFromNib() {
