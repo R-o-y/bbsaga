@@ -239,6 +239,19 @@
                                     <action selector="bubblePressed:" destination="90W-kk-VCR" eventType="touchUpInside" id="ncG-YW-C2J"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z2t-OG-gf7">
+                                <rect key="frame" x="670" y="975" width="60" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Z2t-OG-gf7" secondAttribute="height" multiplier="60:31" id="A46-xt-h62"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="16"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="hnR-ey-8XH" kind="unwind" unwindAction="unwindSegueToMenuWithSegue:" id="htZ-P4-JmS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -249,16 +262,19 @@
                             <constraint firstItem="gq6-g7-E5i" firstAttribute="top" secondItem="2fQ-3M-rda" secondAttribute="bottom" constant="18" id="BIi-wd-608"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Fh7-2C-RVQ" secondAttribute="trailing" priority="250" constant="8" id="BVR-WU-wKh"/>
                             <constraint firstItem="MN7-uZ-8zV" firstAttribute="leading" secondItem="TkE-JW-nHD" secondAttribute="trailing" constant="18" id="Cle-OA-Gbn"/>
+                            <constraint firstItem="Z2t-OG-gf7" firstAttribute="width" secondItem="2CX-cn-bVN" secondAttribute="width" id="EnS-eV-Qrj"/>
                             <constraint firstItem="R78-YZ-x2T" firstAttribute="leading" secondItem="2fQ-3M-rda" secondAttribute="trailing" constant="28" id="GDP-97-Ohm"/>
                             <constraint firstItem="gq6-g7-E5i" firstAttribute="top" secondItem="sQi-iz-Xmm" secondAttribute="bottom" constant="18" id="HKI-M1-L9o"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Z2t-OG-gf7" secondAttribute="trailing" priority="250" constant="18" id="O8f-yB-Sj1"/>
                             <constraint firstItem="gq6-g7-E5i" firstAttribute="top" secondItem="MN7-uZ-8zV" secondAttribute="bottom" constant="80" id="OWO-t0-17D"/>
                             <constraint firstItem="v9T-1G-Ww5" firstAttribute="leading" secondItem="94R-Va-DwQ" secondAttribute="trailing" constant="18" id="PBq-Q3-OWW"/>
+                            <constraint firstItem="gq6-g7-E5i" firstAttribute="top" secondItem="Z2t-OG-gf7" secondAttribute="bottom" constant="18" id="PEu-s7-2jR"/>
                             <constraint firstItem="cYU-eA-Dgi" firstAttribute="leading" secondItem="v9T-1G-Ww5" secondAttribute="trailing" constant="18" id="PUL-FM-g8j"/>
                             <constraint firstItem="gq6-g7-E5i" firstAttribute="top" secondItem="2CX-cn-bVN" secondAttribute="bottom" constant="18" id="SBy-64-8QP"/>
                             <constraint firstItem="2fQ-3M-rda" firstAttribute="width" secondItem="2CX-cn-bVN" secondAttribute="width" id="SpT-H0-vTB"/>
                             <constraint firstItem="gq6-g7-E5i" firstAttribute="top" secondItem="cQr-13-yYa" secondAttribute="bottom" constant="80" id="TeB-29-rVq"/>
                             <constraint firstItem="R78-YZ-x2T" firstAttribute="width" secondItem="2CX-cn-bVN" secondAttribute="width" id="VXg-AB-zYH"/>
-                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="R78-YZ-x2T" secondAttribute="trailing" constant="18" id="XiF-6J-yl0"/>
+                            <constraint firstItem="Z2t-OG-gf7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="R78-YZ-x2T" secondAttribute="trailing" constant="28" placeholder="YES" id="YV4-9d-khG"/>
                             <constraint firstItem="TkE-JW-nHD" firstAttribute="leading" secondItem="cQr-13-yYa" secondAttribute="trailing" constant="18" id="Zm6-yL-1CC"/>
                             <constraint firstItem="cYU-eA-Dgi" firstAttribute="width" secondItem="c8b-Lt-kAe" secondAttribute="width" id="Zwb-AH-qTU"/>
                             <constraint firstItem="sQi-iz-Xmm" firstAttribute="leading" secondItem="2CX-cn-bVN" secondAttribute="trailing" constant="28" id="aCL-go-VnJ"/>
@@ -277,6 +293,7 @@
                             <constraint firstItem="sQi-iz-Xmm" firstAttribute="width" secondItem="2CX-cn-bVN" secondAttribute="width" id="oz2-l5-Ju7"/>
                             <constraint firstItem="94R-Va-DwQ" firstAttribute="width" secondItem="c8b-Lt-kAe" secondAttribute="width" id="q8v-vn-o6O"/>
                             <constraint firstItem="Fh7-2C-RVQ" firstAttribute="width" secondItem="c8b-Lt-kAe" secondAttribute="width" id="rw4-PR-WN3"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Z2t-OG-gf7" secondAttribute="trailing" constant="18" id="rzv-4Z-rVr"/>
                             <constraint firstItem="TkE-JW-nHD" firstAttribute="width" secondItem="c8b-Lt-kAe" secondAttribute="width" id="sYR-Nv-Mzm"/>
                             <constraint firstItem="gq6-g7-E5i" firstAttribute="top" secondItem="94R-Va-DwQ" secondAttribute="bottom" constant="80" id="su7-Xj-nNj"/>
                             <constraint firstItem="94R-Va-DwQ" firstAttribute="leading" secondItem="BCJ-90-cPV" secondAttribute="trailing" constant="18" id="tHM-9O-nCw"/>
@@ -300,6 +317,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Za-uC-jpX" sceneMemberID="firstResponder"/>
+                <exit id="hnR-ey-8XH" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="673" y="-520"/>
         </scene>
@@ -357,6 +375,6 @@
         <image name="shuriken-button" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="War-E8-diQ"/>
+        <segue reference="K51-1V-Ylz"/>
     </inferredMetricsTieBreakers>
 </document>

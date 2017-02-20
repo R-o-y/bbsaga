@@ -36,5 +36,7 @@ class MenuViewController: UIViewController {
             audioPlayer.pauseBgm()
         }
     }
+    
+    @IBAction func unwindSegueToMenu(segue: UIStoryboardSegue) {}
 }
 

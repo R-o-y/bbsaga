@@ -29,13 +29,12 @@ struct Setting {
     static let backGroundImageName = "background"
 }
 
-/// bubble grid design selection scene
+/// bubble grid selection scene
 extension Setting {
     static let numGridsPerRow = 2
     
     static let bubbleGridCellIdentifier = "BubbleGridCell"
     static let storagePanelCellIdentifier = "StoragePanelCell"
-    static let designGridCellIdentifier = "DesignGridCell"
     static let playGridCellIdentifier = "PlayGridCell"
     
     static let segueToDesignerIdentifier = "segueToDesigner"
@@ -49,10 +48,7 @@ extension Setting {
     
     // grid cell
     static let gridThumbnailFooterHeightRatio: CGFloat = 0.1
-}
-
-/// bubble grid play selection scene
-extension Setting {
+    
     static let segueToPlayerIdentifier = "segueToPlayer"
     static let segueToPlayerNotificationName = "segueToPlayer"
 }
