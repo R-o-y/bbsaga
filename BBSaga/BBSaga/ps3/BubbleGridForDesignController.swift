@@ -11,8 +11,6 @@ import UIKit
 
 class BubbleGridForDesignController: BubbleGridController {
     private var cellBorderWidth = Setting.cellBorderWidth
-    private var numRows = Setting.numRows
-    private var numCellsPerOddRow = Setting.numCellsPerOddRow
     
     /// set up an empty bubble grid for user to design on
     /// it also contains some important initialization process
@@ -24,28 +22,11 @@ class BubbleGridForDesignController: BubbleGridController {
         
         bubbleGrid.backgroundColor = UIColor.clear
         
-        setUpEmptyBubbleGridModel()
+        currentBubbleGrid.setUpEmptyBubbleGrid()
         
         bindGestureRecognizer(to: bubbleGrid)
     }
-    
-    /// helper function to set up empty bubble grid model
-    private func setUpEmptyBubbleGridModel() {
-        var numCells = 0
-        for i in 1 ... numRows {
-            if i % 2 == 1 {  // odd row
-                numCells = numCellsPerOddRow
-            } else {  // even row
-                numCells = numCellsPerOddRow - 1
-            }
-            var newRowOfCells = Array<Bubble?>()
-            for _ in 1 ... numCells {
-                newRowOfCells.append(nil)
-            }
-            currentBubbleGrid.appendArrayOfBubbles(newRowOfCells)
-        }
-    }
-    
+
     /// helper function to bind gesture recognizers
     private func bindGestureRecognizer(to bubbleGrid: UICollectionView) {
         bubbleGrid.addGestureRecognizer(UIPanGestureRecognizer(

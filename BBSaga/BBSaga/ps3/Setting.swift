@@ -16,12 +16,15 @@ struct Setting {
 
 /// storage panel
 extension Setting {
-    static let storagePanelHeightInPercentage: CGFloat = 0.38  // relative to the main view
-    static let storagePanelWidthInPercentage: CGFloat = 0.48  // relative to the main view
+    static let storagePanelYPercentage: CGFloat = 0.08
+    static let storagePanelHeightInPercentage: CGFloat = 0.66  // relative to the main view
+    static let storagePanelWidthInPercentage: CGFloat = 0.66  // relative to the main view
+    static let storageAlpha: CGFloat = 0.66
     
     static let storagePanelHeaderAlpha = 0.38
-    static let storagePanelHeaderHeightInPercentage: CGFloat = 0.12  // relative to the storage panel
-    static let headerTextWidthInPercentage: CGFloat = 0.66  // relative to the storage panel header
+    static let storagePanelHeaderHeightInPercentage: CGFloat = 0.06  // relative to the storage panel
+    
+    static let bubbleGridStorageKey = "bubbleGrid"
     
     static let noContentMessage = "there is no content to be loaded from this file"
     static let confirmSaveQuestion = "save into the following file?\n\n"
@@ -29,6 +32,12 @@ extension Setting {
     static let confirmRemoveQuestion = "remove the following file?\n\n"
     static let inputNamePlaceholder = "name, repetition NOT allowed"
     static let loadOverwrittenWarning = "\n\nthe current grid will be overwritten"
+    
+    static let removeGridNotificationName = "removeGrid"
+    
+    static let containerWidthInPercentage: CGFloat = 0.66
+    static let containerHeightWidthRatio: CGFloat = 1.3
+    static let containerUpperPaddingInPercentage: CGFloat = 0.1
 }
 
 /// bubble grid selection scene
@@ -39,10 +48,7 @@ extension Setting {
     static let storagePanelCellIdentifier = "StoragePanelCell"
     static let playGridCellIdentifier = "PlayGridCell"
     
-    static let segueToDesignerIdentifier = "segueToDesigner"
-    static let segueToDesignerNotificationName = "segueToDesigner"
-    
-    static let editButtonImageName = "edit-button"
+    static let removeButtonImageName = "remove-button"
     
     static let gridCollectionItemSizeRatio: CGFloat = 0.28
     static let gridCollectionVerticalMarginRatio: CGFloat = 0.038

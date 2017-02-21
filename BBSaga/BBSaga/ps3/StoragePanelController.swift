@@ -22,7 +22,8 @@ class StoragePanelController: UITableViewController {
         guard let storagePanel = tableView else {
             return
         }
-        
+        storagePanel.rowHeight = storagePanel.frame.width
+        startObservingRemoveGridRequest()
         bindGestureRecognizer(to: storagePanel)
 
         setupStoragePanelHeader()
@@ -32,8 +33,16 @@ class StoragePanelController: UITableViewController {
     private func bindGestureRecognizer(to storagePanel: UITableView) {
         storagePanel.addGestureRecognizer(UITapGestureRecognizer(target: self,
             action: #selector(saveOrLoadByTapping(_:))))
-        storagePanel.addGestureRecognizer(UILongPressGestureRecognizer(target: self,
-            action: #selector(removeByLongPressing(_:))))
+    }
+    
+    private func startObservingRemoveGridRequest() {
+        let name = NSNotification.Name(rawValue: Setting.removeGridNotificationName)
+        NotificationCenter.default.addObserver(forName: name, object: nil, queue: nil,
+                                               using: { [weak self] notification in
+            if let url = notification.object as? URL {
+                self?.removeGrid(at: url)
+            }
+        })
     }
     
     /// helper function to add a header to storagePanel, this header has 2 function:
@@ -56,20 +65,9 @@ class StoragePanelController: UITableViewController {
         
         storagePanel.tableHeaderView = headerView
         
-        // add label displaying "long press to delete"
-        let width = storagePanel.frame.width * CGFloat(Setting.headerTextWidthInPercentage)
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: width,
-                                                height: headerView.frame.height))
-        label.text = "long press to delete"
-        label.textColor = UIColor.white
-        label.backgroundColor = UIColor.clear
-        label.adjustsFontSizeToFitWidth = true
-        label.textAlignment = .center
-        headerView.addSubview(label)
-        
         // add button to enalbe creating new empty plist
-        let buttonView = UIButton(frame: CGRect(x: label.frame.width, y: 0,
-                                                width: headerView.frame.width - label.frame.width,
+        let buttonView = UIButton(frame: CGRect(x: 0, y: 0,
+                                                width: headerView.frame.width,
                                                 height: headerView.frame.height))
         buttonView.backgroundColor = UIColor.clear
         buttonView.setTitle("new", for: .normal)
@@ -97,11 +95,31 @@ class StoragePanelController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: Setting.storagePanelCellIdentifier,
                                                  for: indexPath) as! StoragePanelCell
         cell.awakeFromNib()
-        guard let storedBubbleGridURLs = storageManager.loadBubbleGridFileURLs() else {
-            return cell
-        }
-        cell.setText(to: getURLName(of: storedBubbleGridURLs[indexPath.row]))
         return cell
+    }
+    
+    /// load bublbe grid and its name when cell will be displayed
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard let playGridCell = cell as? StoragePanelCell else {
+            return
+        }
+        guard let playGridURLList = storageManager.loadBubbleGridFileURLs() else {
+            return
+        }
+        let index = indexPath.row
+        let key = Setting.bubbleGridStorageKey
+        if index < playGridURLList.count {
+            let url = playGridURLList[index]
+            guard let loadedDic = storageManager.load(from: url) else {
+                return
+            }
+            guard let loadedBubbleGrid = loadedDic[key] as? BubbleGrid else {
+                return
+            }
+            playGridCell.setUpBubbleGrid(to: loadedBubbleGrid)
+            playGridCell.setURL(to: url)
+            playGridCell.setUpNameLabelText(to: getURLName(of: url))
+        }
     }
     
     /// helper method to alert the specified title and message together with
@@ -149,13 +167,14 @@ class StoragePanelController: UITableViewController {
             }
             let mode = storageManager.getCurrentMode()
             let selectedURL = storedBubbleGridURLs[indexPath.row]
+            let key = Setting.bubbleGridStorageKey
             switch mode {
             case .load:
                 guard let loadedDic = storageManager.load(from: selectedURL) else {
-                    self.alertMessage(message: noContentMessage)
+                    alertMessage(message: noContentMessage)
                     return
                 }
-                if let loadedBubbleGrid = loadedDic["bubbleGrid"] as? BubbleGrid {
+                if let loadedBubbleGrid = loadedDic[key] as? BubbleGrid {
                     let message = confirmLoadQuestion +
                                     getURLName(of: selectedURL) +
                                     loadOverwrittenWarning
@@ -166,17 +185,16 @@ class StoragePanelController: UITableViewController {
                 }
             case .save:
                 let message = confirmSaveQuestion + getURLName(of: selectedURL)
-                let handler: ((UIAlertAction) -> Void) = { _ in
+                let handler: ((UIAlertAction) -> Void) = { [weak self] _ in
                     guard let currentBubbleGrid = designController.getCurrentBubbleGrid() else {
                         return
                     }
-                    let contentDic = ["bubbleGrid": currentBubbleGrid]
-                    self.storageManager.save(contentDic: contentDic,
+                    let contentDic = [key: currentBubbleGrid]
+                    self?.storageManager.save(contentDic: contentDic,
                                              into: selectedURL)
-                    self.alertMessage(title: "",
-                                      message: "save into " +
-                                        self.getURLName(of: selectedURL) +
-                        "\nsuccessfully")
+                    self?.alertMessage(title: "",
+                                      message: "save into " + (self?.getURLName(of: selectedURL))! +
+                                            "\nsuccessfully")
                 }
                 confirmAndHandle(title: "", message: message, handler: handler)
             }
@@ -186,30 +204,17 @@ class StoragePanelController: UITableViewController {
     }
     
     /// long pressing a file in the storagePanel will delete this file from the storage
-    @objc private func removeByLongPressing(_ recognizer: UILongPressGestureRecognizer) {
-        switch recognizer.state {
-        case .began:
-            guard let storedBubbleGridURLs = storageManager.loadBubbleGridFileURLs() else {
-                return
-            }
-            guard let storagePanel = tableView else {
-                return
-            }
-            let currentPoint = recognizer.location(in: storagePanel)
-            guard let indexPath = storagePanel.indexPathForRow(at: currentPoint) else {
-                return
-            }
-            let selectedURL = storedBubbleGridURLs[indexPath.row]
-            
-            let message = confirmRemoveQuestion + getURLName(of: selectedURL)
-            let handler: ((UIAlertAction) -> Void) = { _ in
-                self.storageManager.removePlist(at: selectedURL)
-                storagePanel.reloadData()
-            }
-            confirmAndHandle(message: message, handler: handler)
-        default:
+    private func removeGrid(at selectedURL: URL) {
+        guard let storagePanel = tableView else {
             return
         }
+        
+        let message = confirmRemoveQuestion + getURLName(of: selectedURL)
+        let handler: ((UIAlertAction) -> Void) = { [weak self] _ in
+            self?.storageManager.removePlist(at: selectedURL)
+            storagePanel.reloadData()
+        }
+        confirmAndHandle(message: message, handler: handler)
     }
     
     /// after tapping "create new" button on the header 

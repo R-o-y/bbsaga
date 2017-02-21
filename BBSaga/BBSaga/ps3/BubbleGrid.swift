@@ -11,6 +11,8 @@ import Foundation
 class BubbleGrid: NSObject, NSCoding {
     /// nil entry means no bubble in that cell
     private var bubble2dArray = Array<Array<Bubble?>>()
+    private var numRows = Setting.numRows
+    private var numCellsPerOddRow = Setting.numCellsPerOddRow
 
     /// conform to NSCoding to enable storing into plist
     required convenience init(coder decoder: NSCoder) {
@@ -19,6 +21,23 @@ class BubbleGrid: NSObject, NSCoding {
     }
     func encode(with coder: NSCoder) {
         coder.encode(bubble2dArray, forKey: "bubble2dArray")
+    }
+    
+    /// set up a bubble grid with all cells empty
+    func setUpEmptyBubbleGrid() {
+        var numCells = 0
+        for i in 1 ... numRows {
+            if i % 2 == 1 {  // odd row
+                numCells = numCellsPerOddRow
+            } else {  // even row
+                numCells = numCellsPerOddRow - 1
+            }
+            var newRowOfCells = Array<Bubble?>()
+            for _ in 1 ... numCells {
+                newRowOfCells.append(nil)
+            }
+            bubble2dArray.append(newRowOfCells)
+        }
     }
     
     func setBubbleAt(row: Int, col: Int, to bubble: Bubble?) {

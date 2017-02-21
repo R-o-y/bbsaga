@@ -92,7 +92,7 @@ class BBSagaDesignController: UIViewController {
         let width = view.frame.width * Setting.storagePanelWidthInPercentage
         let height = view.frame.height * Setting.storagePanelHeightInPercentage
         let storagePanelFrame = CGRect(x: (view.frame.width - width) / 2,
-                                       y: (view.frame.height - height) / 2,
+                                       y: view.frame.height * Setting.storagePanelYPercentage,
                                        width: width,
                                        height: height)
         storagePanel = UITableView(frame: storagePanelFrame)
@@ -103,6 +103,7 @@ class BBSagaDesignController: UIViewController {
         
         storagePanel.isHidden = true
         storagePanel.separatorStyle = .none
+        storagePanel.alpha = Setting.storageAlpha
         
         view.addSubview(storagePanel)
         self.addChildViewController(storagePanelController)
@@ -248,7 +249,7 @@ class BBSagaDesignController: UIViewController {
         
         if openStoragePanel {
             storagePanel.isHidden = false
-            Animation.animateTableFallingCells(storagePanel)
+            Animation.animateTableSlidingUpCells(storagePanel)
         } else {
             storagePanel.isHidden = true
         }

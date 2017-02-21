@@ -69,16 +69,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A2E348FD1E5AB7B4008FECD7 /* BBSagaDesignController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BBSagaDesignController.swift; path = BBSaga/ps3/BBSagaDesignController.swift; sourceTree = "<group>"; };
-		A2E348FE1E5AB7B4008FECD7 /* Bubble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Bubble.swift; path = BBSaga/ps3/Bubble.swift; sourceTree = "<group>"; };
-		A2E348FF1E5AB7B4008FECD7 /* BubbleGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BubbleGrid.swift; path = BBSaga/ps3/BubbleGrid.swift; sourceTree = "<group>"; };
+		A2E348FD1E5AB7B4008FECD7 /* BBSagaDesignController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BBSagaDesignController.swift; path = ps3/BBSagaDesignController.swift; sourceTree = "<group>"; };
+		A2E348FE1E5AB7B4008FECD7 /* Bubble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Bubble.swift; path = ps3/Bubble.swift; sourceTree = "<group>"; };
+		A2E348FF1E5AB7B4008FECD7 /* BubbleGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BubbleGrid.swift; path = ps3/BubbleGrid.swift; sourceTree = "<group>"; };
 		A2E349001E5AB7B4008FECD7 /* BubbleGridCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BubbleGridCell.swift; path = ps3/BubbleGridCell.swift; sourceTree = "<group>"; };
 		A2E349011E5AB7B4008FECD7 /* BubbleGridCellFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BubbleGridCellFlowLayout.swift; path = ps3/BubbleGridCellFlowLayout.swift; sourceTree = "<group>"; };
-		A2E349021E5AB7B5008FECD7 /* BubbleGridDesigner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BubbleGridDesigner.swift; path = BBSaga/ps3/BubbleGridDesigner.swift; sourceTree = "<group>"; };
-		A2E349031E5AB7B5008FECD7 /* BubbleGridController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BubbleGridController.swift; path = BBSaga/ps3/BubbleGridController.swift; sourceTree = "<group>"; };
-		A2E349041E5AB7B5008FECD7 /* BubbleGridForDesignController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BubbleGridForDesignController.swift; path = BBSaga/ps3/BubbleGridForDesignController.swift; sourceTree = "<group>"; };
-		A2E349051E5AB7B5008FECD7 /* ColorBubble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorBubble.swift; path = BBSaga/ps3/ColorBubble.swift; sourceTree = "<group>"; };
-		A2E349091E5AB7B5008FECD7 /* PowerBubble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PowerBubble.swift; path = BBSaga/ps3/PowerBubble.swift; sourceTree = "<group>"; };
+		A2E349021E5AB7B5008FECD7 /* BubbleGridDesigner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BubbleGridDesigner.swift; path = ps3/BubbleGridDesigner.swift; sourceTree = "<group>"; };
+		A2E349031E5AB7B5008FECD7 /* BubbleGridController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BubbleGridController.swift; path = ps3/BubbleGridController.swift; sourceTree = "<group>"; };
+		A2E349041E5AB7B5008FECD7 /* BubbleGridForDesignController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BubbleGridForDesignController.swift; path = ps3/BubbleGridForDesignController.swift; sourceTree = "<group>"; };
+		A2E349051E5AB7B5008FECD7 /* ColorBubble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorBubble.swift; path = ps3/ColorBubble.swift; sourceTree = "<group>"; };
+		A2E349091E5AB7B5008FECD7 /* PowerBubble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PowerBubble.swift; path = ps3/PowerBubble.swift; sourceTree = "<group>"; };
 		A2E3490A1E5AB7B5008FECD7 /* Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Setting.swift; path = ps3/Setting.swift; sourceTree = "<group>"; };
 		A2E3490B1E5AB7B5008FECD7 /* StorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StorageManager.swift; path = ps3/StorageManager.swift; sourceTree = "<group>"; };
 		A2E3490C1E5AB7B5008FECD7 /* StoragePanelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoragePanelCell.swift; path = ps3/StoragePanelCell.swift; sourceTree = "<group>"; };
@@ -145,37 +145,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A2E349211E5AB80E008FECD7 /* models */ = {
+		A2492C891E5BD5FD001A3042 /* bubbleGridForDesign */ = {
 			isa = PBXGroup;
 			children = (
-				A2E349021E5AB7B5008FECD7 /* BubbleGridDesigner.swift */,
+				A2492C8A1E5BD65F001A3042 /* models */,
+				A2492C8B1E5BD665001A3042 /* views */,
+				A2492C8C1E5BD66D001A3042 /* controllers */,
+			);
+			name = bubbleGridForDesign;
+			sourceTree = "<group>";
+		};
+		A2492C8A1E5BD65F001A3042 /* models */ = {
+			isa = PBXGroup;
+			children = (
 				A2E348FE1E5AB7B4008FECD7 /* Bubble.swift */,
 				A2E348FF1E5AB7B4008FECD7 /* BubbleGrid.swift */,
 				A2E349051E5AB7B5008FECD7 /* ColorBubble.swift */,
 				A2E349091E5AB7B5008FECD7 /* PowerBubble.swift */,
 			);
 			name = models;
-			path = ..;
 			sourceTree = "<group>";
 		};
-		A2E349221E5AB828008FECD7 /* controllers */ = {
-			isa = PBXGroup;
-			children = (
-				A2E348FD1E5AB7B4008FECD7 /* BBSagaDesignController.swift */,
-				A2E349031E5AB7B5008FECD7 /* BubbleGridController.swift */,
-				A2E349041E5AB7B5008FECD7 /* BubbleGridForDesignController.swift */,
-			);
-			name = controllers;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		A2E349241E5AB888008FECD7 /* views */ = {
+		A2492C8B1E5BD665001A3042 /* views */ = {
 			isa = PBXGroup;
 			children = (
 				A2E349001E5AB7B4008FECD7 /* BubbleGridCell.swift */,
 				A2E349011E5AB7B4008FECD7 /* BubbleGridCellFlowLayout.swift */,
 			);
 			name = views;
+			sourceTree = "<group>";
+		};
+		A2492C8C1E5BD66D001A3042 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A2E349031E5AB7B5008FECD7 /* BubbleGridController.swift */,
+				A2E349041E5AB7B5008FECD7 /* BubbleGridForDesignController.swift */,
+			);
+			name = controllers;
 			sourceTree = "<group>";
 		};
 		A2E349621E5ABC23008FECD7 /* supporting extensions */ = {
@@ -221,9 +227,9 @@
 		A2E3496C1E5B09CD008FECD7 /* storagePanel */ = {
 			isa = PBXGroup;
 			children = (
-				A2E3490D1E5AB7B5008FECD7 /* StoragePanelController.swift */,
-				A2E3490C1E5AB7B5008FECD7 /* StoragePanelCell.swift */,
 				A2E3490B1E5AB7B5008FECD7 /* StorageManager.swift */,
+				A2E3490C1E5AB7B5008FECD7 /* StoragePanelCell.swift */,
+				A2E3490D1E5AB7B5008FECD7 /* StoragePanelController.swift */,
 			);
 			name = storagePanel;
 			sourceTree = "<group>";
@@ -297,10 +303,10 @@
 		A2F7CF941E5152EE00EADAA1 /* Designer */ = {
 			isa = PBXGroup;
 			children = (
+				A2E349021E5AB7B5008FECD7 /* BubbleGridDesigner.swift */,
+				A2E348FD1E5AB7B4008FECD7 /* BBSagaDesignController.swift */,
+				A2492C891E5BD5FD001A3042 /* bubbleGridForDesign */,
 				A2E3496C1E5B09CD008FECD7 /* storagePanel */,
-				A2E349241E5AB888008FECD7 /* views */,
-				A2E349221E5AB828008FECD7 /* controllers */,
-				A2E349211E5AB80E008FECD7 /* models */,
 			);
 			name = Designer;
 			sourceTree = "<group>";

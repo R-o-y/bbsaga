@@ -70,6 +70,10 @@ class StorageManager {
     func createEmptyBubbleGridPlistFile(ofName name: String) {
         let fileURL = gridDesignDirURL.appendingPathComponent(name + ".plist")
         underlyingFileManager.createFile(atPath: fileURL.path, contents: nil, attributes: nil)
+        let emptyBubbleGrid = BubbleGrid()
+        emptyBubbleGrid.setUpEmptyBubbleGrid()
+        let contentDic = [Setting.bubbleGridStorageKey: emptyBubbleGrid]
+        save(contentDic: contentDic, into: fileURL)
     }
     
     /// remove the .plist file at the given url

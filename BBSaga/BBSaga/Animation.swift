@@ -10,14 +10,14 @@ import Foundation
 import UIKit
 
 class Animation {
-    static func animateTableFallingCells(_ tableView: UITableView) {
+    static func animateTableSlidingUpCells(_ tableView: UITableView) {
         tableView.reloadData()
         
         let cells = tableView.visibleCells
         let tableHeight = tableView.bounds.size.height
         
         for cell in cells {
-            cell.transform = CGAffineTransform(translationX: 0, y: -tableHeight)
+            cell.transform = CGAffineTransform(translationX: 0, y: tableHeight)
         }
         
         var index = 0
