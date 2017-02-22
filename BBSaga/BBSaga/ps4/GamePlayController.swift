@@ -196,9 +196,12 @@ class GamePlayController: UIViewController {
     /// check the collision between the projectile bubble and the left/right wall
     /// if collide, reverse the x-component of the velocity
     private func createVerticalBorderCollisionEventDetector() -> EventDetector {
-        let detectEvent = { (target: RigidBody) -> Bool in
-            return (target.position.dx <= self.bubbleRadius && target.velocity.dx < 0) ||  // left side wall
-                (target.position.dx + self.bubbleRadius >= self.view.bounds.width && target.velocity.dx > 0)
+        let detectEvent = { [weak self] (target: RigidBody) -> Bool in
+            guard let weakSelf = self else {
+                return false
+            }
+            return (target.position.dx <= weakSelf.bubbleRadius && target.velocity.dx < 0) ||  // left side wall
+                (target.position.dx + weakSelf.bubbleRadius >= weakSelf.view.bounds.width && target.velocity.dx > 0)
         }
         let callback = { (target: RigidBody) in
             return target.velocity.dx = -target.velocity.dx
@@ -210,11 +213,16 @@ class GamePlayController: UIViewController {
     /// if collide, find the closest empty cell and settle there
     /// then check whether there are 3 or more connected bubbles to be removed
     private func createUpperBorderCollisionEventDetector() -> EventDetector {
-        let detectEvent = { (target: RigidBody) -> Bool in
-            return target.position.dy <= self.bubbleRadius + CGFloat(Setting.statusBarHeight)
+        let detectEvent = { [weak self] (target: RigidBody) -> Bool in
+            guard let weakSelf = self else {
+                return false
+            }
+            return target.position.dy <= weakSelf.bubbleRadius + CGFloat(Setting.statusBarHeight)
         }
-        let callback = { (target: RigidBody) in
-            self.settleBubbleProjectileAndCheck(target)
+        let callback = { [weak self] (target: RigidBody) in
+            if let weakSelf = self {
+                weakSelf.settleBubbleProjectileAndCheck(target)
+            }
         }
         return EventDetector(detectEvent: detectEvent, callback: callback)
     }
@@ -224,11 +232,16 @@ class GamePlayController: UIViewController {
     /// that is, this projectile will be removed from physics engine and renderer
     /// and its corresponding view will be removed from its superview
     private func createBottomBorderCollisionEventDetector() -> EventDetector {
-        let detectEvent = { (target: RigidBody) -> Bool in
-            return target.position.dy >= self.view.bounds.height
+        let detectEvent = { [weak self] (target: RigidBody) -> Bool in
+            guard let weakSelf = self else {
+                return false
+            }
+            return target.position.dy >= weakSelf.view.bounds.height
         }
-        let callback = { (target: RigidBody) in
-            self.gameEngine.removeRigidBody(target)
+        let callback = { [weak self] (target: RigidBody) in
+            if let weakSelf = self {
+                weakSelf.gameEngine.removeRigidBody(target)
+            }
         }
         return EventDetector(detectEvent: detectEvent, callback: callback)
     }
@@ -237,16 +250,21 @@ class GamePlayController: UIViewController {
     /// if collide, find the closest empty cell and settle there
     /// then check whether there are 3 or more connected bubbles to be removed
     private func createGridBubbleCollisionEventDetector() -> EventDetector {
-        let detectEvent = { (target: RigidBody) -> Bool in
-            for position in self.positionsOfGridBubbles {
-                if target.position.distance(to: position) <= 2 * self.bubbleRadius {
+        let detectEvent = { [weak self] (target: RigidBody) -> Bool in
+            guard let weakSelf = self else {
+                return false
+            }
+            for position in weakSelf.positionsOfGridBubbles {
+                if target.position.distance(to: position) <= 2 * weakSelf.bubbleRadius {
                     return true
                 }
             }
             return false
         }
-        let callback = { (target: RigidBody) in
-            self.settleBubbleProjectileAndCheck(target)
+        let callback = { [weak self] (target: RigidBody) in
+            if let weakSelf = self {
+                weakSelf.settleBubbleProjectileAndCheck(target)
+            }
         }
         return EventDetector(detectEvent: detectEvent, callback: callback)
     }
@@ -438,6 +456,10 @@ class GamePlayController: UIViewController {
             return cell
         }
         return nil
+    }
+    
+    deinit {
+        gameEngine.terminateGameLoop()
     }
 }
 

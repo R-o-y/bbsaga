@@ -66,10 +66,11 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="xzh-xa-GUG"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-972" y="-29"/>
+            <point key="canvasLocation" x="-207.03125" y="-29.296874999999996"/>
         </scene>
         <!--Saga Design Controller-->
         <scene sceneID="MXm-Af-gll">
@@ -319,7 +320,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Za-uC-jpX" sceneMemberID="firstResponder"/>
                 <exit id="hnR-ey-8XH" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="673" y="-520"/>
+            <point key="canvasLocation" x="1438.28125" y="-520.3125"/>
         </scene>
         <!--Play Grid Scene Controller-->
         <scene sceneID="x6z-JR-slP">
@@ -340,7 +341,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zyO-0U-JyA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-127" y="394"/>
+            <point key="canvasLocation" x="638.28125" y="393.75"/>
         </scene>
         <!--Game Play Controller-->
         <scene sceneID="de6-XZ-1F2">
@@ -353,12 +354,23 @@
                     <view key="view" contentMode="scaleToFill" id="6Cl-QU-sPe">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4b6-fz-tXf">
+                                <rect key="frame" x="702" y="974" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="wfS-1v-R1k" kind="unwind" unwindAction="unwindSegueToMenuWithSegue:" id="fJN-B5-sk4"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="msu-17-FWy" sceneMemberID="firstResponder"/>
+                <exit id="wfS-1v-R1k" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="673" y="394"/>
+            <point key="canvasLocation" x="1438.28125" y="393.75"/>
         </scene>
     </scenes>
     <resources>
@@ -375,6 +387,6 @@
         <image name="shuriken-button" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="K51-1V-Ylz"/>
+        <segue reference="War-E8-diQ"/>
     </inferredMetricsTieBreakers>
 </document>
