@@ -30,7 +30,7 @@ class StoragePanelCell: UITableViewCell {
 
     private func setUpContainerView() {
         let width = contentView.frame.width * Setting.containerWidthInPercentage
-        let height = width * Setting.containerHeightWidthRatio
+        let height = contentView.frame.height * Setting.containerHeightInPercentage
         let frame = CGRect(x: (contentView.frame.width - width) / 2,
                            y: height * Setting.containerUpperPaddingInPercentage,
                            width: width,

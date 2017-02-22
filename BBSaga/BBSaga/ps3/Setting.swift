@@ -19,7 +19,7 @@ extension Setting {
     static let storagePanelYPercentage: CGFloat = 0.08
     static let storagePanelHeightInPercentage: CGFloat = 0.66  // relative to the main view
     static let storagePanelWidthInPercentage: CGFloat = 0.66  // relative to the main view
-    static let storageAlpha: CGFloat = 0.66
+    static let storagePanelAlpha: CGFloat = 0.66
     
     static let storagePanelHeaderAlpha = 0.38
     static let storagePanelHeaderHeightInPercentage: CGFloat = 0.06  // relative to the storage panel
@@ -35,9 +35,10 @@ extension Setting {
     
     static let removeGridNotificationName = "removeGrid"
     
-    static let containerWidthInPercentage: CGFloat = 0.66
-    static let containerHeightWidthRatio: CGFloat = 1.3
+    static let containerWidthInPercentage: CGFloat = 0.6  // relative to contentView
+    static let containerHeightInPercentage: CGFloat = 1  // relative to contentView
     static let containerUpperPaddingInPercentage: CGFloat = 0.1
+    static let storagePanelRowHeightRatio: CGFloat = 0.8
 }
 
 /// bubble grid selection scene

@@ -22,7 +22,7 @@ class StoragePanelController: UITableViewController {
         guard let storagePanel = tableView else {
             return
         }
-        storagePanel.rowHeight = storagePanel.frame.width
+        storagePanel.rowHeight = Setting.storagePanelRowHeightRatio * storagePanel.bounds.width
         startObservingRemoveGridRequest()
         bindGestureRecognizer(to: storagePanel)
 
@@ -195,6 +195,7 @@ class StoragePanelController: UITableViewController {
                     self?.alertMessage(title: "",
                                       message: "save into " + (self?.getURLName(of: selectedURL))! +
                                             "\nsuccessfully")
+                    storagePanel.reloadRows(at: [indexPath], with: .automatic)
                 }
                 confirmAndHandle(title: "", message: message, handler: handler)
             }

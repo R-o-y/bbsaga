@@ -103,7 +103,7 @@ class BBSagaDesignController: UIViewController {
         
         storagePanel.isHidden = true
         storagePanel.separatorStyle = .none
-        storagePanel.alpha = Setting.storageAlpha
+        storagePanel.alpha = Setting.storagePanelAlpha
         
         view.addSubview(storagePanel)
         self.addChildViewController(storagePanelController)
