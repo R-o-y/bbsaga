@@ -110,15 +110,7 @@ extension Setting {
     static let sinkAndFloatDefaultRange: CGFloat = 28
     
     static let leftSlideInDefaultDuration = 0.38
-}
 
-/// game play
-extension Setting {
-    static let bubbleProjectileSpeed: CGFloat = 1200
-    static let framePerSecond = 60
-    static let minimumShootingVerticalComponent: CGFloat = -18
-    
-    // Animation
     static let dropViewGravityMagnitude: CGFloat = 1.2
     static let dropViewElasticity: CGFloat = 0.66
     static let dropViewFadeOutDuration = 2.8
@@ -131,6 +123,15 @@ extension Setting {
     static let bubbleBurstAnimationDuration = 0.12
     
     static let chainingDelay: TimeInterval = 0.08
+}
+
+/// game play
+extension Setting {
+    static let bubbleProjectileSpeed: CGFloat = 1200
+    static let framePerSecond = 60
+    static let minimumShootingVerticalComponent: CGFloat = -18
+    
+    static let numProjectiles = 60
 }
 
 

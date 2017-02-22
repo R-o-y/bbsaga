@@ -12,6 +12,8 @@ class GamePlayController: UIViewController {
     private var bubbleGridView: UICollectionView!
     private var bubbleGridController: BubbleGridForPlayController!
     
+    @IBOutlet var leftProjectileCountLabel: UILabel!
+    
     private let gameEngine = GameEngine(framePerSecond: Setting.framePerSecond)
     private lazy var renderer: Renderer = { return self.gameEngine.renderer }()
     private lazy var world: World = { return self.gameEngine.world }()
@@ -35,10 +37,10 @@ class GamePlayController: UIViewController {
         setUpBackground()
         setUpBubbleGrid()
         setUpBubbleShooter()
+        leftProjectileCountLabel.text = String(Setting.numProjectiles)
         
         bindGestureRecognizer(to: view)
         addEventDetectors()
-
         world.addCollisionDetector(CollisionDetector())
     }
     
@@ -182,6 +184,18 @@ class GamePlayController: UIViewController {
         // update current chooted bubble
         pendingBubble.setColor(color)
         pendingBubbleView.image = UIImage(named: Setting.imageName(ofBubble: pendingBubble))
+        
+        countDownProjectilesLeft()
+    }
+    
+    private func countDownProjectilesLeft() {
+        guard let currentNumString = leftProjectileCountLabel.text else {
+            return
+        }
+        guard let currentNum = Int(currentNumString) else {
+            return
+        }
+        leftProjectileCountLabel.text = String(currentNum - 1)
     }
     
     /// add event-detectors to the world
@@ -299,6 +313,9 @@ class GamePlayController: UIViewController {
                 removeAfterShootTo(indexPath)
                 break
             }
+        }
+        if leftProjectileCountLabel.text == "0" {
+            gameEngine.terminateGameLoop()
         }
     }
     
