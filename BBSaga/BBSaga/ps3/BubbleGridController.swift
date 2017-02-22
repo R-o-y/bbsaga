@@ -33,7 +33,7 @@ class BubbleGridController: UICollectionViewController {
         let bubbleGridCell = cell as! BubbleGridCell
         
         if let bubble = currentBubbleGrid.getBubbleAt(row: indexPath.section, col: indexPath.row) {
-            bubbleGridCell.setImage(to: UIImage(named: Setting.imageName(ofBubble: bubble)))
+            bubbleGridCell.setImage(to: Setting.imageOfBubble(bubble))
         }
     }
     

@@ -76,7 +76,7 @@ extension Setting {
     /// helper function that maps a bubble to the name of the image that represents it
     /// - Parameter bubble: the bubble to be displayed
     /// - Returns: the name of the imsage that represents it
-    static func imageName(ofBubble bubble: Bubble) -> String {
+    static private func imageName(ofBubble bubble: Bubble) -> String {
         if let bubble = bubble as? ColorBubble {
             switch bubble.getColor() {
             case .blue:
@@ -101,6 +101,10 @@ extension Setting {
             }
         }
         fatalError("imageName(ofBubble:) does not exhaust all types of bubble")
+    }
+    
+    static func imageOfBubble(_ bubble: Bubble) -> UIImage? {
+        return UIImage(named: imageName(ofBubble: bubble))
     }
 }
 

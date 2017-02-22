@@ -71,7 +71,7 @@ class BubbleGridForPlayController: BubbleGridController {
                     let frame = bubbleGrid.dequeueReusableCell(withReuseIdentifier: "BubbleGridCell",
                                                                for: indexPath).frame
                     let view = UIImageView(frame: frame)
-                    view.image = UIImage(named: Setting.imageName(ofBubble: bubble))
+                    view.image = Setting.imageOfBubble(bubble)
                     dropView.add(view)
                 }
             }

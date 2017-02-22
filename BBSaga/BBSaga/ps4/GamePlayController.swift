@@ -98,7 +98,7 @@ class GamePlayController: UIViewController {
         bubbleRadius = view.bounds.width / (2 * CGFloat(Setting.numCellsPerOddRow))
         bubbleShooterPosition = CGVector(dx: view.frame.width / 2, dy: view.frame.height - 2 * bubbleRadius)
         
-        pendingBubbleView.image = UIImage(named: Setting.imageName(ofBubble: pendingBubble))
+        pendingBubbleView.image = Setting.imageOfBubble(pendingBubble)
         pendingBubbleView.frame.size = CGSize(width: 2 * bubbleRadius, height: 2 * bubbleRadius)
         pendingBubbleView.center = bubbleShooterPosition.toCGPoint()
         view.addSubview(pendingBubbleView)
@@ -217,7 +217,7 @@ class GamePlayController: UIViewController {
                                                              y: bubbleShooterPosition.dy - bubbleRadius,
                                                              width: 2 * bubbleRadius,
                                                              height: 2 * bubbleRadius))
-        bubbleProjectileView.image = UIImage(named: Setting.imageName(ofBubble: bubbleProjectile.getBubble()))
+        bubbleProjectileView.image = Setting.imageOfBubble(bubbleProjectile.getBubble())
         view.addSubview(bubbleProjectileView)
         
         // register projectile bubble into the world physical engine
@@ -227,7 +227,7 @@ class GamePlayController: UIViewController {
         
         // update current chooted bubble
         pendingBubble.setColor(color)
-        pendingBubbleView.image = UIImage(named: Setting.imageName(ofBubble: pendingBubble))
+        pendingBubbleView.image = Setting.imageOfBubble(pendingBubble)
         
         countDownProjectilesLeft()
     }
