@@ -119,20 +119,16 @@ extension Animation {
         animationView.animationImages = cutSequenceImageIntoImages(named: Setting.bubbleBurstAnimationImageName,
                                                                    numRows: Setting.bubbleBurstAnimationRowNum,
                                                                    numCols: Setting.bubbleBurstAnimationColNum)
-        
         animationView.animationDuration = duration
         animationView.animationRepeatCount = Setting.bubbleBurstAnimationRepeatCount
         superView.addSubview(animationView)
-        animationView.startAnimating()
         
         UIView.animate(withDuration: animationView.animationDuration,
                        animations: { _ in
+                        animationView.startAnimating()
                         animationView.bounds.size.height = finalSize.height
                         animationView.bounds.size.width = finalSize.width
-        }, completion: { _ in
-            animationView.stopAnimating()
-            animationView.removeFromSuperview()
-        })
+        }, completion: { _ in animationView.removeFromSuperview() })
     }
 }
 
