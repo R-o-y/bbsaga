@@ -50,7 +50,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EZK-ca-dqP">
                                 <rect key="frame" x="213" y="976" width="120" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="28"/>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="28"/>
                                 <state key="normal" title="Play">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
@@ -58,7 +58,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SIQ-5B-a5A">
                                 <rect key="frame" x="436" y="976" width="120" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="28"/>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="28"/>
                                 <state key="normal" title="Design">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
@@ -137,7 +137,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="R78-YZ-x2T" secondAttribute="height" multiplier="118:61" id="4k1-Fl-gW7"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="18"/>
                                 <state key="normal" title="Start">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
@@ -150,7 +150,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="2fQ-3M-rda" secondAttribute="height" multiplier="118:61" id="ZFq-7H-gYX"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="18"/>
                                 <state key="normal" title="Reset">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
@@ -163,7 +163,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="sQi-iz-Xmm" secondAttribute="height" multiplier="118:61" id="Ak0-4g-ZmC"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="18"/>
                                 <state key="normal" title="Load">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
@@ -177,7 +177,7 @@
                                     <constraint firstAttribute="width" secondItem="2CX-cn-bVN" secondAttribute="height" multiplier="118:61" id="0Ym-cX-qUe"/>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="60" id="3Mr-Ic-kFs"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="18"/>
                                 <state key="normal" title="Save">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
@@ -245,7 +245,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Z2t-OG-gf7" secondAttribute="height" multiplier="60:31" id="A46-xt-h62"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="18"/>
                                 <state key="normal" title="Back">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
@@ -356,9 +356,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4b6-fz-tXf">
-                                <rect key="frame" x="702" y="974" width="46" height="30"/>
+                                <rect key="frame" x="666" y="959" width="82" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="28"/>
+                                <state key="normal" title="Home">
+                                    <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
+                                </state>
                                 <connections>
                                     <segue destination="wfS-1v-R1k" kind="unwind" unwindAction="unwindSegueToMenuWithSegue:" id="fJN-B5-sk4"/>
                                 </connections>
@@ -387,6 +390,6 @@
         <image name="shuriken-button" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="War-E8-diQ"/>
+        <segue reference="K51-1V-Ylz"/>
     </inferredMetricsTieBreakers>
 </document>
