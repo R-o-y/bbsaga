@@ -14,6 +14,8 @@ class GamePlayController: UIViewController {
     
     @IBOutlet var leftProjectileCountLabel: UILabel!
     
+    private var aimingBeam: [UIView] = []
+    
     private let gameEngine = GameEngine(framePerSecond: Setting.framePerSecond)
     private lazy var renderer: Renderer = { return self.gameEngine.renderer }()
     private lazy var world: World = { return self.gameEngine.world }()
@@ -122,13 +124,55 @@ class GamePlayController: UIViewController {
     @objc private func shootByPanning(_ recognizer: UIPanGestureRecognizer) {
         switch recognizer.state {
         case .began, .changed:
-            // show bean and update bean
-            break
+            updateAimingBeam(point: recognizer.location(in: view))
         case .ended:
-            let point = recognizer.location(in: view)
-            calculateVelocityAndShootTo(point: point)
+            calculateVelocityAndShootTo(point: recognizer.location(in: view))
+            removeAimingBeam()
         default:
             break
+        }
+    }
+    
+    private func removeAimingBeam() {
+        for view in aimingBeam {
+            view.removeFromSuperview()
+        }
+        aimingBeam = []
+    }
+    
+    private func updateAimingBeam(point: CGPoint) {
+        removeAimingBeam()
+        
+        // draw new aiming beam
+        var currentPosition = bubbleShooterPosition
+        var v = CGVector(point) - bubbleShooterPosition
+        v = Setting.aimingBeamStepLength * (v / v.norm())  // length for each step
+        var hasCollideWithGridBubble = false
+        for _ in 0 ... Setting.aimingBeamStepNum {  // number of steps
+            if hasCollideWithGridBubble {
+                break
+            }
+            currentPosition = currentPosition + v
+            
+            var frame = CGRect()
+            frame.size = Setting.pathNodeSize
+            let pathNode = UIImageView(frame: frame)
+            pathNode.center = currentPosition.toCGPoint()
+            pathNode.image = Setting.pathNodeImage
+            aimingBeam.append(pathNode)
+            view.addSubview(pathNode)
+            
+            // collide with side wall
+            if currentPosition.dx <= bubbleRadius || currentPosition.dx + bubbleRadius >= view.bounds.width {
+                v.dx = -v.dx
+            }
+            // collide with grid bubbles
+            for position in positionsOfGridBubbles {
+                if currentPosition.distance(to: position) <= 2 * bubbleRadius {
+                    hasCollideWithGridBubble = true
+                    break
+                }
+            }
         }
     }
     
@@ -289,7 +333,6 @@ class GamePlayController: UIViewController {
         guard let bubbleProjectile = bubbleProjectile as? BubbleProjectile else {
             return
         }
-        
         gameEngine.removeRigidBody(bubbleProjectile)
         
         for position in positionsToConsiderWhenPrepareSettling(around: bubbleProjectile.position) {
@@ -315,7 +358,7 @@ class GamePlayController: UIViewController {
             }
         }
         if leftProjectileCountLabel.text == "0" {
-            gameEngine.terminateGameLoop()
+            endGame()
         }
     }
     
@@ -477,6 +520,10 @@ class GamePlayController: UIViewController {
             return cell
         }
         return nil
+    }
+    
+    private func endGame() {
+        gameEngine.terminateGameLoop()
     }
     
     deinit {

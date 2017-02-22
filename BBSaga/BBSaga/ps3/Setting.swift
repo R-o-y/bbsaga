@@ -132,6 +132,11 @@ extension Setting {
     static let minimumShootingVerticalComponent: CGFloat = -18
     
     static let numProjectiles = 60
+    
+    static let pathNodeImage = UIImage(named: "shuriken")
+    static let pathNodeSize = CGSize(width: 18, height: 18)
+    static let aimingBeamStepLength = 60
+    static let aimingBeamStepNum = 13
 }
 
 
