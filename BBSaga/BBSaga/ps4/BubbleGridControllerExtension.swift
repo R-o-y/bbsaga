@@ -43,21 +43,19 @@ class BubbleGridForPlayController: BubbleGridController {
     /// remove the bubbles at the specified indexPaths with animation
     /// - Parameter indexPaths: the array of the index path of the grid bubbles to be removed
     func removeConnectedSameColorBubblesWithAnimation(_ indexPaths: [IndexPath]) {
+        guard let bubbleGrid = collectionView else {
+            return
+        }
         for indexPath in indexPaths {
-            if let bubbleGrid = self.collectionView {
-                let cell =  bubbleGrid.dequeueReusableCell(withReuseIdentifier: "BubbleGridCell",
-                                                           for: indexPath)
-                Animation.animateBubbleBurst(within: cell.frame, in: bubbleGrid,
-                                             withDuration: Setting.bubbleBurstAnimationDuration)
-            }
+            let cell = bubbleGrid.dequeueReusableCell(withReuseIdentifier: "BubbleGridCell", for: indexPath)
+            Animation.animateBubbleBurst(within: cell.frame, in: bubbleGrid,
+                                         withDuration: Setting.bubbleBurstAnimationDuration)
         }
         for indexPath in indexPaths {
             currentBubbleGrid.emptyCellAt(row: indexPath.section, col: indexPath.row)
         }
-        if let bubbleGrid = self.collectionView {
-            UIView.performWithoutAnimation {
-                bubbleGrid.reloadItems(at: indexPaths)
-            }
+        UIView.performWithoutAnimation {
+            bubbleGrid.reloadItems(at: indexPaths)
         }
     }
     

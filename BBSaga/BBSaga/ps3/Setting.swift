@@ -129,6 +129,8 @@ extension Setting {
     static let bubbleBurstAnimationRepeatCount = 1
     static let bubbleBurstAnimationFinalScale: CGFloat = 1.2
     static let bubbleBurstAnimationDuration = 0.12
+    
+    static let chainingDelay: TimeInterval = 0.08
 }
 
 

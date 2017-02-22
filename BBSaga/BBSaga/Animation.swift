@@ -132,6 +132,11 @@ extension Animation {
     }
 }
 
+func delay(_ delay: Double, _ closure: @escaping ()->()) {
+    DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+        closure()
+    }
+}
 
 
 

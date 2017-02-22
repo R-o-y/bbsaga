@@ -389,11 +389,13 @@ class GamePlayController: UIViewController {
         bubbleGridController.removeLightningDestroyedBubblesWithAnimation(indexPathsRemovedByLightningBubble)
         
         // trigger chaining power bubbles
-        for indexPath in chainingLightningIndexPaths {
-            triggerLightningBubbleAt(indexPath)
-        }
-        for indexPath in chainingBombIndexPaths {
-            triggerBombBubbleAt(indexPath)
+        delay(Setting.chainingDelay) {
+            for indexPath in chainingLightningIndexPaths {
+                self.triggerLightningBubbleAt(indexPath)
+            }
+            for indexPath in chainingBombIndexPaths {
+                self.triggerBombBubbleAt(indexPath)
+            }
         }
     }
     
@@ -422,11 +424,13 @@ class GamePlayController: UIViewController {
         bubbleGridController.removeBombDestroyedBubblesWithAnimation(indexPathsRemovedByBombBubble)
         
         // trigger chaining power bubbles
-        for indexPath in chainingLightningIndexPaths {
-            triggerLightningBubbleAt(indexPath)
-        }
-        for indexPath in chainingBombIndexPaths {
-            triggerBombBubbleAt(indexPath)
+        delay(Setting.chainingDelay) {
+            for indexPath in chainingLightningIndexPaths {
+                self.triggerLightningBubbleAt(indexPath)
+            }
+            for indexPath in chainingBombIndexPaths {
+                self.triggerBombBubbleAt(indexPath)
+            }
         }
     }
     
