@@ -98,6 +98,9 @@ class GamePlayController: UIViewController {
         bubbleRadius = view.bounds.width / (2 * CGFloat(Setting.numCellsPerOddRow))
         bubbleShooterPosition = CGVector(dx: view.frame.width / 2, dy: view.frame.height - 2 * bubbleRadius)
         
+        if let color = BubbleColor(rawValue: Int.randomWithinRange(lower: 0, upper: 3)) {
+            pendingBubble.setColor(color)
+        }
         pendingBubbleView.image = Setting.imageOfBubble(pendingBubble)
         pendingBubbleView.frame.size = CGSize(width: 2 * bubbleRadius, height: 2 * bubbleRadius)
         pendingBubbleView.center = bubbleShooterPosition.toCGPoint()
