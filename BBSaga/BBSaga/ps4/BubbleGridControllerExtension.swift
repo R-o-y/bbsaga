@@ -47,7 +47,7 @@ class BubbleGridForPlayController: BubbleGridController {
             return
         }
         for indexPath in indexPaths {
-            let cell = bubbleGrid.dequeueReusableCell(withReuseIdentifier: "BubbleGridCell", for: indexPath)
+            let cell = bubbleGrid.dequeueReusableCell(withReuseIdentifier: Setting.bubbleGridCellIdentifier, for: indexPath)
             Animation.animateBubbleBurst(within: cell.frame, in: bubbleGrid,
                                          withDuration: Setting.bubbleBurstAnimationDuration)
         }
@@ -68,7 +68,7 @@ class BubbleGridForPlayController: BubbleGridController {
             if let bubbleGrid = self.collectionView {
                 dropView.frame = bubbleGrid.frame
                 if let bubble = currentBubbleGrid.getBubbleAt(row: indexPath.section, col: indexPath.row) {
-                    let frame = bubbleGrid.dequeueReusableCell(withReuseIdentifier: "BubbleGridCell",
+                    let frame = bubbleGrid.dequeueReusableCell(withReuseIdentifier: Setting.bubbleGridCellIdentifier,
                                                                for: indexPath).frame
                     let view = UIImageView(frame: frame)
                     view.image = Setting.imageOfBubble(bubble)

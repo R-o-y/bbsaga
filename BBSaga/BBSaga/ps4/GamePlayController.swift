@@ -64,7 +64,7 @@ class GamePlayController: UIViewController {
                                           collectionViewLayout: BubbleGridCellFlowLayout())
         bubbleGridController = BubbleGridForPlayController(collectionViewLayout: bubbleGridView.collectionViewLayout)
         bubbleGridView.register(BubbleGridCell.self,
-                                forCellWithReuseIdentifier: "BubbleGridCell")
+                                forCellWithReuseIdentifier: Setting.bubbleGridCellIdentifier)
         
         bubbleGridController.collectionView = bubbleGridView
         
@@ -518,7 +518,7 @@ class GamePlayController: UIViewController {
     /// helper function to get the cell at the specified indexPath
     private func getCell(at indexPath: IndexPath) -> BubbleGridCell? {
         if let cell = bubbleGridView?.dequeueReusableCell(
-            withReuseIdentifier: "BubbleGridCell",for: indexPath) as? BubbleGridCell {
+            withReuseIdentifier: Setting.bubbleGridCellIdentifier,for: indexPath) as? BubbleGridCell {
             return cell
         }
         return nil
