@@ -127,6 +127,7 @@ extension Setting {
     static let bubbleBurstAnimationDuration = 0.12
     
     static let chainingDelay: TimeInterval = 0.08
+    static let lightningDelay: TimeInterval = 0.038
 }
 
 /// game play

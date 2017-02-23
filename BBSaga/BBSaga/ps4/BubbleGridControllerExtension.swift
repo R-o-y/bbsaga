@@ -92,8 +92,15 @@ class BubbleGridForPlayController: BubbleGridController {
         for indexPath in indexPaths {
             currentBubbleGrid.emptyCellAt(row: indexPath.section, col: indexPath.row)
         }
-        if let bubbleGrid = self.collectionView {
-            bubbleGrid.reloadItems(at: indexPaths)
+        guard let bubbleGrid = collectionView else {
+            return
+        }
+        var i: Double = 0
+        for indexPath in indexPaths {
+            delay(Setting.lightningDelay * i) {
+                bubbleGrid.reloadItems(at: [indexPath])
+            }
+            i += 1
         }
     }
     

@@ -169,6 +169,8 @@ class GamePlayController: UIViewController {
             // collide with grid bubbles
             for position in positionsOfGridBubbles {
                 if currentPosition.distance(to: position) <= 2 * bubbleRadius {
+                    let headNode = aimingBeam.removeLast()
+                    headNode.removeFromSuperview()
                     hasCollideWithGridBubble = true
                     break
                 }
