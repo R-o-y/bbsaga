@@ -146,6 +146,15 @@ extension Setting {
     static let firehitSpriteSheetRowNum = 1
     static let firehitSpriteSheetColNum = 9
     static let firehitSizeRateCompareToBubble = 3.18
+    
+    // lightning obstacles animation
+    static let lightningObstacleWidth: CGFloat = 108
+    static let lightningObstacleAnimationDuration: TimeInterval = 1.28
+    static let lightningObstacleSpriteSheetName = "bolt_tesla"
+    static let lightningObstacleSpriteSheetRowNum = 1
+    static let lightningObstacleSpriteSheetColNum = 10
+    static let lightningObstacleDelay: TimeInterval = 0.18
+    static let lightningObstacleWidthRate: CGFloat = 0.88
 }
 
 /// game play

@@ -39,6 +39,7 @@ class GamePlayController: UIViewController {
         setUpBackground()
         setUpBubbleGrid()
         setUpBubbleShooter()
+        setUpLightningObstacles()
         leftProjectileCountLabel.text = String(Setting.numProjectiles)
         
         bindGestureRecognizer(to: view)
@@ -107,6 +108,36 @@ class GamePlayController: UIViewController {
         view.addSubview(pendingBubbleView)
     }
 
+    private func setUpLightningObstacles() {
+        let obstacleView = Animation.createLightningObstacleView(origin: CGPoint(x: 10, y: 380),
+                                                                 numSections: 4)
+        // obstacleView.transform = CGAffineTransform(rotationAngle: 2)
+        // if rotate, calculate new x and y with sin and cos
+        view.addSubview(obstacleView)
+        
+        let obstacle = RigidBody(mass: 1)
+        
+        obstacle.position = CGVector(obstacleView.center)
+        let y = obstacleView.frame.origin.y + obstacleView.frame.height / 2 - obstacle.position.dy
+        let x1 = obstacleView.frame.minX - obstacle.position.dx
+        let x2 = obstacleView.frame.maxX - obstacle.position.dx
+        let start = CGVector(dx: x1, dy: y)
+        let end = CGVector(dx: x2, dy: y)
+        obstacle.shape = SegmentShape(from: start, to: end)
+        
+        
+        let detector = CollisionDetector(callback: { [weak self] (body1: RigidBody, body2: RigidBody) in
+            let bubble = body1.shape is CircleShape ? body1 : body2
+            self?.gameEngine.removeRigidBody(bubble)
+        })
+        detector.addTarget(obstacle)
+        world.addCollisionDetector(detector)
+        world.addBody(obstacle)
+        renderer.register(body: obstacle, view: obstacleView)
+        
+        obstacle.velocity = CGVector(dx: 5, dy: 0)
+    }
+    
     /// helper function to bind gesture recognizers
     private func bindGestureRecognizer(to view: UIView) {
         view.addGestureRecognizer(UITapGestureRecognizer(target: self,

@@ -75,6 +75,10 @@ extension CGVector {
         return 2 * projection - self
     }
     
+    func projection(on vector: CGVector) -> CGVector {
+        return (self * vector) / (vector * vector) * vector
+    }
+    
     init(_ point: CGPoint) {
         self.dx = point.x
         self.dy = point.y

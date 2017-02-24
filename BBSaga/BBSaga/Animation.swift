@@ -180,6 +180,26 @@ extension Animation {
             fireAnimationView.removeFromSuperview()
         }
     }
+    
+    static func createLightningObstacleView(origin: CGPoint, numSections: Int) -> UIView {
+        let width: CGFloat = Setting.lightningObstacleWidth
+        let rate = Setting.lightningObstacleWidthRate
+        let size = CGSize(width: width * CGFloat(numSections - 1) * rate + width, height: width)
+        let containerView = UIView(frame: CGRect(origin: origin, size: size))
+        for i in 0 ... numSections - 1 {
+            let sectionOrigin = CGPoint(x: CGFloat(i) * width * rate, y: 0)
+            let section = UIImageView(frame: CGRect(origin: sectionOrigin, size: CGSize(width: width, height: width)))
+            section.animationImages = cutSequenceImageIntoImages(named: Setting.lightningObstacleSpriteSheetName,
+                                                                 numRows: Setting.lightningObstacleSpriteSheetRowNum,
+                                                                 numCols: Setting.lightningObstacleSpriteSheetColNum)
+            section.animationDuration = Setting.lightningObstacleAnimationDuration
+            containerView.addSubview(section)
+            delay(Double(i) * Setting.lightningObstacleDelay) {
+                section.startAnimating()
+            }
+        }
+        return containerView
+    }
 }
 
 func delay(_ delay: Double, _ closure: @escaping ()->()) {
@@ -187,6 +207,22 @@ func delay(_ delay: Double, _ closure: @escaping ()->()) {
         closure()
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

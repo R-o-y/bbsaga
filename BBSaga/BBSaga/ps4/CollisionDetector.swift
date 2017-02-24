@@ -11,6 +11,7 @@ import UIKit
 
 class CollisionDetector {
     private var circleShapeTargets: [RigidBody] = []
+    private var segmentShapeTargets: [RigidBody] = []
     private var callback: ((RigidBody, RigidBody) -> Void)
     
     init(callback: @escaping (((RigidBody, RigidBody)) -> Void)) {
@@ -25,16 +26,19 @@ class CollisionDetector {
         if target.shape is CircleShape && !circleShapeTargets.contains(target) {
             circleShapeTargets.append(target)
         }
+        if target.shape is SegmentShape && !segmentShapeTargets.contains(target) {
+            segmentShapeTargets.append(target)
+        }
     }
     
     func removeTarget(_ target: RigidBody) {
         circleShapeTargets.removeEqualItems(item: target)
+        segmentShapeTargets.removeEqualItems(item: target)
     }
     
-    /// check for all pairs of rigidBodies this detector keeps track of
-    /// for any pair of rigidBodies, if there is a collision detected
-    /// trigger callback function on them
+    /// check for collisions between rigid bodies and trigger callback method if collision is detected
     func check() {
+        // circle-circle collision
         for (body1, body2) in circleShapeTargets.getAllPairs() {
             if body1.shape.overlap(at: body1.position, with: body2.shape, at: body2.position) {
                 let p1 = body1.position
@@ -58,6 +62,16 @@ class CollisionDetector {
                     // let linkLine = body2.position - body1.position
                     // body1.velocity = -1 * body1.velocity.reflect(by: linkLine)
                     // body2.velocity = -1 * body2.velocity.reflect(by: linkLine)
+                }
+            }
+        }
+        
+        for circleBody in circleShapeTargets {
+            for segmentBody in segmentShapeTargets {
+                if circleBody.shape.overlap(at: circleBody.position,
+                                            with: segmentBody.shape,
+                                            at: segmentBody.position) {
+                    callback(circleBody, segmentBody)
                 }
             }
         }
