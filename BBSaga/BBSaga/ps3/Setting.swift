@@ -119,6 +119,7 @@ extension Setting {
     static let dropViewElasticity: CGFloat = 0.66
     static let dropViewFadeOutDuration = 2.8
     
+    // bubble burst animation
     static let bubbleBurstAnimationImageName = "bubble-burst"
     static let bubbleBurstAnimationRowNum = 1
     static let bubbleBurstAnimationColNum = 4
@@ -127,11 +128,29 @@ extension Setting {
     static let bubbleBurstAnimationDuration = 0.12
     
     static let chainingDelay: TimeInterval = 0.08
-    static let lightningDelay: TimeInterval = 0.038
+    
+    // lightning animation
+    static let lightningDelay: TimeInterval = 0.028
+    static let lightningSectionDuration: TimeInterval = Setting.lightningDelay * TimeInterval(16)
+    static let lightningSectionWidth: CGFloat = 180
+    static let lightningSpriteSheetName = "bolt_strike"
+    static let lightningSpriteSheetRowNum = 1
+    static let lightningSpriteSheetColNum = 10
+    static let lightningNextStartingTimeRate: TimeInterval = 0.138
+    static let lightningNextStartingPositionRate: CGFloat = 0.8
+    static let lightningVerticalHalfRate: CGFloat = 1 / 2.18
+    
+    // fire hit animation
+    static let firehitDuration = 0.66
+    static let firehitSpriteSheetName = "fireball_hit"
+    static let firehitSpriteSheetRowNum = 1
+    static let firehitSpriteSheetColNum = 9
+    static let firehitSizeRateCompareToBubble = 3.18
 }
 
 /// game play
 extension Setting {
+    static let playBackgroundImage = UIImage(named: "background")
     static let bubbleProjectileSpeed: CGFloat = 1200
     static let framePerSecond = 60
     static let minimumShootingVerticalComponent: CGFloat = -18

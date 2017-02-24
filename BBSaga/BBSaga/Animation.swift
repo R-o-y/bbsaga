@@ -130,6 +130,56 @@ extension Animation {
                         animationView.bounds.size.width = finalSize.width
         }, completion: { _ in animationView.removeFromSuperview() })
     }
+    
+    static func animateLightning(centerY: CGFloat, in superView: UIView) {
+        let sectionDuration: TimeInterval = Setting.lightningSectionDuration
+        let nextStartingTimeRatio = Setting.lightningNextStartingTimeRate
+        let sectionWidth = Setting.lightningSectionWidth
+        let lengthRate = Setting.lightningNextStartingPositionRate
+        let y = centerY - sectionWidth * Setting.lightningVerticalHalfRate
+        
+        var lightningSections: [UIImageView] = []
+        let numSection = Int(ceil(superView.bounds.width / sectionWidth) / lengthRate) + 1
+        
+        // prepare
+        for i in 0 ..< numSection {
+            let lightningSectionView = UIImageView(frame: CGRect(x: CGFloat(i) * sectionWidth * lengthRate, y: y, width: sectionWidth, height: sectionWidth))
+            let lightningAnimationImages = cutSequenceImageIntoImages(named: Setting.lightningSpriteSheetName,
+                                                                      numRows: Setting.lightningSpriteSheetRowNum,
+                                                                      numCols: Setting.lightningSpriteSheetColNum)
+            lightningSectionView.animationImages = lightningAnimationImages
+            lightningSectionView.animationDuration = sectionDuration
+            lightningSectionView.animationRepeatCount = 1
+            lightningSections.append(lightningSectionView)
+        }
+        // animate
+        for i in 0 ..< numSection {
+            delay(TimeInterval(i) * sectionDuration * nextStartingTimeRatio) {
+                superView.addSubview(lightningSections[i])
+                lightningSections[i].startAnimating()
+            }
+        }
+        // finish
+        delay(sectionDuration * TimeInterval(numSection - 1) * nextStartingTimeRatio + sectionDuration) {
+            for sectionView in lightningSections {
+                sectionView.removeFromSuperview()
+            }
+        }
+    }
+    
+    static func animateFireHit(within frame: CGRect, in superView: UIView) {
+        let fireAnimationView = UIImageView(frame: frame)
+        fireAnimationView.animationImages = cutSequenceImageIntoImages(named: Setting.firehitSpriteSheetName,
+                                                                       numRows: Setting.firehitSpriteSheetRowNum,
+                                                                       numCols: Setting.firehitSpriteSheetColNum)
+        fireAnimationView.animationDuration = 0.6
+        fireAnimationView.animationRepeatCount = 1
+        superView.addSubview(fireAnimationView)
+        fireAnimationView.startAnimating()
+        delay(fireAnimationView.animationDuration) {
+            fireAnimationView.removeFromSuperview()
+        }
+    }
 }
 
 func delay(_ delay: Double, _ closure: @escaping ()->()) {

@@ -97,10 +97,15 @@ class BubbleGridForPlayController: BubbleGridController {
         }
         var i: Double = 0
         for indexPath in indexPaths {
-            delay(Setting.lightningDelay * i) {
+            delay(Setting.lightningDelay * Double(indexPath.row)) {
                 bubbleGrid.reloadItems(at: [indexPath])
             }
             i += 1
+        }
+        // animate lightning
+        if !indexPaths.isEmpty {
+            let cell = bubbleGrid.dequeueReusableCell(withReuseIdentifier: Setting.bubbleGridCellIdentifier, for: indexPaths[0])
+            Animation.animateLightning(centerY: cell.center.y, in: bubbleGrid)
         }
     }
     
@@ -108,8 +113,19 @@ class BubbleGridForPlayController: BubbleGridController {
         for indexPath in indexPaths {
             currentBubbleGrid.emptyCellAt(row: indexPath.section, col: indexPath.row)
         }
-        if let bubbleGrid = self.collectionView {
-            bubbleGrid.reloadItems(at: indexPaths)
+        guard let bubbleGrid = self.collectionView else {
+            return
+        }
+        
+        bubbleGrid.reloadItems(at: indexPaths)
+        if !indexPaths.isEmpty {
+            let indexPathForBomb = indexPaths[indexPaths.count - 1]
+            let bombCell = bubbleGrid.dequeueReusableCell(withReuseIdentifier: Setting.bubbleGridCellIdentifier, for: indexPathForBomb)
+            let width: CGFloat = bombCell.frame.width * 3.8
+            let x: CGFloat = bombCell.center.x - width / 2
+            let y: CGFloat = bombCell.center.y - width / 2
+            let frame = CGRect(x: x, y: y, width: width, height: width)
+            Animation.animateFireHit(within: frame, in: bubbleGrid)
         }
     }
     
