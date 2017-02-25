@@ -186,6 +186,10 @@ extension Setting {
     static let pathNodeSize = CGSize(width: 18, height: 18)
     static let aimingBeamStepLength = 60
     static let aimingBeamStepNum = 13
+    
+    static let scorePerBubble = 100
+    
+    static let scoreIncreasingAnimationStepDelay = 0.028
 }
 
 

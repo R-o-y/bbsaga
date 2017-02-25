@@ -13,6 +13,8 @@ class GamePlayController: UIViewController {
     private var bubbleGridController: BubbleGridForPlayController!
     
     @IBOutlet var leftProjectileCountLabel: UILabel!
+    @IBOutlet var scoreLabel: UILabel!
+    private var scoreThisShot = 0
     
     private var aimingBeam: [UIView] = []
     
@@ -41,6 +43,7 @@ class GamePlayController: UIViewController {
         setUpBubbleShooter()
         setUpLightningObstacles()
         leftProjectileCountLabel.text = String(Setting.numProjectiles)
+        scoreLabel.text = String(0)
         
         bindGestureRecognizer(to: view)
         addEventDetectors()
@@ -164,11 +167,16 @@ class GamePlayController: UIViewController {
             guard let weakSelf = self else {
                 return
             }
-            let bubble = body1.shape is CircleShape ? body1 : body2
-            if let bubbleFrame = weakSelf.renderer.getCorrespondingView(of: bubble)?.frame {
-                Animation.animateLightningDisappear(within: bubbleFrame, in: weakSelf.view)
+            if !(body1.shape is CircleShape && body2.shape is CircleShape) {
+                let bubble = body1.shape is CircleShape ? body1 : body2
+                if let bubbleFrame = weakSelf.renderer.getCorrespondingView(of: bubble)?.frame {
+                    Animation.animateLightningDisappear(within: bubbleFrame, in: weakSelf.view)
+                }
+                weakSelf.gameEngine.removeRigidBody(bubble)
+                if weakSelf.leftProjectileCountLabel.text == "0" {
+                    weakSelf.endGame()
+                }
             }
-            weakSelf.gameEngine.removeRigidBody(bubble)
         })
         detector.addTarget(obstacle)
         world.addCollisionDetector(detector)
@@ -352,6 +360,9 @@ class GamePlayController: UIViewController {
             guard let weakSelf = self else {
                 return false
             }
+            if weakSelf.leftProjectileCountLabel.text == "0" {
+                weakSelf.endGame()
+            }
             return target.position.dy <= weakSelf.bubbleRadius + CGFloat(Setting.statusBarHeight)
         }
         let callback = { [weak self] (target: RigidBody) in
@@ -388,6 +399,9 @@ class GamePlayController: UIViewController {
         let detectEvent = { [weak self] (target: RigidBody) -> Bool in
             guard let weakSelf = self else {
                 return false
+            }
+            if weakSelf.leftProjectileCountLabel.text == "0" {
+                weakSelf.endGame()
             }
             for position in weakSelf.positionsOfGridBubbles {
                 if target.position.distance(to: position) <= 2 * weakSelf.bubbleRadius {
@@ -434,9 +448,6 @@ class GamePlayController: UIViewController {
                 break
             }
         }
-        if leftProjectileCountLabel.text == "0" {
-            endGame()
-        }
     }
     
     /// helper function that returns the current position
@@ -458,11 +469,13 @@ class GamePlayController: UIViewController {
     /// then remove unattached bubbles
     /// - Parameter indexPath: the indexPath where the bubble projectile settle
     private func removeAfterShootTo(_ indexPath: IndexPath) {
+        scoreThisShot = 0
         let bubbleGrid = bubbleGridController.currentBubbleGrid
         
         // remove more than 3 connected same-colored bubbles
         let connectedIndexPathsOfSameColor = bubbleGrid.connectedIndexPathsOfSameColor(from: indexPath)
         if connectedIndexPathsOfSameColor.count >= 3 {
+            scoreThisShot += connectedIndexPathsOfSameColor.count * Setting.scorePerBubble
             removeFromPositionsOfGridBubbles(indexPaths: connectedIndexPathsOfSameColor)
             bubbleGridController.removeConnectedSameColorBubblesWithAnimation(connectedIndexPathsOfSameColor)
         }
@@ -484,8 +497,26 @@ class GamePlayController: UIViewController {
         
         // remove unattached bubbles
         let unattachedIndexPaths = bubbleGrid.unattachedIndexPaths()
+        scoreThisShot += unattachedIndexPaths.count * Setting.scorePerBubble
         removeFromPositionsOfGridBubbles(indexPaths: unattachedIndexPaths)
         bubbleGridController.removeUnattachedBubblesWithAnimation(unattachedIndexPaths)
+        
+        accumulateScore()
+    }
+    
+    private func accumulateScore() {
+        guard let currentNumString = scoreLabel.text else {
+            return
+        }
+        guard let currentNum = Int(currentNumString) else {
+            return
+        }
+        let finalScore = currentNum + scoreThisShot
+        for i in stride(from: currentNum, through: finalScore, by: Setting.scorePerBubble) {
+            delay(Double(i - currentNum) / Double(Setting.scorePerBubble) * Setting.scoreIncreasingAnimationStepDelay) { [weak self] _ in
+                self?.scoreLabel.text = String(i)
+            }
+        }
     }
     
     /// return the index paths of the power bubble adjacent to the input index path
@@ -506,6 +537,7 @@ class GamePlayController: UIViewController {
     private func triggerLightningBubbleAt(_ indexPath: IndexPath) {
         let bubbleGrid = bubbleGridController.currentBubbleGrid
         let indexPathsRemovedByLightningBubble = bubbleGrid.indexPathsRemovedByLightningBubble(at: indexPath)
+        scoreThisShot += indexPathsRemovedByLightningBubble.count * Setting.scorePerBubble
         
         // get the index paths of chaining power bubbles
         var chainingLightningIndexPaths: [IndexPath] = []
@@ -539,6 +571,7 @@ class GamePlayController: UIViewController {
         let bubbleGrid = bubbleGridController.currentBubbleGrid
         var indexPathsRemovedByBombBubble = bubbleGrid.adjacentUnemptyIndexPaths(to: indexPath)
         indexPathsRemovedByBombBubble.append(indexPath)
+        scoreThisShot += indexPathsRemovedByBombBubble.count * Setting.scorePerBubble
         
         // get the index paths of chaining power bubbles
         var chainingLightningIndexPaths: [IndexPath] = []
@@ -572,6 +605,7 @@ class GamePlayController: UIViewController {
         let bubbleGrid = bubbleGridController.currentBubbleGrid
         var indexPathsRemovedByStarBubble = bubbleGrid.indexPathsOfSameColor(as: projectileIndexPath)
         indexPathsRemovedByStarBubble.append(starBubbleIndexPath)
+        scoreThisShot += indexPathsRemovedByStarBubble.count * Setting.scorePerBubble
         removeFromPositionsOfGridBubbles(indexPaths: indexPathsRemovedByStarBubble)
         bubbleGridController.removeStarDestroyedBubblesWithAnimation(indexPathsRemovedByStarBubble)
     }
