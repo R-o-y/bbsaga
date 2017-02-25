@@ -15,8 +15,18 @@ class PlayGridSceneController: UIViewController {
     @IBOutlet var bar: UIView!
     
     override func viewDidLoad() {
+        setUpBackground()
         setUpGridsViewAndController()
         startObservingSegueToPlayerRequest()
+    }
+    
+    private func setUpBackground() {
+        let background = UIImageView(image: Setting.backgroundImage)
+        background.alpha = Setting.selectionSceneBackgroundAlpha
+        background.frame = CGRect(x: 0, y: 0,
+                                  width: view.frame.width,
+                                  height: view.frame.height)
+        view.insertSubview(background, at: 0)  // insert at the most back
     }
     
     private func startObservingSegueToPlayerRequest() {

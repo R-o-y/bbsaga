@@ -15,6 +15,7 @@ class GamePlayController: UIViewController {
     
     @IBOutlet var backBtn: UIButton!
     @IBOutlet var leftProjectileCountLabel: UILabel!
+    private var leftProjectileCount = 0
     @IBOutlet var scoreLabel: UILabel!
     private var scoreThisShot = 0
     
@@ -28,10 +29,15 @@ class GamePlayController: UIViewController {
     private var bubbleRadius: CGFloat = 0
     private let bubbleProjectileSpeed = Setting.bubbleProjectileSpeed
     private var bubbleShooterPosition = CGVector()
-    private var pendingBubble = ColorBubble(ofColor: .blue)
+    private var pendingBubble = ColorBubble()
     private var pendingBubbleView = UIImageView()
+    private var nextBubble = ColorBubble()
+    @IBOutlet var nextBubbleView: UIImageView!
     
     private var positionsOfGridBubbles: [CGVector] = []
+    
+    var cannonView = UIImageView()
+    var cannonBaseView = UIImageView()
     
     /// set the text color of status bar white
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -45,6 +51,7 @@ class GamePlayController: UIViewController {
         setUpBubbleShooter()
         setUpLightningObstacles()
         leftProjectileCountLabel.text = String(Setting.numProjectiles)
+        leftProjectileCount = Setting.numProjectiles
         scoreLabel.text = String(0)
         
         bindGestureRecognizer(to: view)
@@ -63,7 +70,8 @@ class GamePlayController: UIViewController {
     
     /// helper function to add background image into current view
     private func setUpBackground() {
-        let background = UIImageView(image: Setting.playBackgroundImage)
+        let background = UIImageView(image: Setting.backgroundImage)
+        background.alpha = Setting.playBackgroundAlpha
         background.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
         view.insertSubview(background, at: 0)  // insert at the most back
     }
@@ -107,15 +115,32 @@ class GamePlayController: UIViewController {
     /// helper function to set up bubble shooter
     private func setUpBubbleShooter() {
         bubbleRadius = view.bounds.width / (2 * CGFloat(Setting.numCellsPerOddRow))
-        bubbleShooterPosition = CGVector(dx: view.frame.width / 2, dy: view.frame.height - 2 * bubbleRadius)
+        bubbleShooterPosition = CGVector(dx: view.frame.width / 2, dy: view.frame.height - 1.2 * bubbleRadius)
         
         if let color = BubbleColor(rawValue: Int.randomWithinRange(lower: 0, upper: Setting.numBubbleColor - 1)) {
             pendingBubble.setColor(color)
         }
         pendingBubbleView.image = Setting.imageOfBubble(pendingBubble)
-        pendingBubbleView.frame.size = CGSize(width: 2 * bubbleRadius, height: 2 * bubbleRadius)
+        pendingBubbleView.frame.size = CGSize(width:  bubbleRadius, height: bubbleRadius)
         pendingBubbleView.center = bubbleShooterPosition.toCGPoint()
         view.addSubview(pendingBubbleView)
+        
+        if let color = BubbleColor(rawValue: Int.randomWithinRange(lower: 0, upper: Setting.numBubbleColor - 1)) {
+            nextBubble.setColor(color)
+        }
+        nextBubbleView.image = Setting.imageOfBubble(nextBubble)
+        
+        cannonView = UIImageView(frame: CGRect(x: view.bounds.width / 2 - 44, y: view.bounds.height - 138, width: 88, height: 180))
+        cannonView.image = Animation.cutSequenceImageIntoImages(named: "cannon", numRows: 2, numCols: 6)[0]
+        view.addSubview(cannonView)
+        cannonBaseView = UIImageView(frame: CGRect(x: view.bounds.width / 2 - 33, y: view.bounds.height - 66, width: 66, height: 66))
+        cannonBaseView.image = UIImage(named: "cannon-base")
+        view.addSubview(cannonBaseView)
+        
+        let shiftY = cannonView.bounds.height * 0.3
+        cannonView.transform = CGAffineTransform(translationX: 0, y: shiftY)
+        cannonView.layer.anchorPoint = CGPoint(x: 0.5, y: 0.8)
+        cannonView.transform = CGAffineTransform(rotationAngle: 0)
     }
 
     
@@ -180,7 +205,7 @@ class GamePlayController: UIViewController {
                     Animation.animateLightningDisappear(within: bubbleFrame, in: weakSelf.view)
                 }
                 weakSelf.gameEngine.removeRigidBody(bubble)
-                if weakSelf.leftProjectileCountLabel.text == "0" {
+                if weakSelf.leftProjectileCount < 0 {
                     weakSelf.endGame()
                 }
             }
@@ -207,6 +232,7 @@ class GamePlayController: UIViewController {
     @objc private func shootByTapping(_ recognizer: UITapGestureRecognizer) {
         let point = recognizer.location(in: view)
         calculateVelocityAndShootTo(point: point)
+        rotateCannon(towards: point)
     }
     
     /// when players panning, show a bean to indicate the predicted trajectory
@@ -215,6 +241,7 @@ class GamePlayController: UIViewController {
         switch recognizer.state {
         case .began, .changed:
             updateAimingBeam(point: recognizer.location(in: view))
+            rotateCannon(towards: recognizer.location(in: view))
         case .ended:
             calculateVelocityAndShootTo(point: recognizer.location(in: view))
             removeAimingBeam()
@@ -234,9 +261,9 @@ class GamePlayController: UIViewController {
         removeAimingBeam()
         
         // draw new aiming beam
-        var currentPosition = bubbleShooterPosition
         var v = CGVector(point) - bubbleShooterPosition
         v = Setting.aimingBeamStepLength * (v / v.norm())  // length for each step
+        var currentPosition = bubbleShooterPosition + v
         var hasCollideWithGridBubble = false
         for _ in 0 ... Setting.aimingBeamStepNum {  // number of steps
             if hasCollideWithGridBubble {
@@ -317,21 +344,47 @@ class GamePlayController: UIViewController {
         // register projectile bubble body and uiview to renderer
         renderer.register(body: bubbleProjectile, view: bubbleProjectileView)
         
-        // update current chooted bubble
-        pendingBubble.setColor(color)
-        pendingBubbleView.image = Setting.imageOfBubble(pendingBubble)
-        
+        // update current choosed bubble
+        pendingBubble.setColor(nextBubble.getColor())
+        pendingBubbleView.image = Setting.imageOfBubble(nextBubble)
+
+        nextBubble.setColor(color)
+        nextBubbleView.image = Setting.imageOfBubble(nextBubble)
         countDownProjectilesLeft()
+        if leftProjectileCount <= 0 {
+            nextBubbleView.image = nil
+        }
+        
+        animateCannon()
+    }
+    
+    private func rotateCannon(towards position: CGPoint) {
+        let center = cannonView.center
+        let y = position.y - center.y
+        let x = position.x - center.x
+        var angle = atan(y / x)
+        if angle < 0 { angle = angle + CGFloat(M_PI) }
+        
+        UIView.animate(withDuration: 0.08, animations: { [weak self] _ in
+            self?.cannonView.transform = CGAffineTransform(rotationAngle: angle - CGFloat(M_PI / 2))
+        })
+    }
+    
+    private func animateCannon() {
+        cannonView.animationImages = Animation.cutSequenceImageIntoImages(named: "cannon", numRows: 2, numCols: 6)
+        cannonView.animationDuration = 0.38
+        cannonView.animationRepeatCount = 0
+        cannonView.startAnimating()
+        delay(0.38) {
+            self.cannonView.stopAnimating()
+        }
     }
     
     private func countDownProjectilesLeft() {
-        guard let currentNumString = leftProjectileCountLabel.text else {
-            return
+        leftProjectileCount -= 1
+        if leftProjectileCount >= 0 {
+            leftProjectileCountLabel.text = String(leftProjectileCount)
         }
-        guard let currentNum = Int(currentNumString) else {
-            return
-        }
-        leftProjectileCountLabel.text = String(currentNum - 1)
     }
     
     /// add event-detectors to the world
@@ -366,9 +419,6 @@ class GamePlayController: UIViewController {
         let detectEvent = { [weak self] (target: RigidBody) -> Bool in
             guard let weakSelf = self else {
                 return false
-            }
-            if weakSelf.leftProjectileCountLabel.text == "0" {
-                weakSelf.endGame()
             }
             return target.position.dy <= weakSelf.bubbleRadius + CGFloat(Setting.statusBarHeight)
         }
@@ -407,9 +457,6 @@ class GamePlayController: UIViewController {
             guard let weakSelf = self else {
                 return false
             }
-            if weakSelf.leftProjectileCountLabel.text == "0" {
-                weakSelf.endGame()
-            }
             for position in weakSelf.positionsOfGridBubbles {
                 if target.position.distance(to: position) <= 2 * weakSelf.bubbleRadius {
                     return true
@@ -428,6 +475,9 @@ class GamePlayController: UIViewController {
     /// find the closest empty cell and settle there
     /// then check whether there are 3 or more connected bubbles to be removed
     private func settleBubbleProjectileAndCheck(_ bubbleProjectile: RigidBody) {
+        if leftProjectileCount < 0  {
+            endGame()
+        }
         guard let bubbleProjectile = bubbleProjectile as? BubbleProjectile else {
             return
         }
@@ -565,11 +615,11 @@ class GamePlayController: UIViewController {
         bubbleGridController.removeLightningDestroyedBubblesWithAnimation(indexPathsRemovedByLightningBubble)
         
         // trigger chaining power bubbles
-        for indexPath in chainingLightningIndexPaths {
-            triggerLightningBubbleAt(indexPath)
-        }
         for indexPath in chainingBombIndexPaths {
             triggerBombBubbleAt(indexPath)
+        }
+        for indexPath in chainingLightningIndexPaths {
+            triggerLightningBubbleAt(indexPath)
         }
     }
     

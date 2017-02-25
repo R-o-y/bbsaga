@@ -60,7 +60,7 @@ class BBSagaDesignController: UIViewController {
     
     /// helper function to add background image into current view
     private func setUpBackground() {
-        let background = UIImageView(image: UIImage(named: Setting.backGroundImageName))
+        let background = UIImageView(image: UIImage(named: Setting.backgroundImageName))
         background.frame = CGRect(x: 0, y: 0,
                                   width: view.frame.width,
                                   height: view.frame.height)

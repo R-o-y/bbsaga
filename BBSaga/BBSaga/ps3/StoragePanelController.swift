@@ -22,6 +22,7 @@ class StoragePanelController: UITableViewController {
         guard let storagePanel = tableView else {
             return
         }
+        storagePanel.layer.cornerRadius = storagePanel.bounds.width * Setting.storagePanelCornerRadiusRate
         storagePanel.rowHeight = Setting.storagePanelRowHeightRatio * storagePanel.bounds.width
         startObservingRemoveGridRequest()
         bindGestureRecognizer(to: storagePanel)

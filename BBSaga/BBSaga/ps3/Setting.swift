@@ -11,7 +11,9 @@ import UIKit
 
 struct Setting {
     static let statusBarHeight: Double = 20
-    static let backGroundImageName = "background"
+    static let backgroundImageName = "background"
+    static let backgroundImage = UIImage(named: "background")
+    static let homeBackgroundImage = UIImage(named: "home-background")
 }
 
 /// storage panel
@@ -19,7 +21,7 @@ extension Setting {
     static let storagePanelYPercentage: CGFloat = 0.08
     static let storagePanelHeightInPercentage: CGFloat = 0.66  // relative to the main view
     static let storagePanelWidthInPercentage: CGFloat = 0.66  // relative to the main view
-    static let storagePanelAlpha: CGFloat = 0.66
+    static let storagePanelAlpha: CGFloat = 0.8
     
     static let storagePanelHeaderAlpha = 0.38
     static let storagePanelHeaderHeightInPercentage: CGFloat = 0.06  // relative to the storage panel
@@ -39,11 +41,13 @@ extension Setting {
     static let containerHeightInPercentage: CGFloat = 1  // relative to contentView
     static let containerUpperPaddingInPercentage: CGFloat = 0.1
     static let storagePanelRowHeightRatio: CGFloat = 0.8
+    static let storagePanelCornerRadiusRate: CGFloat = 0.038
 }
 
 /// bubble grid selection scene
 extension Setting {
     static let numGridsPerRow = 2
+    static let selectionSceneBackgroundAlpha: CGFloat = 1
     
     static let bubbleGridCellIdentifier = "BubbleGridCell"
     static let storagePanelCellIdentifier = "StoragePanelCell"
@@ -176,6 +180,7 @@ extension Setting {
 /// game play
 extension Setting {
     static let playBackgroundImage = UIImage(named: "background")
+    static let playBackgroundAlpha: CGFloat = 1
     static let bubbleProjectileSpeed: CGFloat = 1200
     static let framePerSecond = 60
     static let minimumShootingVerticalComponent: CGFloat = -18

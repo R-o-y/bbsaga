@@ -22,7 +22,7 @@ class MenuViewController: UIViewController {
     
     /// helper function to add background image into current view
     private func setUpBackground() {
-        let background = UIImageView(image: UIImage(named: "home-background.jpg"))
+        let background = UIImageView(image: Setting.homeBackgroundImage)
         background.frame = CGRect(x: 0, y: 0,
                                   width: view.frame.width,
                                   height: view.frame.height)
