@@ -11,8 +11,7 @@ import UIKit
 
 struct Setting {
     static let statusBarHeight: Double = 20
-    static let backgroundImageName = "background"
-    static let backgroundImage = UIImage(named: "background")
+    static let backgroundImage = UIImage(named: "background2")
     static let homeBackgroundImage = UIImage(named: "background1")
 }
 
