@@ -200,6 +200,34 @@ extension Animation {
         }
         return containerView
     }
+    
+    static func animateLightningDisappear(within frame: CGRect, in superView: UIView) {
+        let animationView = UIImageView()
+        
+        let finalScale: CGFloat = Setting.finalScale
+        let size = CGSize(width: frame.size.width * Setting.initScale,
+                          height: frame.size.height * Setting.initScale)
+        animationView.frame.size = size
+        
+        let finalSize = CGSize(width: size.width * finalScale, height: size.height * finalScale)
+        
+        let center = CGPoint(x: frame.origin.x + frame.width / 2, y: frame.origin.y + frame.height / 2)
+        animationView.center = center
+        
+        animationView.animationImages = cutSequenceImageIntoImages(named: Setting.spriteSheetName,
+                                                                   numRows: Setting.spriteSheetNumRows,
+                                                                   numCols: Setting.spriteSheetNumCols)
+        animationView.animationDuration = Setting.duration
+        animationView.animationRepeatCount = Setting.bubbleBurstAnimationRepeatCount
+        superView.addSubview(animationView)
+        
+        UIView.animate(withDuration: animationView.animationDuration,
+                       animations: { _ in
+                        animationView.startAnimating()
+                        animationView.bounds.size.height = finalSize.height
+                        animationView.bounds.size.width = finalSize.width
+        }, completion: { _ in animationView.removeFromSuperview() })
+    }
 }
 
 func delay(_ delay: Double, _ closure: @escaping ()->()) {

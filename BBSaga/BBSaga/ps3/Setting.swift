@@ -148,13 +148,29 @@ extension Setting {
     static let firehitSizeRateCompareToBubble = 3.18
     
     // lightning obstacles animation
-    static let lightningObstacleWidth: CGFloat = 108
+    static let lightningObstacleWidth: CGFloat = 168
     static let lightningObstacleAnimationDuration: TimeInterval = 1.28
     static let lightningObstacleSpriteSheetName = "bolt_tesla"
     static let lightningObstacleSpriteSheetRowNum = 1
     static let lightningObstacleSpriteSheetColNum = 10
     static let lightningObstacleDelay: TimeInterval = 0.18
     static let lightningObstacleWidthRate: CGFloat = 0.88
+    static let obstacle1VerticalRangeUpper = 240
+    static let obstacle1VerticalRangeLower = 380
+    static let obstacle1Origin = CGPoint(x: 330, y: 280)
+    static let obstacle2Origin = CGPoint(x: -38, y: 480)
+    static let obstacle3Origin = CGPoint(x: 638, y: 480)
+    static let obstacle2Angle = CGFloat(-M_PI / 3)
+    static let obstacle3Angle = CGFloat(M_PI / 3)
+    static let obstacle1Velocity = CGVector(dx: 138, dy: 0)
+    
+    // lightning disappear animtaion
+    static let finalScale: CGFloat = 1.28
+    static let initScale: CGFloat = 2.8
+    static let duration = 0.6
+    static let spriteSheetName = "bolt_sizzle"
+    static let spriteSheetNumRows = 1
+    static let spriteSheetNumCols = 10
 }
 
 /// game play
