@@ -138,15 +138,15 @@ class GamePlayController: UIViewController {
         nextBubbleView.image = Setting.imageOfBubble(nextBubble)
         
         cannonView = UIImageView(frame: CGRect(x: view.bounds.width / 2 - 44, y: view.bounds.height - 138, width: 88, height: 180))
-        cannonView.image = Animation.cutSequenceImageIntoImages(named: "cannon", numRows: 2, numCols: 6)[0]
+        cannonView.image = Animation.cutSequenceImageIntoImages(named: Setting.cannonSpriteSheetName, numRows: 2, numCols: 6)[0]
         view.addSubview(cannonView)
         cannonBaseView = UIImageView(frame: CGRect(x: view.bounds.width / 2 - 33, y: view.bounds.height - 66, width: 66, height: 66))
-        cannonBaseView.image = UIImage(named: "cannon-base")
+        cannonBaseView.image = UIImage(named: Setting.cannonBaseSpriteSheetName)
         view.addSubview(cannonBaseView)
         
         let shiftY = cannonView.bounds.height * 0.3
         cannonView.transform = CGAffineTransform(translationX: 0, y: shiftY)
-        cannonView.layer.anchorPoint = CGPoint(x: 0.5, y: 0.8)
+        cannonView.layer.anchorPoint = Setting.cannonAnchorPoint
         cannonView.transform = CGAffineTransform(rotationAngle: 0)
     }
 
@@ -378,7 +378,8 @@ class GamePlayController: UIViewController {
     }
     
     private func animateCannon() {
-        cannonView.animationImages = Animation.cutSequenceImageIntoImages(named: "cannon", numRows: 2, numCols: 6)
+        cannonView.animationImages = Animation.cutSequenceImageIntoImages(named: Setting.cannonSpriteSheetName,
+                                                                          numRows: 2, numCols: 6)
         cannonView.animationDuration = 0.38
         cannonView.animationRepeatCount = 0
         cannonView.startAnimating()

@@ -202,6 +202,9 @@ extension Setting {
     
     static let unwindSegueToDeignerIdentifier = "unwindSegueToDeigner"
     static let unwindSegueToSelectorIdentifier = "unwindSegueToSelector"
+    static let cannonSpriteSheetName = "cannon"
+    static let cannonBaseSpriteSheetName = "cannon-base"
+    static let cannonAnchorPoint = CGPoint(x: 0.5, y: 0.8)
 }
 
 
