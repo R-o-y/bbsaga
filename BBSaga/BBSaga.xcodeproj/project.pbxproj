@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A261572D1E61B57000A7E5B9 /* EndingSceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A261572C1E61B57000A7E5B9 /* EndingSceneController.swift */; };
 		A2E349101E5AB7B5008FECD7 /* BBSagaDesignController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E348FD1E5AB7B4008FECD7 /* BBSagaDesignController.swift */; };
 		A2E349111E5AB7B5008FECD7 /* Bubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E348FE1E5AB7B4008FECD7 /* Bubble.swift */; };
 		A2E349121E5AB7B5008FECD7 /* BubbleGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E348FF1E5AB7B4008FECD7 /* BubbleGrid.swift */; };
@@ -69,6 +70,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A261572C1E61B57000A7E5B9 /* EndingSceneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndingSceneController.swift; sourceTree = "<group>"; };
 		A2E348FD1E5AB7B4008FECD7 /* BBSagaDesignController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BBSagaDesignController.swift; path = ps3/BBSagaDesignController.swift; sourceTree = "<group>"; };
 		A2E348FE1E5AB7B4008FECD7 /* Bubble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Bubble.swift; path = ps3/Bubble.swift; sourceTree = "<group>"; };
 		A2E348FF1E5AB7B4008FECD7 /* BubbleGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BubbleGrid.swift; path = ps3/BubbleGrid.swift; sourceTree = "<group>"; };
@@ -318,6 +320,7 @@
 				A2E349331E5ABB28008FECD7 /* BubbleProjectile.swift */,
 				A2E349321E5ABB28008FECD7 /* BubbleGridExtension.swift */,
 				A2E349301E5ABB28008FECD7 /* BubbleGridControllerExtension.swift */,
+				A261572C1E61B57000A7E5B9 /* EndingSceneController.swift */,
 				A2E3493A1E5ABB28008FECD7 /* GamePlayController.swift */,
 				A2E349631E5ABC3E008FECD7 /* renderer */,
 				A2E349641E5ABC60008FECD7 /* physicsEgin */,
@@ -525,6 +528,7 @@
 				A2F7CFA11E52252B00EADAA1 /* AudioPlayer.swift in Sources */,
 				A2E349131E5AB7B5008FECD7 /* BubbleGridCell.swift in Sources */,
 				A2E349171E5AB7B5008FECD7 /* BubbleGridForDesignController.swift in Sources */,
+				A261572D1E61B57000A7E5B9 /* EndingSceneController.swift in Sources */,
 				A2F7CFA91E54420800EADAA1 /* DropView.swift in Sources */,
 				A2E3491F1E5AB7B5008FECD7 /* StoragePanelCell.swift in Sources */,
 				A2E349571E5ABB28008FECD7 /* GameEngine.swift in Sources */,

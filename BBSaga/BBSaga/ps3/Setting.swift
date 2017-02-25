@@ -13,7 +13,7 @@ struct Setting {
     static let statusBarHeight: Double = 20
     static let backgroundImageName = "background"
     static let backgroundImage = UIImage(named: "background")
-    static let homeBackgroundImage = UIImage(named: "home-background")
+    static let homeBackgroundImage = UIImage(named: "background1")
 }
 
 /// storage panel
@@ -47,7 +47,8 @@ extension Setting {
 /// bubble grid selection scene
 extension Setting {
     static let numGridsPerRow = 2
-    static let selectionSceneBackgroundAlpha: CGFloat = 1
+    static let selectionSceneBackgroundAlpha: CGFloat = 0.88
+    static let selectionBackgroundImage = UIImage(named: "home-background")
     
     static let bubbleGridCellIdentifier = "BubbleGridCell"
     static let storagePanelCellIdentifier = "StoragePanelCell"
@@ -58,6 +59,10 @@ extension Setting {
     static let gridCollectionItemSizeRatio: CGFloat = 0.28
     static let gridCollectionVerticalMarginRatio: CGFloat = 0.038
     static let gridCollectionHorizontalMarginRatio: CGFloat = 0.12
+    
+    static let cellCornerRadiusWidthRate: CGFloat = 0.06
+    static let bubbleGridViewAlpha: CGFloat = 0.916
+    static let nameLabelFont = UIFont (name: "Bradley Hand", size: 18)
     
     // grid cell
     static let gridThumbnailFooterHeightRatio: CGFloat = 0.1
@@ -129,7 +134,7 @@ extension Setting {
     static let bubbleBurstAnimationColNum = 4
     static let bubbleBurstAnimationRepeatCount = 1
     static let bubbleBurstAnimationFinalScale: CGFloat = 1.2
-    static let bubbleBurstAnimationDuration = 0.12
+    static let bubbleBurstAnimationDuration = 0.18
     
     static let chainingDelay: TimeInterval = 0.08
     
@@ -179,7 +184,7 @@ extension Setting {
 
 /// game play
 extension Setting {
-    static let playBackgroundImage = UIImage(named: "background")
+    static let playBackgroundImage = UIImage(named: "background2")
     static let playBackgroundAlpha: CGFloat = 1
     static let bubbleProjectileSpeed: CGFloat = 1200
     static let framePerSecond = 60

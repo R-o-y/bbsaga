@@ -21,7 +21,8 @@ class PlayGridSceneController: UIViewController {
     }
     
     private func setUpBackground() {
-        let background = UIImageView(image: Setting.backgroundImage)
+        let background = UIImageView(image: Setting.selectionBackgroundImage)
+        background.contentMode = .scaleAspectFill
         background.alpha = Setting.selectionSceneBackgroundAlpha
         background.frame = CGRect(x: 0, y: 0,
                                   width: view.frame.width,

@@ -39,6 +39,11 @@ class GamePlayController: UIViewController {
     var cannonView = UIImageView()
     var cannonBaseView = UIImageView()
     
+    //Ending Scene
+    @IBOutlet var endingView: UIView!
+    @IBOutlet var finalScoreLabel: UILabel!
+    @IBOutlet var endingViewBackBtn: UIButton!
+
     /// set the text color of status bar white
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -53,6 +58,7 @@ class GamePlayController: UIViewController {
         leftProjectileCountLabel.text = String(Setting.numProjectiles)
         leftProjectileCount = Setting.numProjectiles
         scoreLabel.text = String(0)
+        endingView?.isHidden = true
         
         bindGestureRecognizer(to: view)
         addEventDetectors()
@@ -70,9 +76,10 @@ class GamePlayController: UIViewController {
     
     /// helper function to add background image into current view
     private func setUpBackground() {
-        let background = UIImageView(image: Setting.backgroundImage)
+        let background = UIImageView(image: Setting.playBackgroundImage)
         background.alpha = Setting.playBackgroundAlpha
         background.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
+        background.contentMode = .scaleAspectFill
         view.insertSubview(background, at: 0)  // insert at the most back
     }
     
@@ -165,7 +172,7 @@ class GamePlayController: UIViewController {
         let lightningObstacleBorderCollisionEventDetector = EventDetector(detectEvent: detectEvent, callback: callback)
         world.addEventDetector(lightningObstacleBorderCollisionEventDetector)
         lightningObstacleBorderCollisionEventDetector.addTarget(setUpLightningObstacle(origin: Setting.obstacle1Origin,
-                                                                                       numSection: 1,
+                                                                                       numSection: 2,
                                                                                        rotationAngle: 0,
                                                                                        initVelocity: Setting.obstacle1Velocity))
         lightningObstacleBorderCollisionEventDetector.addTarget(setUpLightningObstacle(origin: Setting.obstacle2Origin,
@@ -694,6 +701,28 @@ class GamePlayController: UIViewController {
     
     private func endGame() {
         gameEngine.terminateGameLoop()
+        if let recognizers = view.gestureRecognizers {
+            for recognizer in recognizers {
+                view.removeGestureRecognizer(recognizer)
+            }
+        }
+        endingView?.layer.cornerRadius = endingView.bounds.width * 0.08
+        endingView?.isHidden = false
+        endingView.removeFromSuperview()
+        view.addSubview(endingView)  // add to the top
+        endingViewBackBtn?.addTarget(self, action: #selector(performBackSegue(_:)), for: .touchUpInside)
+
+        guard let currentNumString = scoreLabel.text else {
+            return
+        }
+        guard let currentNum = Int(currentNumString) else {
+            return
+        }
+        for i in stride(from: 0, through: currentNum, by: Setting.scorePerBubble) {
+            delay(Double(i) / Double(Setting.scorePerBubble) * Setting.scoreIncreasingAnimationStepDelay) { [weak self] _ in
+                self?.finalScoreLabel.text = String(i)
+            }
+        }
     }
     
     deinit {

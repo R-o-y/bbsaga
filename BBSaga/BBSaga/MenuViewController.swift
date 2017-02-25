@@ -12,21 +12,16 @@ import AVFoundation
 let audioPlayer = AudioPlayer()
 
 class MenuViewController: UIViewController {
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var settingView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        audioPlayer.prepareBgm()
-//        audioPlayer.playBgm()
-        setUpBackground()
-    }
-    
-    /// helper function to add background image into current view
-    private func setUpBackground() {
-        let background = UIImageView(image: Setting.homeBackgroundImage)
-        background.frame = CGRect(x: 0, y: 0,
-                                  width: view.frame.width,
-                                  height: view.frame.height)
-        view.insertSubview(background, at: 0)  // insert at the most back
+        audioPlayer.prepareBgm()
+        audioPlayer.playBgm()
+        titleLabel.transform = CGAffineTransform(rotationAngle: -0.08)
+        settingView.layer.cornerRadius = settingView.bounds.width * Setting.cellCornerRadiusWidthRate
+        settingView.isHidden = true  // hide at the beginning
     }
     
     @IBAction func bgmSwitchPressed(_ sender: UISwitch) {
@@ -34,6 +29,14 @@ class MenuViewController: UIViewController {
             audioPlayer.playBgm()
         } else {
             audioPlayer.pauseBgm()
+        }
+    }
+
+    @IBAction func toggleSettingView(_ sender: Any) {
+        if settingView.isHidden {
+            settingView.isHidden = false
+        } else {
+            settingView.isHidden = true
         }
     }
     

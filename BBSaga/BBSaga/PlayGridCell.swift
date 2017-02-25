@@ -21,6 +21,8 @@ class PlayGridCell: UICollectionViewCell {
         setUpBubbleGridView()
         setUpNameLabel()
         bindGestureRecognizer()
+        contentView.clipsToBounds = true
+        contentView.layer.cornerRadius = contentView.bounds.width * Setting.cellCornerRadiusWidthRate
     }
     
     private func bindGestureRecognizer() {
@@ -40,7 +42,8 @@ class PlayGridCell: UICollectionViewCell {
         bubbleGridView.frame = contentView.frame
         bubbleGridView.register(BubbleGridCell.self, forCellWithReuseIdentifier: Setting.bubbleGridCellIdentifier)
         
-        bubbleGridView.backgroundColor = UIColor.clear
+        bubbleGridView.backgroundColor = UIColor.white
+        bubbleGridView.alpha = Setting.bubbleGridViewAlpha
         bubbleGridView.contentMode = .scaleToFill
         bubbleGridView.clipsToBounds = true
         
@@ -49,11 +52,13 @@ class PlayGridCell: UICollectionViewCell {
     
     private func setUpNameLabel() {
         nameLabel = UILabel()
+        nameLabel.backgroundColor = UIColor.darkGray
         let height = contentView.bounds.size.width * Setting.gridThumbnailFooterHeightRatio
         let width = contentView.bounds.size.width
         nameLabel.frame.size = CGSize(width: width, height: height)
         nameLabel.frame.origin = CGPoint(x: 0, y: contentView.bounds.size.height - height)
-        nameLabel.textColor = .darkGray
+        nameLabel.textColor = .white
+        nameLabel.font = Setting.nameLabelFont
         nameLabel.textAlignment = .center
         contentView.addSubview(nameLabel)
     }
