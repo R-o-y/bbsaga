@@ -12,6 +12,7 @@ import UIKit
 class PlayGridSceneController: UIViewController {
     private var playGridCollectionView: UICollectionView!
     private var playGridCollectionViewController: PlayGridCollectionController!
+    @IBOutlet var bar: UIView!
     
     override func viewDidLoad() {
         setUpGridsViewAndController()
@@ -36,7 +37,7 @@ class PlayGridSceneController: UIViewController {
             return
         }
         playGridCollectionView = playGridCollectionViewControllerCollectionView
-        playGridCollectionView.frame = view.frame
+        playGridCollectionView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height - bar.frame.height)
         playGridCollectionView.register(PlayGridCell.self, forCellWithReuseIdentifier: Setting.playGridCellIdentifier)
         view.addSubview(playGridCollectionView)
     }
@@ -65,10 +66,13 @@ class PlayGridSceneController: UIViewController {
                 return
             }
             if let playController = segue.destination as? GamePlayController {
-                playController.loadedBubbleGrid = senderBubbleGridController.currentBubbleGrid
+                playController.loadedBubbleGrid = senderBubbleGridController.currentBubbleGrid.replica()
+                playController.backSegueIdentifier = Setting.unwindSegueToSelectorIdentifier
             }
         }
     }
+    
+    @IBAction func unwindSegueToSelectionScene(segue: UIStoryboardSegue) {}
 }
 
 

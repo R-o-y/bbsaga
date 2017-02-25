@@ -95,6 +95,14 @@ class BubbleGrid: NSObject, NSCoding {
             }
         }
     }
+    
+    func replica() -> BubbleGrid {
+        let sameGrid = BubbleGrid()
+        for row in bubble2dArray {
+            sameGrid.appendArrayOfBubbles(row)
+        }
+        return sameGrid
+    }
 }
 
 

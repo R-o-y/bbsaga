@@ -246,7 +246,7 @@
                                     <constraint firstAttribute="width" secondItem="Z2t-OG-gf7" secondAttribute="height" multiplier="60:31" id="A46-xt-h62"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="18"/>
-                                <state key="normal" title="Back">
+                                <state key="normal" title="Home">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
@@ -320,7 +320,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Za-uC-jpX" sceneMemberID="firstResponder"/>
                 <exit id="hnR-ey-8XH" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1438.28125" y="-520.3125"/>
+            <point key="canvasLocation" x="638" y="-451"/>
         </scene>
         <!--Play Grid Scene Controller-->
         <scene sceneID="x6z-JR-slP">
@@ -333,13 +333,35 @@
                     <view key="view" contentMode="scaleToFill" id="IBL-HT-Nbs">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jL8-wv-Aar">
+                                <rect key="frame" x="0.0" y="956" width="768" height="68"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="90x-d9-BGC">
+                                        <rect key="frame" x="678" y="15" width="82" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="24"/>
+                                        <state key="normal" title="Home">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="lqY-Io-RCq" kind="unwind" unwindAction="unwindSegueToMenuWithSegue:" id="8Si-ym-gQK"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="bar" destination="jL8-wv-Aar" id="SnY-wz-rbd"/>
                         <segue destination="pdI-LI-lzM" kind="show" identifier="segueToPlayer" animates="NO" id="War-E8-diQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zyO-0U-JyA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="lqY-Io-RCq" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="638.28125" y="393.75"/>
         </scene>
@@ -358,13 +380,10 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4b6-fz-tXf">
                                 <rect key="frame" x="666" y="959" width="82" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="28"/>
-                                <state key="normal" title="Home">
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="24"/>
+                                <state key="normal" title="Back">
                                     <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
                                 </state>
-                                <connections>
-                                    <segue destination="wfS-1v-R1k" kind="unwind" unwindAction="unwindSegueToMenuWithSegue:" id="fJN-B5-sk4"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="count" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ct0-M8-GJd">
                                 <rect key="frame" x="83" y="863" width="70" height="40"/>
@@ -384,14 +403,17 @@
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="backBtn" destination="4b6-fz-tXf" id="SQ6-ds-orv"/>
                         <outlet property="leftProjectileCountLabel" destination="ct0-M8-GJd" id="xVo-ME-cHL"/>
                         <outlet property="scoreLabel" destination="kXY-Lx-LJ2" id="dAO-5W-P0e"/>
+                        <segue destination="wfS-1v-R1k" kind="unwind" identifier="unwindSegueToDeigner" animates="NO" unwindAction="unwindSegueToDesignerSceneWithSegue:" id="JU0-fw-CKQ"/>
+                        <segue destination="wfS-1v-R1k" kind="unwind" identifier="unwindSegueToSelector" animates="NO" unwindAction="unwindSegueToSelectionSceneWithSegue:" id="D37-hH-1P7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="msu-17-FWy" sceneMemberID="firstResponder"/>
                 <exit id="wfS-1v-R1k" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1438.28125" y="393.75"/>
+            <point key="canvasLocation" x="1530" y="-29"/>
         </scene>
     </scenes>
     <resources>

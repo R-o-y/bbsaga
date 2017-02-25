@@ -14,8 +14,11 @@ Your answer here
 
 ### Problem 1: Cannon Direction
 
-Your answer here
-
+> players can select the direction of cannon (also the direction of shooting bubble projectiles) using 2 gestures
+> 1. tap gesture
+> after players at a position, 
+> 2. pan gesture
+> 
 
 ### Problem 2: Upcoming Bubbles
 
@@ -38,15 +41,23 @@ Please save your diagram as `class-diagram.png` in the root directory of the rep
 
 ### Problem 8: Testing
 
-> #### test game flow
-> #### test bubble grid designer
-> #### test 
-
-
+> ##### test game flow:   
+   
+> ##### test bubble grid designer:
+     
+> ##### test player:
+       
 ### Problem 9: The Bells & Whistles
 
-Your answer here
-
+> ##### List of extra features I implement:
+> - Implement the bubble bursting animation using the sprite bubble-burst.png
+> - Implement the lightning animation
+> - Implement the bomb animation
+> - Adding game score
+> - Cannon has limited number of shots in the game, after which the player loses
+> - Add trajectory animation and path to the cannon
+> - Adding game score
+> - Lightning obstacles
 
 ### Problem 10: Final Reflection
 

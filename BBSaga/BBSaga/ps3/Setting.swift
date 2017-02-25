@@ -190,6 +190,9 @@ extension Setting {
     static let scorePerBubble = 100
     
     static let scoreIncreasingAnimationStepDelay = 0.028
+    
+    static let unwindSegueToDeignerIdentifier = "unwindSegueToDeigner"
+    static let unwindSegueToSelectorIdentifier = "unwindSegueToSelector"
 }
 
 

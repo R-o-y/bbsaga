@@ -11,7 +11,9 @@ import UIKit
 class GamePlayController: UIViewController {
     private var bubbleGridView: UICollectionView!
     private var bubbleGridController: BubbleGridForPlayController!
+    var backSegueIdentifier = Setting.unwindSegueToSelectorIdentifier  // default
     
+    @IBOutlet var backBtn: UIButton!
     @IBOutlet var leftProjectileCountLabel: UILabel!
     @IBOutlet var scoreLabel: UILabel!
     private var scoreThisShot = 0
@@ -48,12 +50,17 @@ class GamePlayController: UIViewController {
         bindGestureRecognizer(to: view)
         addEventDetectors()
         world.addCollisionDetector(CollisionDetector())
+        backBtn.addTarget(self, action: #selector(performBackSegue(_:)), for: .touchUpInside)
+    }
+    
+    @objc private func performBackSegue(_ sender: UIButton) {
+        performSegue(withIdentifier: backSegueIdentifier, sender: self)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         gameEngine.startGameLoop()
     }
-
+    
     /// helper function to add background image into current view
     private func setUpBackground() {
         let background = UIImageView(image: Setting.playBackgroundImage)
@@ -627,6 +634,12 @@ class GamePlayController: UIViewController {
             return cell
         }
         return nil
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let designController = segue.destination as? BBSagaDesignController {
+            designController.moveButtonsOutOfView()
+        }
     }
     
     private func endGame() {

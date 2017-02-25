@@ -111,7 +111,7 @@ class BBSagaDesignController: UIViewController {
     }
     
     // move mode buttons out of the screen first, when view did appear, slide them in
-    private func moveButtonsOutOfView() {
+    func moveButtonsOutOfView() {
         for target in modeButtons {
             target.transform = CGAffineTransform(translationX: view.bounds.width, y: 0)
         }
@@ -273,9 +273,12 @@ class BBSagaDesignController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let playController = segue.destination as? GamePlayController {
-            playController.loadedBubbleGrid = getCurrentBubbleGrid()
+            playController.loadedBubbleGrid = getCurrentBubbleGrid()?.replica()
+            playController.backSegueIdentifier = Setting.unwindSegueToDeignerIdentifier
         }
     }
+    
+    @IBAction func unwindSegueToDesignerScene(segue: UIStoryboardSegue) {}
 }
 
 
