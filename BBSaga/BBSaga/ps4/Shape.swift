@@ -17,12 +17,12 @@ public class CircleShape: Shape {
     private(set) var offset: CGVector
     private(set) var radius: CGFloat
 
-    init(radius: CGFloat) {
+    public init(radius: CGFloat) {
         self.radius = radius
         offset = CGVector.zero
     }
     
-    init(radius: CGFloat, offset: CGVector) {
+    public init(radius: CGFloat, offset: CGVector) {
         self.radius = radius
         self.offset = offset
     }
@@ -72,7 +72,7 @@ public class SegmentShape: Shape {
     private(set) var p1: CGVector  // in local coordinate
     private(set) var p2: CGVector
     
-    init(from p1: CGVector, to p2: CGVector) {
+    public init(from p1: CGVector, to p2: CGVector) {
         self.p1 = p1
         self.p2 = p2
     }
@@ -85,3 +85,4 @@ public class SegmentShape: Shape {
         return false
     }
 }
+

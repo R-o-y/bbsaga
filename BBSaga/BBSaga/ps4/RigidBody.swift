@@ -20,13 +20,13 @@ public class RigidBody: Hashable {
         return position.dx.hashValue ^ position.dy.hashValue
     }
     
-    init(mass: Double) {
+    public init(mass: Double) {
         self.mass = mass
     }
     
     /// Update the physics property of this RigidBody.
     /// This method will be called by World.update(timeInterval: TimeInterval)
-    func update(timeInterval: TimeInterval) {
+    public func update(timeInterval: TimeInterval) {
         let nextVelocity = velocity + timeInterval * acceleration
         let averageVelocity = (velocity + nextVelocity) / 2
         position = position + timeInterval * averageVelocity

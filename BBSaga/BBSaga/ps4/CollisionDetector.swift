@@ -14,15 +14,15 @@ public class CollisionDetector {
     private var segmentShapeTargets: [RigidBody] = []
     private var callback: ((RigidBody, RigidBody) -> Void)
     
-    init(callback: @escaping (((RigidBody, RigidBody)) -> Void)) {
+    public init(callback: @escaping (((RigidBody, RigidBody)) -> Void)) {
         self.callback = callback
     }
     
-    init() {
+    public init() {
         callback = { _,_ in }
     }
     
-    func addTarget(_ target: RigidBody) {
+    public func addTarget(_ target: RigidBody) {
         if target.shape is CircleShape && !circleShapeTargets.contains(target) {
             circleShapeTargets.append(target)
         }
@@ -31,13 +31,13 @@ public class CollisionDetector {
         }
     }
     
-    func removeTarget(_ target: RigidBody) {
+    public func removeTarget(_ target: RigidBody) {
         circleShapeTargets.removeEqualItems(item: target)
         segmentShapeTargets.removeEqualItems(item: target)
     }
     
     /// check for collisions between rigid bodies and trigger callback method if collision is detected
-    func check() {
+    public func check() {
         // circle-circle collision
         for (body1, body2) in circleShapeTargets.getAllPairs() {
             if body1.shape.overlap(at: body1.position, with: body2.shape, at: body2.position) {
