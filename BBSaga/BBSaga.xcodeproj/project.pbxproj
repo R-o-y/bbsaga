@@ -7,60 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A261572D1E61B57000A7E5B9 /* EndingSceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A261572C1E61B57000A7E5B9 /* EndingSceneController.swift */; };
-		A261574E1E626A3900A7E5B9 /* bomb combo.plist in Resources */ = {isa = PBXBuildFile; fileRef = A26157481E626A3900A7E5B9 /* bomb combo.plist */; };
-		A261574F1E626A3900A7E5B9 /* chaining.plist in Resources */ = {isa = PBXBuildFile; fileRef = A26157491E626A3900A7E5B9 /* chaining.plist */; };
-		A26157501E626A3900A7E5B9 /* full-random-easy.plist in Resources */ = {isa = PBXBuildFile; fileRef = A261574A1E626A3900A7E5B9 /* full-random-easy.plist */; };
-		A26157511E626A3900A7E5B9 /* mission impossible.plist in Resources */ = {isa = PBXBuildFile; fileRef = A261574B1E626A3900A7E5B9 /* mission impossible.plist */; };
-		A26157521E626A3900A7E5B9 /* power of lightning.plist in Resources */ = {isa = PBXBuildFile; fileRef = A261574C1E626A3900A7E5B9 /* power of lightning.plist */; };
-		A26157531E626A3900A7E5B9 /* star and falling.plist in Resources */ = {isa = PBXBuildFile; fileRef = A261574D1E626A3900A7E5B9 /* star and falling.plist */; };
-		A26157561E626CAE00A7E5B9 /* bgm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A26157551E626CAE00A7E5B9 /* bgm.mp3 */; };
-		A261575C1E62772600A7E5B9 /* bomb.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A26157581E62772600A7E5B9 /* bomb.mp3 */; };
-		A261575E1E62772600A7E5B9 /* same-color.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A261575A1E62772600A7E5B9 /* same-color.mp3 */; };
-		A26157611E62825600A7E5B9 /* shoot.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A26157601E62825600A7E5B9 /* shoot.mp3 */; };
-		A26157641E62842300A7E5B9 /* lightning.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A26157621E62842300A7E5B9 /* lightning.mp3 */; };
-		A26157651E62842300A7E5B9 /* lightning2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A26157631E62842300A7E5B9 /* lightning2.mp3 */; };
-		A2E349101E5AB7B5008FECD7 /* BBSagaDesignController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E348FD1E5AB7B4008FECD7 /* BBSagaDesignController.swift */; };
-		A2E349111E5AB7B5008FECD7 /* Bubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E348FE1E5AB7B4008FECD7 /* Bubble.swift */; };
-		A2E349121E5AB7B5008FECD7 /* BubbleGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E348FF1E5AB7B4008FECD7 /* BubbleGrid.swift */; };
-		A2E349131E5AB7B5008FECD7 /* BubbleGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E349001E5AB7B4008FECD7 /* BubbleGridCell.swift */; };
-		A2E349141E5AB7B5008FECD7 /* BubbleGridCellFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E349011E5AB7B4008FECD7 /* BubbleGridCellFlowLayout.swift */; };
-		A2E349151E5AB7B5008FECD7 /* BubbleGridDesigner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E349021E5AB7B5008FECD7 /* BubbleGridDesigner.swift */; };
-		A2E349161E5AB7B5008FECD7 /* BubbleGridController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E349031E5AB7B5008FECD7 /* BubbleGridController.swift */; };
-		A2E349171E5AB7B5008FECD7 /* BubbleGridForDesignController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E349041E5AB7B5008FECD7 /* BubbleGridForDesignController.swift */; };
-		A2E349181E5AB7B5008FECD7 /* ColorBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E349051E5AB7B5008FECD7 /* ColorBubble.swift */; };
-		A2E3491C1E5AB7B5008FECD7 /* PowerBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E349091E5AB7B5008FECD7 /* PowerBubble.swift */; };
-		A2E3491D1E5AB7B5008FECD7 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E3490A1E5AB7B5008FECD7 /* Setting.swift */; };
-		A2E3491E1E5AB7B5008FECD7 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E3490B1E5AB7B5008FECD7 /* StorageManager.swift */; };
-		A2E3491F1E5AB7B5008FECD7 /* StoragePanelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E3490C1E5AB7B5008FECD7 /* StoragePanelCell.swift */; };
-		A2E349201E5AB7B5008FECD7 /* StoragePanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E3490D1E5AB7B5008FECD7 /* StoragePanelController.swift */; };
 		A2E349471E5ABB28008FECD7 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E349291E5ABB28008FECD7 /* ArrayExtension.swift */; };
-		A2E3494E1E5ABB28008FECD7 /* BubbleGridControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E349301E5ABB28008FECD7 /* BubbleGridControllerExtension.swift */; };
-		A2E349501E5ABB28008FECD7 /* BubbleGridExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E349321E5ABB28008FECD7 /* BubbleGridExtension.swift */; };
-		A2E349511E5ABB28008FECD7 /* BubbleProjectile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E349331E5ABB28008FECD7 /* BubbleProjectile.swift */; };
 		A2E349521E5ABB28008FECD7 /* CGVectorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E349341E5ABB28008FECD7 /* CGVectorExtension.swift */; };
 		A2E349531E5ABB28008FECD7 /* CollisionDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E349351E5ABB28008FECD7 /* CollisionDetector.swift */; };
 		A2E349561E5ABB28008FECD7 /* EventDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E349381E5ABB28008FECD7 /* EventDetector.swift */; };
-		A2E349571E5ABB28008FECD7 /* GameEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E349391E5ABB28008FECD7 /* GameEngine.swift */; };
-		A2E349581E5ABB28008FECD7 /* GamePlayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E3493A1E5ABB28008FECD7 /* GamePlayController.swift */; };
 		A2E3495A1E5ABB28008FECD7 /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E3493C1E5ABB28008FECD7 /* IntExtension.swift */; };
-		A2E3495C1E5ABB28008FECD7 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E3493E1E5ABB28008FECD7 /* Renderer.swift */; };
 		A2E3495D1E5ABB28008FECD7 /* RigidBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E3493F1E5ABB28008FECD7 /* RigidBody.swift */; };
 		A2E349601E5ABB28008FECD7 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E349421E5ABB28008FECD7 /* Shape.swift */; };
 		A2E349611E5ABB28008FECD7 /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E349431E5ABB28008FECD7 /* World.swift */; };
-		A2E349671E5AC942008FECD7 /* PlayGridCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E349661E5AC942008FECD7 /* PlayGridCollectionController.swift */; };
-		A2E349691E5AC957008FECD7 /* PlayGridSceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E349681E5AC957008FECD7 /* PlayGridSceneController.swift */; };
-		A2E3496B1E5ACA80008FECD7 /* PlayGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E3496A1E5ACA80008FECD7 /* PlayGridCell.swift */; };
-		A2F7CF661E514ADC00EADAA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7CF651E514ADC00EADAA1 /* AppDelegate.swift */; };
-		A2F7CF681E514ADC00EADAA1 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7CF671E514ADC00EADAA1 /* MenuViewController.swift */; };
-		A2F7CF6B1E514ADC00EADAA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2F7CF691E514ADC00EADAA1 /* Main.storyboard */; };
-		A2F7CF6D1E514ADC00EADAA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2F7CF6C1E514ADC00EADAA1 /* Assets.xcassets */; };
-		A2F7CF701E514ADC00EADAA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2F7CF6E1E514ADC00EADAA1 /* LaunchScreen.storyboard */; };
-		A2F7CF7B1E514ADD00EADAA1 /* BBSagaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7CF7A1E514ADD00EADAA1 /* BBSagaTests.swift */; };
-		A2F7CF861E514ADD00EADAA1 /* BBSagaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7CF851E514ADD00EADAA1 /* BBSagaUITests.swift */; };
-		A2F7CFA11E52252B00EADAA1 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7CFA01E52252B00EADAA1 /* AudioPlayer.swift */; };
-		A2F7CFA71E5441EA00EADAA1 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7CFA61E5441EA00EADAA1 /* Animation.swift */; };
-		A2F7CFA91E54420800EADAA1 /* DropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7CFA81E54420800EADAA1 /* DropView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,67 +35,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A261572C1E61B57000A7E5B9 /* EndingSceneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndingSceneController.swift; sourceTree = "<group>"; };
-		A26157481E626A3900A7E5B9 /* bomb combo.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "bomb combo.plist"; sourceTree = "<group>"; };
-		A26157491E626A3900A7E5B9 /* chaining.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = chaining.plist; sourceTree = "<group>"; };
-		A261574A1E626A3900A7E5B9 /* full-random-easy.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "full-random-easy.plist"; sourceTree = "<group>"; };
-		A261574B1E626A3900A7E5B9 /* mission impossible.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "mission impossible.plist"; sourceTree = "<group>"; };
-		A261574C1E626A3900A7E5B9 /* power of lightning.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "power of lightning.plist"; sourceTree = "<group>"; };
-		A261574D1E626A3900A7E5B9 /* star and falling.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "star and falling.plist"; sourceTree = "<group>"; };
-		A26157551E626CAE00A7E5B9 /* bgm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgm.mp3; sourceTree = "<group>"; };
-		A26157581E62772600A7E5B9 /* bomb.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bomb.mp3; sourceTree = "<group>"; };
-		A261575A1E62772600A7E5B9 /* same-color.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "same-color.mp3"; sourceTree = "<group>"; };
-		A26157601E62825600A7E5B9 /* shoot.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = shoot.mp3; sourceTree = "<group>"; };
-		A26157621E62842300A7E5B9 /* lightning.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lightning.mp3; sourceTree = "<group>"; };
-		A26157631E62842300A7E5B9 /* lightning2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lightning2.mp3; sourceTree = "<group>"; };
-		A2E348FD1E5AB7B4008FECD7 /* BBSagaDesignController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BBSagaDesignController.swift; path = ps3/BBSagaDesignController.swift; sourceTree = "<group>"; };
-		A2E348FE1E5AB7B4008FECD7 /* Bubble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Bubble.swift; path = ps3/Bubble.swift; sourceTree = "<group>"; };
-		A2E348FF1E5AB7B4008FECD7 /* BubbleGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BubbleGrid.swift; path = ps3/BubbleGrid.swift; sourceTree = "<group>"; };
-		A2E349001E5AB7B4008FECD7 /* BubbleGridCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BubbleGridCell.swift; path = ps3/BubbleGridCell.swift; sourceTree = "<group>"; };
-		A2E349011E5AB7B4008FECD7 /* BubbleGridCellFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BubbleGridCellFlowLayout.swift; path = ps3/BubbleGridCellFlowLayout.swift; sourceTree = "<group>"; };
-		A2E349021E5AB7B5008FECD7 /* BubbleGridDesigner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BubbleGridDesigner.swift; path = ps3/BubbleGridDesigner.swift; sourceTree = "<group>"; };
-		A2E349031E5AB7B5008FECD7 /* BubbleGridController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BubbleGridController.swift; path = ps3/BubbleGridController.swift; sourceTree = "<group>"; };
-		A2E349041E5AB7B5008FECD7 /* BubbleGridForDesignController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BubbleGridForDesignController.swift; path = ps3/BubbleGridForDesignController.swift; sourceTree = "<group>"; };
-		A2E349051E5AB7B5008FECD7 /* ColorBubble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorBubble.swift; path = ps3/ColorBubble.swift; sourceTree = "<group>"; };
-		A2E349091E5AB7B5008FECD7 /* PowerBubble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PowerBubble.swift; path = ps3/PowerBubble.swift; sourceTree = "<group>"; };
-		A2E3490A1E5AB7B5008FECD7 /* Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Setting.swift; path = ps3/Setting.swift; sourceTree = "<group>"; };
-		A2E3490B1E5AB7B5008FECD7 /* StorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StorageManager.swift; path = ps3/StorageManager.swift; sourceTree = "<group>"; };
-		A2E3490C1E5AB7B5008FECD7 /* StoragePanelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoragePanelCell.swift; path = ps3/StoragePanelCell.swift; sourceTree = "<group>"; };
-		A2E3490D1E5AB7B5008FECD7 /* StoragePanelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoragePanelController.swift; path = ps3/StoragePanelController.swift; sourceTree = "<group>"; };
 		A2E349291E5ABB28008FECD7 /* ArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArrayExtension.swift; path = ps4/ArrayExtension.swift; sourceTree = "<group>"; };
-		A2E349301E5ABB28008FECD7 /* BubbleGridControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BubbleGridControllerExtension.swift; path = ps4/BubbleGridControllerExtension.swift; sourceTree = "<group>"; };
-		A2E349321E5ABB28008FECD7 /* BubbleGridExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BubbleGridExtension.swift; path = ps4/BubbleGridExtension.swift; sourceTree = "<group>"; };
-		A2E349331E5ABB28008FECD7 /* BubbleProjectile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BubbleProjectile.swift; path = ps4/BubbleProjectile.swift; sourceTree = "<group>"; };
 		A2E349341E5ABB28008FECD7 /* CGVectorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CGVectorExtension.swift; path = ps4/CGVectorExtension.swift; sourceTree = "<group>"; };
 		A2E349351E5ABB28008FECD7 /* CollisionDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollisionDetector.swift; path = ps4/CollisionDetector.swift; sourceTree = "<group>"; };
 		A2E349381E5ABB28008FECD7 /* EventDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventDetector.swift; path = ps4/EventDetector.swift; sourceTree = "<group>"; };
-		A2E349391E5ABB28008FECD7 /* GameEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameEngine.swift; path = ps4/GameEngine.swift; sourceTree = "<group>"; };
-		A2E3493A1E5ABB28008FECD7 /* GamePlayController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GamePlayController.swift; path = ps4/GamePlayController.swift; sourceTree = "<group>"; };
 		A2E3493C1E5ABB28008FECD7 /* IntExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IntExtension.swift; path = ps4/IntExtension.swift; sourceTree = "<group>"; };
-		A2E3493E1E5ABB28008FECD7 /* Renderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Renderer.swift; path = ps4/Renderer.swift; sourceTree = "<group>"; };
 		A2E3493F1E5ABB28008FECD7 /* RigidBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RigidBody.swift; path = ps4/RigidBody.swift; sourceTree = "<group>"; };
 		A2E349421E5ABB28008FECD7 /* Shape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Shape.swift; path = ps4/Shape.swift; sourceTree = "<group>"; };
 		A2E349431E5ABB28008FECD7 /* World.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = World.swift; path = ps4/World.swift; sourceTree = "<group>"; };
-		A2E349661E5AC942008FECD7 /* PlayGridCollectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayGridCollectionController.swift; sourceTree = "<group>"; };
-		A2E349681E5AC957008FECD7 /* PlayGridSceneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayGridSceneController.swift; sourceTree = "<group>"; };
-		A2E3496A1E5ACA80008FECD7 /* PlayGridCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayGridCell.swift; sourceTree = "<group>"; };
-		A2F7CF621E514ADC00EADAA1 /* BBSaga.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BBSaga.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A2F7CF651E514ADC00EADAA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A2F7CF671E514ADC00EADAA1 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		A2F7CF6A1E514ADC00EADAA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A2F7CF6C1E514ADC00EADAA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A2F7CF6F1E514ADC00EADAA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		A2F7CF711E514ADC00EADAA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A2F7CF761E514ADD00EADAA1 /* BBSagaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BBSagaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A2F7CF7A1E514ADD00EADAA1 /* BBSagaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBSagaTests.swift; sourceTree = "<group>"; };
-		A2F7CF7C1E514ADD00EADAA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A2F7CF811E514ADD00EADAA1 /* BBSagaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BBSagaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A2F7CF851E514ADD00EADAA1 /* BBSagaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBSagaUITests.swift; sourceTree = "<group>"; };
-		A2F7CF871E514ADD00EADAA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A2F7CF9A1E521B5400EADAA1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		A2F7CFA01E52252B00EADAA1 /* AudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
-		A2F7CFA61E5441EA00EADAA1 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
-		A2F7CFA81E54420800EADAA1 /* DropView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropView.swift; sourceTree = "<group>"; };
+		A2F7CF621E514ADC00EADAA1 /* BBSaga.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = BBSaga.app; path = "/Users/luoyuyang/Desktop/5/BBSaga/build/Debug-iphoneos/BBSaga.app"; sourceTree = "<absolute>"; };
+		A2F7CF761E514ADD00EADAA1 /* BBSagaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = BBSagaTests.xctest; path = "/Users/luoyuyang/Desktop/5/BBSaga/build/Debug-iphoneos/BBSagaTests.xctest"; sourceTree = "<absolute>"; };
+		A2F7CF811E514ADD00EADAA1 /* BBSagaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = BBSagaUITests.xctest; path = "/Users/luoyuyang/Desktop/5/BBSaga/build/Debug-iphoneos/BBSagaUITests.xctest"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,70 +73,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A2492C891E5BD5FD001A3042 /* bubbleGridForDesign */ = {
-			isa = PBXGroup;
-			children = (
-				A2492C8A1E5BD65F001A3042 /* models */,
-				A2492C8B1E5BD665001A3042 /* views */,
-				A2492C8C1E5BD66D001A3042 /* controllers */,
-			);
-			name = bubbleGridForDesign;
-			sourceTree = "<group>";
-		};
-		A2492C8A1E5BD65F001A3042 /* models */ = {
-			isa = PBXGroup;
-			children = (
-				A2E348FE1E5AB7B4008FECD7 /* Bubble.swift */,
-				A2E348FF1E5AB7B4008FECD7 /* BubbleGrid.swift */,
-				A2E349051E5AB7B5008FECD7 /* ColorBubble.swift */,
-				A2E349091E5AB7B5008FECD7 /* PowerBubble.swift */,
-			);
-			name = models;
-			sourceTree = "<group>";
-		};
-		A2492C8B1E5BD665001A3042 /* views */ = {
-			isa = PBXGroup;
-			children = (
-				A2E349001E5AB7B4008FECD7 /* BubbleGridCell.swift */,
-				A2E349011E5AB7B4008FECD7 /* BubbleGridCellFlowLayout.swift */,
-			);
-			name = views;
-			sourceTree = "<group>";
-		};
-		A2492C8C1E5BD66D001A3042 /* controllers */ = {
-			isa = PBXGroup;
-			children = (
-				A2E349031E5AB7B5008FECD7 /* BubbleGridController.swift */,
-				A2E349041E5AB7B5008FECD7 /* BubbleGridForDesignController.swift */,
-			);
-			name = controllers;
-			sourceTree = "<group>";
-		};
-		A26157541E626A3B00A7E5B9 /* preloaded levels */ = {
-			isa = PBXGroup;
-			children = (
-				A26157481E626A3900A7E5B9 /* bomb combo.plist */,
-				A26157491E626A3900A7E5B9 /* chaining.plist */,
-				A261574D1E626A3900A7E5B9 /* star and falling.plist */,
-				A261574A1E626A3900A7E5B9 /* full-random-easy.plist */,
-				A261574B1E626A3900A7E5B9 /* mission impossible.plist */,
-				A261574C1E626A3900A7E5B9 /* power of lightning.plist */,
-			);
-			name = "preloaded levels";
-			sourceTree = "<group>";
-		};
-		A26157571E62770F00A7E5B9 /* sound effects */ = {
-			isa = PBXGroup;
-			children = (
-				A26157581E62772600A7E5B9 /* bomb.mp3 */,
-				A26157621E62842300A7E5B9 /* lightning.mp3 */,
-				A26157631E62842300A7E5B9 /* lightning2.mp3 */,
-				A26157601E62825600A7E5B9 /* shoot.mp3 */,
-				A261575A1E62772600A7E5B9 /* same-color.mp3 */,
-			);
-			name = "sound effects";
-			sourceTree = "<group>";
-		};
 		A2E349621E5ABC23008FECD7 /* supporting extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,14 +81,6 @@
 				A2E3493C1E5ABB28008FECD7 /* IntExtension.swift */,
 			);
 			name = "supporting extensions";
-			sourceTree = "<group>";
-		};
-		A2E349631E5ABC3E008FECD7 /* renderer */ = {
-			isa = PBXGroup;
-			children = (
-				A2E3493E1E5ABB28008FECD7 /* Renderer.swift */,
-			);
-			name = renderer;
 			sourceTree = "<group>";
 		};
 		A2E349641E5ABC60008FECD7 /* physicsEgin */ = {
@@ -263,153 +95,21 @@
 			name = physicsEgin;
 			sourceTree = "<group>";
 		};
-		A2E349651E5AC8BA008FECD7 /* PlaySelector */ = {
-			isa = PBXGroup;
-			children = (
-				A2E349681E5AC957008FECD7 /* PlayGridSceneController.swift */,
-				A2E349661E5AC942008FECD7 /* PlayGridCollectionController.swift */,
-				A2E3496A1E5ACA80008FECD7 /* PlayGridCell.swift */,
-			);
-			name = PlaySelector;
-			sourceTree = "<group>";
-		};
-		A2E3496C1E5B09CD008FECD7 /* storagePanel */ = {
-			isa = PBXGroup;
-			children = (
-				A2E3490B1E5AB7B5008FECD7 /* StorageManager.swift */,
-				A2E3490C1E5AB7B5008FECD7 /* StoragePanelCell.swift */,
-				A2E3490D1E5AB7B5008FECD7 /* StoragePanelController.swift */,
-			);
-			name = storagePanel;
-			sourceTree = "<group>";
-		};
 		A2F7CF591E514ADC00EADAA1 = {
 			isa = PBXGroup;
 			children = (
-				A26157541E626A3B00A7E5B9 /* preloaded levels */,
-				A2F7CF641E514ADC00EADAA1 /* BBSaga */,
-				A2F7CF791E514ADD00EADAA1 /* BBSagaTests */,
-				A2F7CF841E514ADD00EADAA1 /* BBSagaUITests */,
-				A2F7CF631E514ADC00EADAA1 /* Products */,
-				A2F7CF991E521B5400EADAA1 /* Frameworks */,
+				A2F7CF641E514ADC00EADAA1 /* PhysicsEgin */,
 			);
 			sourceTree = "<group>";
 		};
-		A2F7CF631E514ADC00EADAA1 /* Products */ = {
+		A2F7CF641E514ADC00EADAA1 /* PhysicsEgin */ = {
 			isa = PBXGroup;
 			children = (
-				A2F7CF621E514ADC00EADAA1 /* BBSaga.app */,
-				A2F7CF761E514ADD00EADAA1 /* BBSagaTests.xctest */,
-				A2F7CF811E514ADD00EADAA1 /* BBSagaUITests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		A2F7CF641E514ADC00EADAA1 /* BBSaga */ = {
-			isa = PBXGroup;
-			children = (
-				A2E3490A1E5AB7B5008FECD7 /* Setting.swift */,
-				A2F7CFA51E54417F00EADAA1 /* Animation */,
-				A2F7CF9F1E52251400EADAA1 /* AudioPlayer */,
-				A2F7CF941E5152EE00EADAA1 /* Designer */,
-				A2E349651E5AC8BA008FECD7 /* PlaySelector */,
-				A2F7CF951E5152F500EADAA1 /* Player */,
-				A2F7CF671E514ADC00EADAA1 /* MenuViewController.swift */,
-				A2F7CF691E514ADC00EADAA1 /* Main.storyboard */,
-				A2F7CF6C1E514ADC00EADAA1 /* Assets.xcassets */,
-				A2F7CF931E514B4600EADAA1 /* supporting files */,
-			);
-			path = BBSaga;
-			sourceTree = "<group>";
-		};
-		A2F7CF791E514ADD00EADAA1 /* BBSagaTests */ = {
-			isa = PBXGroup;
-			children = (
-				A2F7CF7A1E514ADD00EADAA1 /* BBSagaTests.swift */,
-				A2F7CF7C1E514ADD00EADAA1 /* Info.plist */,
-			);
-			path = BBSagaTests;
-			sourceTree = "<group>";
-		};
-		A2F7CF841E514ADD00EADAA1 /* BBSagaUITests */ = {
-			isa = PBXGroup;
-			children = (
-				A2F7CF851E514ADD00EADAA1 /* BBSagaUITests.swift */,
-				A2F7CF871E514ADD00EADAA1 /* Info.plist */,
-			);
-			path = BBSagaUITests;
-			sourceTree = "<group>";
-		};
-		A2F7CF931E514B4600EADAA1 /* supporting files */ = {
-			isa = PBXGroup;
-			children = (
-				A2F7CF651E514ADC00EADAA1 /* AppDelegate.swift */,
-				A2F7CF6E1E514ADC00EADAA1 /* LaunchScreen.storyboard */,
-				A2F7CF711E514ADC00EADAA1 /* Info.plist */,
-			);
-			name = "supporting files";
-			sourceTree = "<group>";
-		};
-		A2F7CF941E5152EE00EADAA1 /* Designer */ = {
-			isa = PBXGroup;
-			children = (
-				A2E349021E5AB7B5008FECD7 /* BubbleGridDesigner.swift */,
-				A2E348FD1E5AB7B4008FECD7 /* BBSagaDesignController.swift */,
-				A2492C891E5BD5FD001A3042 /* bubbleGridForDesign */,
-				A2E3496C1E5B09CD008FECD7 /* storagePanel */,
-			);
-			name = Designer;
-			sourceTree = "<group>";
-		};
-		A2F7CF951E5152F500EADAA1 /* Player */ = {
-			isa = PBXGroup;
-			children = (
-				A2E349391E5ABB28008FECD7 /* GameEngine.swift */,
-				A2E349331E5ABB28008FECD7 /* BubbleProjectile.swift */,
-				A2E349321E5ABB28008FECD7 /* BubbleGridExtension.swift */,
-				A2E349301E5ABB28008FECD7 /* BubbleGridControllerExtension.swift */,
-				A261572C1E61B57000A7E5B9 /* EndingSceneController.swift */,
-				A2E3493A1E5ABB28008FECD7 /* GamePlayController.swift */,
-				A2E349631E5ABC3E008FECD7 /* renderer */,
 				A2E349641E5ABC60008FECD7 /* physicsEgin */,
 				A2E349621E5ABC23008FECD7 /* supporting extensions */,
 			);
-			name = Player;
-			sourceTree = "<group>";
-		};
-		A2F7CF961E52102000EADAA1 /* audio */ = {
-			isa = PBXGroup;
-			children = (
-				A26157571E62770F00A7E5B9 /* sound effects */,
-				A26157551E626CAE00A7E5B9 /* bgm.mp3 */,
-			);
-			name = audio;
-			sourceTree = "<group>";
-		};
-		A2F7CF991E521B5400EADAA1 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A2F7CF9A1E521B5400EADAA1 /* AVFoundation.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		A2F7CF9F1E52251400EADAA1 /* AudioPlayer */ = {
-			isa = PBXGroup;
-			children = (
-				A2F7CFA01E52252B00EADAA1 /* AudioPlayer.swift */,
-				A2F7CF961E52102000EADAA1 /* audio */,
-			);
-			name = AudioPlayer;
-			sourceTree = "<group>";
-		};
-		A2F7CFA51E54417F00EADAA1 /* Animation */ = {
-			isa = PBXGroup;
-			children = (
-				A2F7CFA61E5441EA00EADAA1 /* Animation.swift */,
-				A2F7CFA81E54420800EADAA1 /* DropView.swift */,
-			);
-			name = Animation;
+			name = PhysicsEgin;
+			path = BBSaga;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -506,7 +206,7 @@
 				Base,
 			);
 			mainGroup = A2F7CF591E514ADC00EADAA1;
-			productRefGroup = A2F7CF631E514ADC00EADAA1 /* Products */;
+			productRefGroup = A2F7CF591E514ADC00EADAA1;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -522,21 +222,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A26157531E626A3900A7E5B9 /* star and falling.plist in Resources */,
-				A26157651E62842300A7E5B9 /* lightning2.mp3 in Resources */,
-				A2F7CF701E514ADC00EADAA1 /* LaunchScreen.storyboard in Resources */,
-				A261574F1E626A3900A7E5B9 /* chaining.plist in Resources */,
-				A261574E1E626A3900A7E5B9 /* bomb combo.plist in Resources */,
-				A26157511E626A3900A7E5B9 /* mission impossible.plist in Resources */,
-				A261575C1E62772600A7E5B9 /* bomb.mp3 in Resources */,
-				A26157641E62842300A7E5B9 /* lightning.mp3 in Resources */,
-				A2F7CF6D1E514ADC00EADAA1 /* Assets.xcassets in Resources */,
-				A26157611E62825600A7E5B9 /* shoot.mp3 in Resources */,
-				A26157521E626A3900A7E5B9 /* power of lightning.plist in Resources */,
-				A26157501E626A3900A7E5B9 /* full-random-easy.plist in Resources */,
-				A261575E1E62772600A7E5B9 /* same-color.mp3 in Resources */,
-				A2F7CF6B1E514ADC00EADAA1 /* Main.storyboard in Resources */,
-				A26157561E626CAE00A7E5B9 /* bgm.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -561,43 +246,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2E349151E5AB7B5008FECD7 /* BubbleGridDesigner.swift in Sources */,
 				A2E349521E5ABB28008FECD7 /* CGVectorExtension.swift in Sources */,
-				A2E349161E5AB7B5008FECD7 /* BubbleGridController.swift in Sources */,
 				A2E3495A1E5ABB28008FECD7 /* IntExtension.swift in Sources */,
-				A2E349141E5AB7B5008FECD7 /* BubbleGridCellFlowLayout.swift in Sources */,
-				A2E349111E5AB7B5008FECD7 /* Bubble.swift in Sources */,
-				A2E3491C1E5AB7B5008FECD7 /* PowerBubble.swift in Sources */,
-				A2E3491D1E5AB7B5008FECD7 /* Setting.swift in Sources */,
-				A2E349201E5AB7B5008FECD7 /* StoragePanelController.swift in Sources */,
-				A2E3496B1E5ACA80008FECD7 /* PlayGridCell.swift in Sources */,
 				A2E349531E5ABB28008FECD7 /* CollisionDetector.swift in Sources */,
 				A2E349611E5ABB28008FECD7 /* World.swift in Sources */,
-				A2E349511E5ABB28008FECD7 /* BubbleProjectile.swift in Sources */,
-				A2E349101E5AB7B5008FECD7 /* BBSagaDesignController.swift in Sources */,
-				A2E349581E5ABB28008FECD7 /* GamePlayController.swift in Sources */,
-				A2E3494E1E5ABB28008FECD7 /* BubbleGridControllerExtension.swift in Sources */,
-				A2F7CF681E514ADC00EADAA1 /* MenuViewController.swift in Sources */,
-				A2E349181E5AB7B5008FECD7 /* ColorBubble.swift in Sources */,
-				A2E3495C1E5ABB28008FECD7 /* Renderer.swift in Sources */,
 				A2E3495D1E5ABB28008FECD7 /* RigidBody.swift in Sources */,
-				A2F7CF661E514ADC00EADAA1 /* AppDelegate.swift in Sources */,
-				A2F7CFA71E5441EA00EADAA1 /* Animation.swift in Sources */,
-				A2E349121E5AB7B5008FECD7 /* BubbleGrid.swift in Sources */,
 				A2E349601E5ABB28008FECD7 /* Shape.swift in Sources */,
-				A2F7CFA11E52252B00EADAA1 /* AudioPlayer.swift in Sources */,
-				A2E349131E5AB7B5008FECD7 /* BubbleGridCell.swift in Sources */,
-				A2E349171E5AB7B5008FECD7 /* BubbleGridForDesignController.swift in Sources */,
-				A261572D1E61B57000A7E5B9 /* EndingSceneController.swift in Sources */,
-				A2F7CFA91E54420800EADAA1 /* DropView.swift in Sources */,
-				A2E3491F1E5AB7B5008FECD7 /* StoragePanelCell.swift in Sources */,
-				A2E349571E5ABB28008FECD7 /* GameEngine.swift in Sources */,
-				A2E3491E1E5AB7B5008FECD7 /* StorageManager.swift in Sources */,
 				A2E349561E5ABB28008FECD7 /* EventDetector.swift in Sources */,
 				A2E349471E5ABB28008FECD7 /* ArrayExtension.swift in Sources */,
-				A2E349671E5AC942008FECD7 /* PlayGridCollectionController.swift in Sources */,
-				A2E349691E5AC957008FECD7 /* PlayGridSceneController.swift in Sources */,
-				A2E349501E5ABB28008FECD7 /* BubbleGridExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -605,7 +261,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2F7CF7B1E514ADD00EADAA1 /* BBSagaTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,7 +268,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2F7CF861E514ADD00EADAA1 /* BBSagaUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -631,25 +285,6 @@
 			targetProxy = A2F7CF821E514ADD00EADAA1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		A2F7CF691E514ADC00EADAA1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A2F7CF6A1E514ADC00EADAA1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		A2F7CF6E1E514ADC00EADAA1 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A2F7CF6F1E514ADC00EADAA1 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		A2F7CF881E514ADD00EADAA1 /* Debug */ = {
