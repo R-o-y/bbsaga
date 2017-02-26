@@ -9,11 +9,11 @@
 import Foundation
 import UIKit
 
-protocol Shape {
+public protocol Shape {
     func overlap(at myPosition: CGVector, with shape: Shape, at position: CGVector) -> Bool
 }
 
-class CircleShape: Shape {
+public class CircleShape: Shape {
     private(set) var offset: CGVector
     private(set) var radius: CGFloat
 
@@ -38,7 +38,7 @@ class CircleShape: Shape {
     ///                 the position of the center of the other shape will be position + shape.offset
     /// - Returns: true if this circle is overlapped with the other circle or segment, false if not
     ///             if the other shape is not a circle, return false
-    func overlap(at myPosition: CGVector, with shape: Shape, at itsPosition: CGVector) -> Bool {
+    public func overlap(at myPosition: CGVector, with shape: Shape, at itsPosition: CGVector) -> Bool {
         let center = myPosition + self.offset
         if let shape = shape as? CircleShape {
             let center2 = itsPosition + shape.offset
@@ -68,7 +68,7 @@ class CircleShape: Shape {
     }
 }
 
-class SegmentShape: Shape {
+public class SegmentShape: Shape {
     private(set) var p1: CGVector  // in local coordinate
     private(set) var p2: CGVector
     
@@ -78,7 +78,7 @@ class SegmentShape: Shape {
     }
     
     /// currently, only segment-circle overlaps is supported
-    func overlap(at myPosition: CGVector, with shape: Shape, at position: CGVector) -> Bool {
+    public func overlap(at myPosition: CGVector, with shape: Shape, at position: CGVector) -> Bool {
         if let shape = shape as? CircleShape {
             return shape.overlap(at: position, with: self, at: myPosition)
         }

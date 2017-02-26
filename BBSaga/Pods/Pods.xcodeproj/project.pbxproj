@@ -34,13 +34,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0CA4ED89B1D1F88A8524719D0E06AFE9 /* PhysicsEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PhysicsEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0CA4ED89B1D1F88A8524719D0E06AFE9 /* PhysicsEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PhysicsEngine.framework; path = PhysicsEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DC06EDB7F02D30A4568A40BDCC4BD3C /* RigidBody.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RigidBody.swift; path = BBSaga/BBSaga/ps4/RigidBody.swift; sourceTree = "<group>"; };
 		1DFBBDC51B8F8C3C616EFC5E2E1736A3 /* CGVectorExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CGVectorExtension.swift; path = BBSaga/BBSaga/ps4/CGVectorExtension.swift; sourceTree = "<group>"; };
 		2D5F3484B1492DE64EE9EA93AE4A76F6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A0EC235A46F54F1883EC3C5D8AC59F3 /* ArrayExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ArrayExtension.swift; path = BBSaga/BBSaga/ps4/ArrayExtension.swift; sourceTree = "<group>"; };
 		4C5115CCCBEFCA02AC1B0DAD66B17D5E /* Pods-BBSaga.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BBSaga.debug.xcconfig"; sourceTree = "<group>"; };
-		4F55E7CE004B95AB8EA8C3E710560198 /* Pods_BBSaga.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BBSaga.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F55E7CE004B95AB8EA8C3E710560198 /* Pods_BBSaga.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BBSaga.framework; path = "Pods-BBSaga.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5026F8CD0E3EBFF2984BA4B993D38E27 /* Pods-BBSaga-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BBSaga-dummy.m"; sourceTree = "<group>"; };
 		587716612A3BA061A38B9102481FDBA4 /* Pods-BBSaga-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BBSaga-resources.sh"; sourceTree = "<group>"; };
 		60583EF51027C9DDA5E77822E2D94969 /* Pods-BBSaga-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BBSaga-frameworks.sh"; sourceTree = "<group>"; };
@@ -48,8 +48,8 @@
 		6C2E747FB95343A1081B28BB375477A5 /* IntExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IntExtension.swift; path = BBSaga/BBSaga/ps4/IntExtension.swift; sourceTree = "<group>"; };
 		83296C1E18120D26851673101D65EF93 /* PhysicsEngine-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PhysicsEngine-umbrella.h"; sourceTree = "<group>"; };
 		910426344B5F44518D9A53E3472D8F0D /* PhysicsEngine-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PhysicsEngine-dummy.m"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9ADA98EC5AE70242EAB8B181742028FF /* Pods-BBSaga.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-BBSaga.modulemap"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9ADA98EC5AE70242EAB8B181742028FF /* Pods-BBSaga.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-BBSaga.modulemap"; sourceTree = "<group>"; };
 		9B948A01E8917CC266A59A3461DF7276 /* CollisionDetector.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CollisionDetector.swift; path = BBSaga/BBSaga/ps4/CollisionDetector.swift; sourceTree = "<group>"; };
 		9B9849BE6247D9FEAB6FBD6C93C79336 /* PhysicsEngine.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PhysicsEngine.xcconfig; sourceTree = "<group>"; };
 		A0DEF0EE16A0DEEFE738FEE65E8D3AD7 /* Pods-BBSaga-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BBSaga-umbrella.h"; sourceTree = "<group>"; };
@@ -58,7 +58,7 @@
 		ADAB20A8117158A8B6D2D8CB8FE85ABB /* Shape.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Shape.swift; path = BBSaga/BBSaga/ps4/Shape.swift; sourceTree = "<group>"; };
 		AE8F7401626CAA5070B8A4B3DF2ED300 /* World.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = World.swift; path = BBSaga/BBSaga/ps4/World.swift; sourceTree = "<group>"; };
 		BB58F1C91C06427B10472C70E86E2525 /* Pods-BBSaga.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BBSaga.release.xcconfig"; sourceTree = "<group>"; };
-		BC446046516F50CA439211E22AE1D4C3 /* PhysicsEngine.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = PhysicsEngine.modulemap; sourceTree = "<group>"; };
+		BC446046516F50CA439211E22AE1D4C3 /* PhysicsEngine.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = PhysicsEngine.modulemap; sourceTree = "<group>"; };
 		C210835F2FC2E36B7849624667AEC13E /* PhysicsEngine-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PhysicsEngine-prefix.pch"; sourceTree = "<group>"; };
 		C318AA9946FB42FB7A70C67CFBBC3BE3 /* EventDetector.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EventDetector.swift; path = BBSaga/BBSaga/ps4/EventDetector.swift; sourceTree = "<group>"; };
 		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -163,6 +163,7 @@
 				AE8F7401626CAA5070B8A4B3DF2ED300 /* World.swift */,
 				21E220FF9E7426814D0C91A74FCBB6F8 /* Support Files */,
 			);
+			name = PhysicsEngine;
 			path = PhysicsEngine;
 			sourceTree = "<group>";
 		};
@@ -323,7 +324,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/PhysicsEngine/PhysicsEngine-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/PhysicsEngine/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/PhysicsEngine/PhysicsEngine.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -474,7 +475,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/PhysicsEngine/PhysicsEngine-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/PhysicsEngine/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/PhysicsEngine/PhysicsEngine.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;

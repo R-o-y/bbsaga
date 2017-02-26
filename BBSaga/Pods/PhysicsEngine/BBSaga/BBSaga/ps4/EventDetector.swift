@@ -8,7 +8,7 @@
 
 import Foundation
 
-class EventDetector {
+public class EventDetector {
     private var targets: [RigidBody] = []
     private var callback: ((RigidBody) -> Void)
     private var detectEvent: ((RigidBody) -> Bool)
