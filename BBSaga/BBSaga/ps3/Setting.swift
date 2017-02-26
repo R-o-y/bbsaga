@@ -200,6 +200,7 @@ extension Setting {
     static let scorePerBubble = 100
     
     static let scoreIncreasingAnimationStepDelay = 0.028
+    static let endingSceneScoreIncreasingAnimationStepDelay = 0.012
     
     static let unwindSegueToDeignerIdentifier = "unwindSegueToDeigner"
     static let unwindSegueToSelectorIdentifier = "unwindSegueToSelector"
@@ -210,10 +211,10 @@ extension Setting {
     static let cannonAnchorPoint = CGPoint(x: 0.5, y: 0.8)
     static let cannonRotationDuration: TimeInterval = 0.08
     static let cannonAnimationDuration: TimeInterval = 0.38
-    static let cannonY = 138
-    static let cannonHeight = 180
-    static let cannonBaseWidth = 66
-    static let cannonWidth = 88
+    static let cannonY: CGFloat = 138
+    static let cannonHeight: CGFloat = 180
+    static let cannonBaseWidth: CGFloat = 66
+    static let cannonWidth: CGFloat = 88
     static let cannonAnchorRate: CGFloat = 0.3
     
     static let colorInGridPossibility = 0.8
