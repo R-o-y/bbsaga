@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class World {
+public class World {
     private(set) var rigidBodies: [RigidBody] = []
     private(set) var eventDetectors: [EventDetector] = []
     private(set) var collisionDetectors: [CollisionDetector] = []

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class CollisionDetector {
+public class CollisionDetector {
     private var circleShapeTargets: [RigidBody] = []
     private var segmentShapeTargets: [RigidBody] = []
     private var callback: ((RigidBody, RigidBody) -> Void)
