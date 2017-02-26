@@ -66,21 +66,55 @@ Please save your diagram as `class-diagram.png` in the root directory of the rep
 ### Problem 8: Testing
 
 > #### ------ Black-box testing ------
-> #### test menu scene: (for the following descriptiion, tapping a button means tapping its image, tapping the label will not trigger the event currently)
+> #### test menu scene: (for the following description, tapping a button means tapping its image, tapping the label will not trigger the event currently)
 > - *test Play button*
->   - expected: after tapping the Play button, the game should switch to grid-selection-scene (the scene to select a level to play) 
+>     - expected: after tapping the Play button, the game should switch to grid-selection-scene (the scene to select a level to play) 
 > - *test Design button*
->   - expected: after tapping the Design button, the game should switch to the level-design-scene
+>     - expected: after tapping the Design button, the game should switch to the level-design-scene
 > - *test Setting button*    
->   - expected: after tapping the Setting button, 
+>     - expected: after tapping the Setting button, 
 >   if the setting panel is hidden before tapping, then it will be displayed
 >   if the setting panel is displayed before tapping, then it will be hidden
 > - *test background-music-toggle-button in Setting panel*
->   - expected: tap the toggle button will toggle whether to play the background music, 
+>     - expected: tap the toggle button will toggle whether to play the background music, 
 >   when toggle off the background music, it will pause at that time point. When the background music is toggled on, it will continue from the time point it paused at last time.
 > - *test background music*
->   - expected: there should be background music played if the toggle button is in "on" state. the background music shoot loop infinitely.
+>     - expected: there should be background music played if the toggle button is in "on" state. the background music shoot loop infinitely.
 > #### test bubble grid designer scene:
+> - *test designer main view*
+>     - test changing mode by tapping bubble buttons or erase button
+>         - expected: tapping an highlighted button will switch to cycle mode, tapping an un-highlighted button will switch the the selected mode
+>     - test highlighting mode buttons by tapping it
+>         - expected: tapping an button will toggle the highlight state
+>     - test highlighting Save/Load button by tapping it
+>         - expected: tapping Save/Load button will toggle highlighting state of the one tapped, if the other one is also highlighted, un-highlight it
+>   - test displaying storage panel
+>       - expected: if one of the Save/Load button is highlighted, storage panel should be displayed
+>   - test cleaning all cells by tapping reset button
+>       - expected: after tapping the reset button
+> - *test bubble grid*
+>     - test tapping gesture in filling/erasing/cycling mode
+>         - expected: 
+>             in filling mode: fill the cell with the bubble of the selected type
+>             in erasing mode: the cell becomes empty
+>             in cycling mode: if the cell is empty before tapping, then it should remain empty; if not empty, should cycle through in the order the same as the one shown in the palette
+>     - test filling cells after choosing a color with pan gesture in filling mode
+>         - expected: the cells panning over will be filled with the bubble of the selected color
+>     - test erasing cells by long pressing in any mode
+>         - expected: the cell that is long pressed becomes empty
+> - test storage panel
+>     - test creating new empty plist file to be saved into. 
+>         - expected: the new level will be created and the grid inside it will be initialized to be an empty grid
+>         **Special cases**:
+>             - there should be no file created if the name given is empty
+>             - if a duplicate name is given, the new empty one will overwrite the existing one
+>             - the name only contains space, the empty file will still be created because it is a valid name
+>     - test deleting a level
+>         - expected: the file will be deleted from the storage and it will be removed from the storage panel
+>     - test saving the current bubble grid into a level
+>         - no matter whether the grid is empty, partially empty of full, it will be saved into the selected level when the level is selected by tapping
+>     - test loading a bubble grid in the storage panel:
+>         - expected: the loaded one will be displayed in the design grid and the original one in the grid will be discarded
 > #### test level selector scene:   
 > - *test displaying the correct grids*
 >   - expected: both the preloaded levels as well as the levels designed by players should be displayed. These levels are displayed in a table with 2 columns.
@@ -102,10 +136,60 @@ Please save your diagram as `class-diagram.png` in the root directory of the rep
 >     - expected: the color of the next bubble should be generated according to the rule specified in problem 2
 >   - case: when the number of projectile left is 0, that is, the pending bubble is the last projectile
 >     - expected: there is no next bubble. the place where the next bubble is shown should be empty
-> - *test shooting direction with tapping gesture*
-> - *test shooting direction with panning gesture*
-> - *test shooting sound effect*
-> - *test aiming beam*
+> - *test bubble launching with tap gesture*
+>     - expected: after the player tap a position, cannon will rotate toward that position, and bubble projectile will be shot towards that position. note if the angle of shooting is too small, that is, almost horizontal direction, then the bubble will not be shot
+> - *test bubble launching with pan gesture*
+>     - expected: when the player place the finger on the screen and move a bit to be recognized as a pan gesture, cannon will rotate to the position where the finger is placed and a aiming beam, which is a line of shurikens, will be displayed. After this, whenever the player move the finger, the direction of the cannon and the aiming beam will be updated. When the player lift off the finger, the aiming beam will disappear and the bubble projectile will be shot towards the position where the finger is lifted off. note if the angle of the shooting is too small, that is, almost horizontal direction, then the bubble will not be shot
+> - *test bubble movement*
+>     - expected: the bubble should move at a constant speed once it is launched
+>			                the direction of the velocity will be changed by collision 
+>			                but the magnitude will keep unchanged
+> - *test bubble collision with the side wall*
+>     - expected: that is, the vertical component of the velocity should keep unchanged 
+>			                while the horizontal component of the velocity should become the opposite
+> - *test bubble collision with the top wall*
+>     - expected: the bubble should stop moving and snap to the grid cells according to the rule specified
+> - *test bubble projectile collision with the bottom wall*
+>     - expected: the bubble should disappear and never appear again
+> - *test bubble projectile collision with the bubbles in the grid*
+>     - expected: 
+>         - collide with another bubble in the arena, not at the last row
+>            expected: the bubble should stop moving and snap to the grid cells according to the rule specified
+>        - collide with another bubble in the arena, but at the last row
+>            expected: the bubble should disappear, it will not snap to the grid cell
+> - *test projectile collision with the lightning obstacles*
+>     - expected: the bubble will be "destroyed" by the lightning obstacles
+> - *test the movement of the lightning obstacles*
+>     - expected: there are 3 obstacles shown, the 2 on the 2 sides are static and rotate with a certain angles upwards
+>     the other one is a dynamic one which keep moving left and right, its y position is randomly within a certain range
+> - *test bubble snapping to grid cells*
+>     - expected: **neighbor positions**: the vertices of the inscribed hexagon of the bubble
+>        - after collide with a bubble in the arena, not at the last row
+>            expected: the bubble should settle at the closest empty cells
+>       - after collide with a bubble in the arena, but at the last row
+>            expected: if there is an empty cell which can be reached by any of the neighbor positions
+>                the bubble will settle at that cell
+>                if not, the bubble will disappear, it will not snap to the grid cell
+>        - shoot towards the gap between the leftmost or right most grid bubble on the even row and the sidewall
+>            in this case, when the bubble projectile collides with grid bubble, its center may be in the gap, not in any cells, 
+>            expected: if there is an empty cell which can be reached by any of the neighbor positions
+>                the bubble will settle at that cell
+> - *test removing connected bubbles*
+>     - expected: if there are 3 connected bubbles of the same color, they will be removed
+> - *test lightning power*
+>     - expected: if the bubble projectile collide with a lightning bubble in the grid, the projectile, the lightning bubble itself and all bubbles in the same row will be removed with animation
+> - *test bomb power*
+>     - expected: if the bubble projectile collide with a bomb bubble in the grid, the projectile, the bomb bubble itself and all bubbles adjacent to the bomb bubble will be removed with animation
+> - *test star power*
+>     - expected: if the bubble projectile collide with a star bubble in the grid, the projectile, the star bubble itself and all bubbles in the gird of the same color will be removed 
+> - *test chaining power*
+>     - expected: the lightning bubble and the bomb bubble will chain their effect, that is, if there is any lightning or bomb bubble removed by another lightning or bomb bubble, its power will also be triggered. star bubble will not be chained
+> - *test unattached bubbles*
+>     - expected: after the corresponding removal by connected-bubble-of-the-same-color and power-bubble-with-chaining are all done, all bubbles that are unattached to the top wall will be removed with a fall down animation
+> - *test animation*
+>     - expected: shooting, 3-or-more-same-color-removal, lightning, bomb, unattached-bubbles-removal, collide with lightning obstacles all have corresponding animation
+> - *test sound effect*
+>     - expected: shooting, 3-or-more-same-color-removal, lightning, bomb, star, collide with lightning obstacles all have corresponding sound effects
 > #### test ending scene: 
 >   - test displayer final score
 >     - expected: the ending scene should display the final score of this round
@@ -123,7 +207,7 @@ Please save your diagram as `class-diagram.png` in the root directory of the rep
 > - Implement the bubble bursting animation using the sprite bubble-burst.png
 > - Implement the lightning animation
 > - Implement the bomb animation
-> - Implement background music (with toggle button) and sound effects
+> - Implement background music (with a toggle button) and sound effects
 > - Adding game score
 >   - every bubble removed worth the same score: 10. And the total score displayed will update every time there are bubbles removed. When the game ended (run out of projectiles), the final score will be shown in the ending scene 
 > - Ending scene
@@ -132,7 +216,7 @@ Please save your diagram as `class-diagram.png` in the root directory of the rep
 >   - there is no win or lose for this game, if shots are run out, then the game is over and total score will be calculated and ending scene will be displayed
 > - Add trajectory animation and path to the cannon
 >   - if players use pan gesture to shoot the bubble, trajectory will be displayed and update when players move their finger
-> - Lightning obstacles
+> - Lightning obstacles and corresponding animation
 >   - the bubble projectile will be "destroyed" by the lightning obstacles if there is a collision
 >  lightning obstacles can: keep moving, rotate (keep rotating or fix a angle), have different lengths
 
