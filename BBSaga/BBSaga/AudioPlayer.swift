@@ -10,61 +10,84 @@ import Foundation
 import AVFoundation
 
 class AudioPlayer {
-    private var avAudioPlayer = AVAudioPlayer()  // this is to play background music
-    private var avPlayer = AVPlayer()  // this is to play sound effect
+    private var bgmPlayer = AVAudioPlayer()
+    private var shootPlayer = AVAudioPlayer()
+    private var lightningPlayer = AVAudioPlayer()
+    private var bombPlayer = AVAudioPlayer()
+    private var sameColorPlayer = AVAudioPlayer()
     
     func prepare() {
         // prepare background audio player
-        if let path = Bundle.main.path(forResource: "bgm", ofType: "mp3") {
-            let url = URL(fileURLWithPath: path)
-            do {
-                try avAudioPlayer = AVAudioPlayer(contentsOf: url)
-            } catch {}
-        }
-        // prepare sound effects player
-        guard let path = Bundle.main.path(forResource: "shoot", ofType: "mp3") else {
-            return
-        }
-        let url = URL(fileURLWithPath: path)
-        avPlayer.replaceCurrentItem(with: AVPlayerItem(url: url))
+        bgmPlayer = getAudioPlayer(playing: "bgm", ofType: "mp3")
+        shootPlayer = getAudioPlayer(playing: "shoot", ofType: "mp3")
+        lightningPlayer = getAudioPlayer(playing: "lightning2", ofType: "mp3")
+        bombPlayer = getAudioPlayer(playing: "bomb", ofType: "mp3")
+        sameColorPlayer = getAudioPlayer(playing: "same-color", ofType: "mp3")
+        bgmPlayer.volume = Setting.bgmVolumn
+        bombPlayer.volume = Setting.bombVolumn
+        shootPlayer.volume = Setting.shootVolumn
     }
     
     func playBgm() {
-        avAudioPlayer.numberOfLoops = -1  // loop infinitely
-        avAudioPlayer.play()
+        bgmPlayer.numberOfLoops = -1  // loop infinitely
+        bgmPlayer.play()
     }
     
     func pauseBgm() {
-        avAudioPlayer.pause()
+        bgmPlayer.pause()
     }
     
     /// play the background music from the start
     func replayBgm() {
-        avAudioPlayer.currentTime = 0
+        bgmPlayer.currentTime = 0
     }
     
     func playShootSoundEffect() {
-//        avPlayerPlay(name: "shoot", ofType: "mp3")
+        playSoundEffect(by: shootPlayer)
     }
     
     func playBombSoundEffect() {
-//        avPlayerPlay(name: "bomb", ofType: "mp3")
+        playSoundEffect(by: bombPlayer)
     }
     
     func playLightningSoundEffect() {
-//        avPlayerPlay(name: "lightning2", ofType: "mp3")
+        playSoundEffect(by: lightningPlayer)
     }
     
     func playSameColorSoundEffect() {
-//        avPlayerPlay(name: "same-color", ofType: "mp3")
+        playSoundEffect(by: sameColorPlayer)
     }
     
-    private func avPlayerPlay(name: String, ofType extensionName: String) {
-        guard let path = Bundle.main.path(forResource: name, ofType: extensionName) else {
-            return
+    private func getAudioPlayer(playing name: String, ofType extensionName: String) -> AVAudioPlayer {
+        var player = AVAudioPlayer()
+        if let path = Bundle.main.path(forResource: name, ofType: extensionName) {
+            let url = URL(fileURLWithPath: path)
+            do {
+                try player = AVAudioPlayer(contentsOf: url)
+                player.prepareToPlay()
+            } catch {}
         }
-        let url = URL(fileURLWithPath: path)
-        avPlayer.replaceCurrentItem(with: AVPlayerItem(url: url))
-        avPlayer.play()
+        return player
+    }
+    
+    private func playSoundEffect(by player: AVAudioPlayer) {
+        DispatchQueue.global().async {
+            if player.isPlaying {
+                player.currentTime = 0
+            } else {
+                player.play()
+            }
+        }
     }
 }
+
+
+
+
+
+
+
+
+
+
+

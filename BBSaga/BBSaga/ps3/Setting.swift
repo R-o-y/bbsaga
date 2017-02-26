@@ -225,6 +225,13 @@ extension Setting {
     static let endingViewCornerRadiusRate: CGFloat = 0.08
 }
 
+/// audio player:
+extension Setting {
+    static let bgmVolumn: Float = 0.6
+    static let bombVolumn: Float = 0.6
+    static let shootVolumn: Float = 0.66
+}
+
 
 
 
