@@ -1,0 +1,6 @@
+platform :ios, '9.0'
+
+target ‘BBSaga’ do
+  use_frameworks!
+  pod ‘PhysicsEngine’, :git => 'https://royl8@bitbucket.org/cs3217/2017-ps5-a0147980u.git', :branch => ‘making_physicsNgin_cocoapod’
+end

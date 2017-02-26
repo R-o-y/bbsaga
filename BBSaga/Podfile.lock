@@ -1,0 +1,22 @@
+PODS:
+  - PhysicsEngine (0.0.1)
+
+DEPENDENCIES:
+  - PhysicsEngine (from `https://royl8@bitbucket.org/cs3217/2017-ps5-a0147980u.git`, branch `making_physicsNgin_cocoapod`)
+
+EXTERNAL SOURCES:
+  PhysicsEngine:
+    :branch: making_physicsNgin_cocoapod
+    :git: https://royl8@bitbucket.org/cs3217/2017-ps5-a0147980u.git
+
+CHECKOUT OPTIONS:
+  PhysicsEngine:
+    :commit: 23b037ac4740550c0590e041cc0b9dd0c06dc4fc
+    :git: https://royl8@bitbucket.org/cs3217/2017-ps5-a0147980u.git
+
+SPEC CHECKSUMS:
+  PhysicsEngine: c119594e29d888d1d4af3e147629edbbda5a8bdb
+
+PODFILE CHECKSUM: fb55ed84406b301b7875fd5766f20c5566522c21
+
+COCOAPODS: 1.2.0

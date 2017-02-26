@@ -61,6 +61,7 @@
 		A2F7CFA11E52252B00EADAA1 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7CFA01E52252B00EADAA1 /* AudioPlayer.swift */; };
 		A2F7CFA71E5441EA00EADAA1 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7CFA61E5441EA00EADAA1 /* Animation.swift */; };
 		A2F7CFA91E54420800EADAA1 /* DropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7CFA81E54420800EADAA1 /* DropView.swift */; };
+		BCB5D47EA0DF315DE1ED92B2 /* Pods_BBSaga.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232FD3DADAD3073D6BD0105E /* Pods_BBSaga.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		232FD3DADAD3073D6BD0105E /* Pods_BBSaga.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BBSaga.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BF41692A11DFF257A42FA88 /* Pods-BBSaga.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BBSaga.release.xcconfig"; path = "Pods/Target Support Files/Pods-BBSaga/Pods-BBSaga.release.xcconfig"; sourceTree = "<group>"; };
 		A261572C1E61B57000A7E5B9 /* EndingSceneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndingSceneController.swift; sourceTree = "<group>"; };
 		A26157481E626A3900A7E5B9 /* bomb combo.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "bomb combo.plist"; sourceTree = "<group>"; };
 		A26157491E626A3900A7E5B9 /* chaining.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = chaining.plist; sourceTree = "<group>"; };
@@ -142,6 +145,7 @@
 		A2F7CFA01E52252B00EADAA1 /* AudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		A2F7CFA61E5441EA00EADAA1 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		A2F7CFA81E54420800EADAA1 /* DropView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropView.swift; sourceTree = "<group>"; };
+		E03B09D32D277E4788F6F835 /* Pods-BBSaga.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BBSaga.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BBSaga/Pods-BBSaga.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +153,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCB5D47EA0DF315DE1ED92B2 /* Pods_BBSaga.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,6 +174,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D4A7FFB835188F01E8C5A5C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E03B09D32D277E4788F6F835 /* Pods-BBSaga.debug.xcconfig */,
+				4BF41692A11DFF257A42FA88 /* Pods-BBSaga.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A2492C891E5BD5FD001A3042 /* bubbleGridForDesign */ = {
 			isa = PBXGroup;
 			children = (
@@ -292,6 +306,7 @@
 				A2F7CF841E514ADD00EADAA1 /* BBSagaUITests */,
 				A2F7CF631E514ADC00EADAA1 /* Products */,
 				A2F7CF991E521B5400EADAA1 /* Frameworks */,
+				7D4A7FFB835188F01E8C5A5C /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -390,6 +405,7 @@
 			isa = PBXGroup;
 			children = (
 				A2F7CF9A1E521B5400EADAA1 /* AVFoundation.framework */,
+				232FD3DADAD3073D6BD0105E /* Pods_BBSaga.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -419,9 +435,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A2F7CF8A1E514ADD00EADAA1 /* Build configuration list for PBXNativeTarget "BBSaga" */;
 			buildPhases = (
+				C4CD1F4E5784F27489D731F8 /* [CP] Check Pods Manifest.lock */,
 				A2F7CF5E1E514ADC00EADAA1 /* Sources */,
 				A2F7CF5F1E514ADC00EADAA1 /* Frameworks */,
 				A2F7CF601E514ADC00EADAA1 /* Resources */,
+				A39C243123B5207DB1A7E5A4 /* [CP] Embed Pods Frameworks */,
+				1BBE19C6849B9DF9E27CF0E4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -555,6 +574,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1BBE19C6849B9DF9E27CF0E4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BBSaga/Pods-BBSaga-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A39C243123B5207DB1A7E5A4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BBSaga/Pods-BBSaga-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C4CD1F4E5784F27489D731F8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A2F7CF5E1E514ADC00EADAA1 /* Sources */ = {
@@ -747,6 +814,7 @@
 		};
 		A2F7CF8B1E514ADD00EADAA1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E03B09D32D277E4788F6F835 /* Pods-BBSaga.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = A875RZMXQF;
@@ -760,6 +828,7 @@
 		};
 		A2F7CF8C1E514ADD00EADAA1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4BF41692A11DFF257A42FA88 /* Pods-BBSaga.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = A875RZMXQF;

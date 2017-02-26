@@ -1,0 +1,27 @@
+{
+  "name": "PhysicsEngine",
+  "version": "0.0.1",
+  "summary": "PhysicsEngine for Bubble Blast Saga",
+  "description": "For PS5",
+  "homepage": "https://cs3217.gitbooks.io/problem-sets/content/ps/PS5/PS5.html",
+  "license": {
+    "type": "MIT",
+    "file": "FILE_LICENSE"
+  },
+  "authors": {
+    "Luo Yuyang": "royl8@outlook.com"
+  },
+  "source": {
+    "git": "https://royl8@bitbucket.org/cs3217/2017-ps5-a0147980u.git"
+  },
+  "source_files": [
+    "BBSaga/BBSaga",
+    "BBSaga/BBSaga/**/*.{swift}"
+  ],
+  "platforms": {
+    "osx": null,
+    "ios": null,
+    "tvos": null,
+    "watchos": null
+  }
+}
