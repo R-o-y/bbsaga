@@ -204,15 +204,24 @@ extension Setting {
     static let unwindSegueToDeignerIdentifier = "unwindSegueToDeigner"
     static let unwindSegueToSelectorIdentifier = "unwindSegueToSelector"
     static let cannonSpriteSheetName = "cannon"
+    static let cannonSpriteSheetNumRow = 2
+    static let cannonSpriteSheetNumCol = 6
     static let cannonBaseSpriteSheetName = "cannon-base"
     static let cannonAnchorPoint = CGPoint(x: 0.5, y: 0.8)
     static let cannonRotationDuration: TimeInterval = 0.08
     static let cannonAnimationDuration: TimeInterval = 0.38
+    static let cannonY = 138
+    static let cannonHeight = 180
+    static let cannonBaseWidth = 66
+    static let cannonWidth = 88
+    static let cannonAnchorRate: CGFloat = 0.3
     
     static let colorInGridPossibility = 0.8
     static let randomRange = 100
     
     static let defaultBubbleColor = BubbleColor.blue
+    
+    static let endingViewCornerRadiusRate: CGFloat = 0.08
 }
 
 

@@ -134,14 +134,20 @@ class GamePlayController: UIViewController {
         nextBubble.setColor(nextColor())
         nextBubbleView.image = Setting.imageOfBubble(nextBubble)
         
-        cannonView = UIImageView(frame: CGRect(x: view.bounds.width / 2 - 44, y: view.bounds.height - 138, width: 88, height: 180))
-        cannonView.image = Animation.cutSequenceImageIntoImages(named: Setting.cannonSpriteSheetName, numRows: 2, numCols: 6)[0]
+        cannonView = UIImageView(frame: CGRect(x: view.bounds.width / 2 - Setting.cannonWidth / 2,
+                                               y: view.bounds.height - Setting.cannonY,
+                                               width: Setting.cannonWidth,
+                                               height: Setting.cannonHeight))
+        cannonView.image = Animation.cutSequenceImageIntoImages(named: Setting.cannonSpriteSheetName, numRows: Setting.cannonSpriteSheetNumRow, numCols: Setting.cannonSpriteSheetNumCol)[0]
         view.addSubview(cannonView)
-        cannonBaseView = UIImageView(frame: CGRect(x: view.bounds.width / 2 - 33, y: view.bounds.height - 66, width: 66, height: 66))
+        cannonBaseView = UIImageView(frame: CGRect(x: view.bounds.width / 2 - Setting.cannonBaseWidth,
+                                                   y: view.bounds.height - Setting.cannonBaseWidth,
+                                                   width: Setting.cannonBaseWidth,
+                                                   height: Setting.cannonBaseWidth))
         cannonBaseView.image = UIImage(named: Setting.cannonBaseSpriteSheetName)
         view.addSubview(cannonBaseView)
         
-        let shiftY = cannonView.bounds.height * 0.3
+        let shiftY = cannonView.bounds.height * Setting.cannonAnchorRate
         cannonView.transform = CGAffineTransform(translationX: 0, y: shiftY)
         cannonView.layer.anchorPoint = Setting.cannonAnchorPoint
         cannonView.transform = CGAffineTransform(rotationAngle: 0)
@@ -245,7 +251,7 @@ class GamePlayController: UIViewController {
                 view.removeGestureRecognizer(recognizer)
             }
         }
-        endingView?.layer.cornerRadius = endingView.bounds.width * 0.08
+        endingView?.layer.cornerRadius = endingView.bounds.width * Setting.cellCornerRadiusWidthRate
         endingView?.isHidden = false
         endingView.removeFromSuperview()
         view.addSubview(endingView)  // add to the top
