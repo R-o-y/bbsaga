@@ -20,8 +20,13 @@ class PlayGridCollectionController: UICollectionViewController {
         }
         playGridCollectionView.backgroundColor = UIColor.clear
         
-        if let list = storageManager.loadBubbleGridFileURLs() {
-            playGridURLList = list
+        for url in storageManager.preloadLevelURLs {
+            playGridURLList.append(url)
+        }
+        if let userDesignedGridURLs = storageManager.loadBubbleGridFileURLs() {
+            for url in userDesignedGridURLs {
+                playGridURLList.append(url)
+            }
         }
     }
     

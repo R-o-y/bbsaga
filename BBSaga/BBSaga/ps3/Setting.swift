@@ -21,8 +21,7 @@ extension Setting {
     static let storagePanelHeightInPercentage: CGFloat = 0.66  // relative to the main view
     static let storagePanelWidthInPercentage: CGFloat = 0.66  // relative to the main view
     static let storagePanelAlpha: CGFloat = 0.8
-    
-    static let storagePanelHeaderAlpha = 0.38
+
     static let storagePanelHeaderHeightInPercentage: CGFloat = 0.06  // relative to the storage panel
     
     static let bubbleGridStorageKey = "bubbleGrid"
@@ -68,6 +67,8 @@ extension Setting {
     
     static let segueToPlayerIdentifier = "segueToPlayer"
     static let segueToPlayerNotificationName = "segueToPlayer"
+    
+    static let preloadedLevelNames = ["bomb combo", "chaining", "full-random-easy", "mission impossible", "power of lightning", "star and falling"]
 }
 
 /// bubble grid view

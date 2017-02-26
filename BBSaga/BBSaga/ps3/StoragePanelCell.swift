@@ -38,6 +38,8 @@ class StoragePanelCell: UITableViewCell {
         containerView = UIView(frame: frame)
         containerView.layer.borderWidth = 0.8
         containerView.layer.borderColor = UIColor.darkGray.cgColor
+        containerView.clipsToBounds = true
+        containerView.layer.cornerRadius = containerView.bounds.width * Setting.cellCornerRadiusWidthRate
         contentView.addSubview(containerView)
     }
 
@@ -68,8 +70,10 @@ class StoragePanelCell: UITableViewCell {
         let width = containerView.bounds.size.width
         nameLabel.frame.size = CGSize(width: width, height: height)
         nameLabel.frame.origin = CGPoint(x: 0, y: containerView.bounds.size.height - height)
-        nameLabel.textColor = .darkGray
+        nameLabel.textColor = .white
+        nameLabel.backgroundColor = .darkGray
         nameLabel.textAlignment = .center
+        nameLabel.font = Setting.nameLabelFont
         containerView.addSubview(nameLabel)
     }
     

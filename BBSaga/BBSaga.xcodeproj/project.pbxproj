@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		A261572D1E61B57000A7E5B9 /* EndingSceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A261572C1E61B57000A7E5B9 /* EndingSceneController.swift */; };
+		A261574E1E626A3900A7E5B9 /* bomb combo.plist in Resources */ = {isa = PBXBuildFile; fileRef = A26157481E626A3900A7E5B9 /* bomb combo.plist */; };
+		A261574F1E626A3900A7E5B9 /* chaining.plist in Resources */ = {isa = PBXBuildFile; fileRef = A26157491E626A3900A7E5B9 /* chaining.plist */; };
+		A26157501E626A3900A7E5B9 /* full-random-easy.plist in Resources */ = {isa = PBXBuildFile; fileRef = A261574A1E626A3900A7E5B9 /* full-random-easy.plist */; };
+		A26157511E626A3900A7E5B9 /* mission impossible.plist in Resources */ = {isa = PBXBuildFile; fileRef = A261574B1E626A3900A7E5B9 /* mission impossible.plist */; };
+		A26157521E626A3900A7E5B9 /* power of lightning.plist in Resources */ = {isa = PBXBuildFile; fileRef = A261574C1E626A3900A7E5B9 /* power of lightning.plist */; };
+		A26157531E626A3900A7E5B9 /* star and falling.plist in Resources */ = {isa = PBXBuildFile; fileRef = A261574D1E626A3900A7E5B9 /* star and falling.plist */; };
+		A26157561E626CAE00A7E5B9 /* bgm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A26157551E626CAE00A7E5B9 /* bgm.mp3 */; };
 		A2E349101E5AB7B5008FECD7 /* BBSagaDesignController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E348FD1E5AB7B4008FECD7 /* BBSagaDesignController.swift */; };
 		A2E349111E5AB7B5008FECD7 /* Bubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E348FE1E5AB7B4008FECD7 /* Bubble.swift */; };
 		A2E349121E5AB7B5008FECD7 /* BubbleGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E348FF1E5AB7B4008FECD7 /* BubbleGrid.swift */; };
@@ -46,7 +53,6 @@
 		A2F7CF701E514ADC00EADAA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2F7CF6E1E514ADC00EADAA1 /* LaunchScreen.storyboard */; };
 		A2F7CF7B1E514ADD00EADAA1 /* BBSagaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7CF7A1E514ADD00EADAA1 /* BBSagaTests.swift */; };
 		A2F7CF861E514ADD00EADAA1 /* BBSagaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7CF851E514ADD00EADAA1 /* BBSagaUITests.swift */; };
-		A2F7CF981E52105000EADAA1 /* bgm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A2F7CF971E52105000EADAA1 /* bgm.mp3 */; };
 		A2F7CFA11E52252B00EADAA1 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7CFA01E52252B00EADAA1 /* AudioPlayer.swift */; };
 		A2F7CFA71E5441EA00EADAA1 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7CFA61E5441EA00EADAA1 /* Animation.swift */; };
 		A2F7CFA91E54420800EADAA1 /* DropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7CFA81E54420800EADAA1 /* DropView.swift */; };
@@ -71,6 +77,13 @@
 
 /* Begin PBXFileReference section */
 		A261572C1E61B57000A7E5B9 /* EndingSceneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndingSceneController.swift; sourceTree = "<group>"; };
+		A26157481E626A3900A7E5B9 /* bomb combo.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "bomb combo.plist"; sourceTree = "<group>"; };
+		A26157491E626A3900A7E5B9 /* chaining.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = chaining.plist; sourceTree = "<group>"; };
+		A261574A1E626A3900A7E5B9 /* full-random-easy.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "full-random-easy.plist"; sourceTree = "<group>"; };
+		A261574B1E626A3900A7E5B9 /* mission impossible.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "mission impossible.plist"; sourceTree = "<group>"; };
+		A261574C1E626A3900A7E5B9 /* power of lightning.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "power of lightning.plist"; sourceTree = "<group>"; };
+		A261574D1E626A3900A7E5B9 /* star and falling.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "star and falling.plist"; sourceTree = "<group>"; };
+		A26157551E626CAE00A7E5B9 /* bgm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgm.mp3; sourceTree = "<group>"; };
 		A2E348FD1E5AB7B4008FECD7 /* BBSagaDesignController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BBSagaDesignController.swift; path = ps3/BBSagaDesignController.swift; sourceTree = "<group>"; };
 		A2E348FE1E5AB7B4008FECD7 /* Bubble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Bubble.swift; path = ps3/Bubble.swift; sourceTree = "<group>"; };
 		A2E348FF1E5AB7B4008FECD7 /* BubbleGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BubbleGrid.swift; path = ps3/BubbleGrid.swift; sourceTree = "<group>"; };
@@ -115,7 +128,6 @@
 		A2F7CF811E514ADD00EADAA1 /* BBSagaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BBSagaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2F7CF851E514ADD00EADAA1 /* BBSagaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBSagaUITests.swift; sourceTree = "<group>"; };
 		A2F7CF871E514ADD00EADAA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A2F7CF971E52105000EADAA1 /* bgm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgm.mp3; sourceTree = "<group>"; };
 		A2F7CF9A1E521B5400EADAA1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		A2F7CFA01E52252B00EADAA1 /* AudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		A2F7CFA61E5441EA00EADAA1 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
@@ -186,6 +198,19 @@
 			name = controllers;
 			sourceTree = "<group>";
 		};
+		A26157541E626A3B00A7E5B9 /* preloaded levels */ = {
+			isa = PBXGroup;
+			children = (
+				A26157481E626A3900A7E5B9 /* bomb combo.plist */,
+				A26157491E626A3900A7E5B9 /* chaining.plist */,
+				A261574D1E626A3900A7E5B9 /* star and falling.plist */,
+				A261574A1E626A3900A7E5B9 /* full-random-easy.plist */,
+				A261574B1E626A3900A7E5B9 /* mission impossible.plist */,
+				A261574C1E626A3900A7E5B9 /* power of lightning.plist */,
+			);
+			name = "preloaded levels";
+			sourceTree = "<group>";
+		};
 		A2E349621E5ABC23008FECD7 /* supporting extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,6 +264,7 @@
 		A2F7CF591E514ADC00EADAA1 = {
 			isa = PBXGroup;
 			children = (
+				A26157541E626A3B00A7E5B9 /* preloaded levels */,
 				A2F7CF641E514ADC00EADAA1 /* BBSaga */,
 				A2F7CF791E514ADD00EADAA1 /* BBSagaTests */,
 				A2F7CF841E514ADD00EADAA1 /* BBSagaUITests */,
@@ -332,7 +358,7 @@
 		A2F7CF961E52102000EADAA1 /* audio */ = {
 			isa = PBXGroup;
 			children = (
-				A2F7CF971E52105000EADAA1 /* bgm.mp3 */,
+				A26157551E626CAE00A7E5B9 /* bgm.mp3 */,
 			);
 			name = audio;
 			sourceTree = "<group>";
@@ -473,10 +499,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A26157531E626A3900A7E5B9 /* star and falling.plist in Resources */,
 				A2F7CF701E514ADC00EADAA1 /* LaunchScreen.storyboard in Resources */,
+				A261574F1E626A3900A7E5B9 /* chaining.plist in Resources */,
+				A261574E1E626A3900A7E5B9 /* bomb combo.plist in Resources */,
+				A26157511E626A3900A7E5B9 /* mission impossible.plist in Resources */,
 				A2F7CF6D1E514ADC00EADAA1 /* Assets.xcassets in Resources */,
+				A26157521E626A3900A7E5B9 /* power of lightning.plist in Resources */,
+				A26157501E626A3900A7E5B9 /* full-random-easy.plist in Resources */,
 				A2F7CF6B1E514ADC00EADAA1 /* Main.storyboard in Resources */,
-				A2F7CF981E52105000EADAA1 /* bgm.mp3 in Resources */,
+				A26157561E626CAE00A7E5B9 /* bgm.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

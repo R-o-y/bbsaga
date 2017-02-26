@@ -45,7 +45,6 @@ class PlayGridCell: UICollectionViewCell {
         bubbleGridView.backgroundColor = UIColor.white
         bubbleGridView.alpha = Setting.bubbleGridViewAlpha
         bubbleGridView.contentMode = .scaleToFill
-        bubbleGridView.clipsToBounds = true
         
         contentView.addSubview(bubbleGridView)
     }

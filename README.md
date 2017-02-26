@@ -41,11 +41,14 @@ Please save your diagram as `class-diagram.png` in the root directory of the rep
 
 ### Problem 8: Testing
 
+> #### Black-box testing
 > ##### test game flow:   
-   
 > ##### test bubble grid designer:
-     
-> ##### test player:
+> ##### test level selector:     
+> ##### test gameplay logic:
+> --------------------------------
+> #### White-box testing
+> 
        
 ### Problem 9: The Bells & Whistles
 
@@ -54,10 +57,15 @@ Please save your diagram as `class-diagram.png` in the root directory of the rep
 > - Implement the lightning animation
 > - Implement the bomb animation
 > - Adding game score
+> - Ending scene
+>  - ending scene will show the total score of the player for this round, and provide a button to go back to the level selector scene
 > - Cannon has limited number of shots in the game, after which the player loses
+>  - there is no win or lose for this game, if shots are run out, then the game is over and total score will be calculated and ending scene will be displayed
 > - Add trajectory animation and path to the cannon
-> - Adding game score
+>  - if players use pan gesture to shoot the bubble, trajectory will be displayed when players move their finger
 > - Lightning obstacles
+>  - the bubble projectile will be "destroyed" by the lightning obstacles if there is a collision
+>  lightning obstacles can: keep moving, rotate (keep rotating or fix a angle), have different lengths
 
 ### Problem 10: Final Reflection
 

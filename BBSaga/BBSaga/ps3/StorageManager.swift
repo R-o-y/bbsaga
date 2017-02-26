@@ -45,6 +45,17 @@ class StorageManager {
         }
         return gridDesignDirURL
     }
+    var preloadLevelURLs: [URL] {
+        var returnUrlArray: [URL] = []
+        for name in Setting.preloadedLevelNames {
+            if let path = Bundle.main.path(forResource: name, ofType: "plist") {
+                let url = URL(fileURLWithPath: path)
+                returnUrlArray.append(url)
+            }
+        }
+        print(returnUrlArray)
+        return returnUrlArray
+    }
     
     func getCurrentMode() -> StorageManagerMode {
         return storageManagerMode

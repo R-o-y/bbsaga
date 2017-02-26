@@ -61,8 +61,7 @@ class StoragePanelController: UITableViewController {
                                              height: headerHeight)
         let headerView = UIView(frame: storagePanelHeaderFrame)
         headerView.isOpaque = false
-        headerView.alpha = CGFloat(Setting.storagePanelHeaderAlpha)
-        headerView.backgroundColor = UIColor.black
+        headerView.backgroundColor = .darkGray
         
         storagePanel.tableHeaderView = headerView
         
