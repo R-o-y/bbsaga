@@ -80,7 +80,7 @@ class StoragePanelCell: UITableViewCell {
     private func setUpRemoveButton() {
         let height = containerView.bounds.width * Setting.gridThumbnailFooterHeightRatio
         let width = height
-        removeButton = UIButton(frame: CGRect(x: containerView.bounds.width  - width,
+        removeButton = UIButton(frame: CGRect(x: containerView.bounds.width  - 2 * width,
                                               y: containerView.bounds.height - height,
                                               width: width, height: height))
         removeButton.setImage(UIImage(named: Setting.removeButtonImageName), for: .normal)
