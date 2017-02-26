@@ -363,6 +363,7 @@ class GamePlayController: UIViewController {
         }
         
         animateCannon()
+        audioPlayer.playShootSoundEffect()
     }
     
     private func rotateCannon(towards position: CGPoint) {
@@ -540,6 +541,7 @@ class GamePlayController: UIViewController {
         // remove more than 3 connected same-colored bubbles
         let connectedIndexPathsOfSameColor = bubbleGrid.connectedIndexPathsOfSameColor(from: indexPath)
         if connectedIndexPathsOfSameColor.count >= 3 {
+            audioPlayer.playSameColorSoundEffect()
             scoreThisShot += connectedIndexPathsOfSameColor.count * Setting.scorePerBubble
             removeFromPositionsOfGridBubbles(indexPaths: connectedIndexPathsOfSameColor)
             bubbleGridController.removeConnectedSameColorBubblesWithAnimation(connectedIndexPathsOfSameColor)
@@ -547,16 +549,19 @@ class GamePlayController: UIViewController {
         
         // trigger star bubble
         for starBubbleIndexPath in getPowerBubbleIndexPaths(around: indexPath, ofPower: .star) {
+            audioPlayer.playSameColorSoundEffect()
             triggerStarBubbleAt(starBubbleIndexPath, by: indexPath)
         }
         
         // trigger lightning bubble
         for indexPath in getPowerBubbleIndexPaths(around: indexPath, ofPower: .lightning) {
+            audioPlayer.playLightningSoundEffect()
             triggerLightningBubbleAt(indexPath)
         }
         
         // trigger bomb bubble
         for indexPath in getPowerBubbleIndexPaths(around: indexPath, ofPower: .bomb) {
+            audioPlayer.playBombSoundEffect()
             triggerBombBubbleAt(indexPath)
         }
         

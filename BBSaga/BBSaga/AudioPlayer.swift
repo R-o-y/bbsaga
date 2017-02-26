@@ -18,7 +18,6 @@ class AudioPlayer {
             let url = URL(fileURLWithPath: path)
             do {
                 try avAudioPlayer = AVAudioPlayer(contentsOf: url)
-                avAudioPlayer.prepareToPlay()
             } catch {}
         }
     }
@@ -35,5 +34,30 @@ class AudioPlayer {
     /// play the background music from the start
     func replayBgm() {
         avAudioPlayer.currentTime = 0
+    }
+    
+    func playShootSoundEffect() {
+        avPlayerPlay(name: "shoot", ofType: "mp3")
+    }
+    
+    func playBombSoundEffect() {
+        avPlayerPlay(name: "bomb", ofType: "mp3")
+    }
+    
+    func playLightningSoundEffect() {
+        avPlayerPlay(name: "lightning2", ofType: "mp3")
+    }
+    
+    func playSameColorSoundEffect() {
+        avPlayerPlay(name: "same-color", ofType: "mp3")
+    }
+    
+    private func avPlayerPlay(name: String, ofType extensionName: String) {
+        guard let path = Bundle.main.path(forResource: name, ofType: extensionName) else {
+            return
+        }
+        let url = URL(fileURLWithPath: path)
+        avPlayer.replaceCurrentItem(with: AVPlayerItem(url: url))
+        avPlayer.play()
     }
 }

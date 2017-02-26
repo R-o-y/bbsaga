@@ -15,6 +15,11 @@
 		A26157521E626A3900A7E5B9 /* power of lightning.plist in Resources */ = {isa = PBXBuildFile; fileRef = A261574C1E626A3900A7E5B9 /* power of lightning.plist */; };
 		A26157531E626A3900A7E5B9 /* star and falling.plist in Resources */ = {isa = PBXBuildFile; fileRef = A261574D1E626A3900A7E5B9 /* star and falling.plist */; };
 		A26157561E626CAE00A7E5B9 /* bgm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A26157551E626CAE00A7E5B9 /* bgm.mp3 */; };
+		A261575C1E62772600A7E5B9 /* bomb.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A26157581E62772600A7E5B9 /* bomb.mp3 */; };
+		A261575E1E62772600A7E5B9 /* same-color.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A261575A1E62772600A7E5B9 /* same-color.mp3 */; };
+		A26157611E62825600A7E5B9 /* shoot.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A26157601E62825600A7E5B9 /* shoot.mp3 */; };
+		A26157641E62842300A7E5B9 /* lightning.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A26157621E62842300A7E5B9 /* lightning.mp3 */; };
+		A26157651E62842300A7E5B9 /* lightning2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A26157631E62842300A7E5B9 /* lightning2.mp3 */; };
 		A2E349101E5AB7B5008FECD7 /* BBSagaDesignController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E348FD1E5AB7B4008FECD7 /* BBSagaDesignController.swift */; };
 		A2E349111E5AB7B5008FECD7 /* Bubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E348FE1E5AB7B4008FECD7 /* Bubble.swift */; };
 		A2E349121E5AB7B5008FECD7 /* BubbleGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E348FF1E5AB7B4008FECD7 /* BubbleGrid.swift */; };
@@ -84,6 +89,11 @@
 		A261574C1E626A3900A7E5B9 /* power of lightning.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "power of lightning.plist"; sourceTree = "<group>"; };
 		A261574D1E626A3900A7E5B9 /* star and falling.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "star and falling.plist"; sourceTree = "<group>"; };
 		A26157551E626CAE00A7E5B9 /* bgm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgm.mp3; sourceTree = "<group>"; };
+		A26157581E62772600A7E5B9 /* bomb.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bomb.mp3; sourceTree = "<group>"; };
+		A261575A1E62772600A7E5B9 /* same-color.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "same-color.mp3"; sourceTree = "<group>"; };
+		A26157601E62825600A7E5B9 /* shoot.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = shoot.mp3; sourceTree = "<group>"; };
+		A26157621E62842300A7E5B9 /* lightning.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lightning.mp3; sourceTree = "<group>"; };
+		A26157631E62842300A7E5B9 /* lightning2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lightning2.mp3; sourceTree = "<group>"; };
 		A2E348FD1E5AB7B4008FECD7 /* BBSagaDesignController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BBSagaDesignController.swift; path = ps3/BBSagaDesignController.swift; sourceTree = "<group>"; };
 		A2E348FE1E5AB7B4008FECD7 /* Bubble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Bubble.swift; path = ps3/Bubble.swift; sourceTree = "<group>"; };
 		A2E348FF1E5AB7B4008FECD7 /* BubbleGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BubbleGrid.swift; path = ps3/BubbleGrid.swift; sourceTree = "<group>"; };
@@ -209,6 +219,18 @@
 				A261574C1E626A3900A7E5B9 /* power of lightning.plist */,
 			);
 			name = "preloaded levels";
+			sourceTree = "<group>";
+		};
+		A26157571E62770F00A7E5B9 /* sound effects */ = {
+			isa = PBXGroup;
+			children = (
+				A26157581E62772600A7E5B9 /* bomb.mp3 */,
+				A26157621E62842300A7E5B9 /* lightning.mp3 */,
+				A26157631E62842300A7E5B9 /* lightning2.mp3 */,
+				A26157601E62825600A7E5B9 /* shoot.mp3 */,
+				A261575A1E62772600A7E5B9 /* same-color.mp3 */,
+			);
+			name = "sound effects";
 			sourceTree = "<group>";
 		};
 		A2E349621E5ABC23008FECD7 /* supporting extensions */ = {
@@ -358,6 +380,7 @@
 		A2F7CF961E52102000EADAA1 /* audio */ = {
 			isa = PBXGroup;
 			children = (
+				A26157571E62770F00A7E5B9 /* sound effects */,
 				A26157551E626CAE00A7E5B9 /* bgm.mp3 */,
 			);
 			name = audio;
@@ -500,13 +523,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				A26157531E626A3900A7E5B9 /* star and falling.plist in Resources */,
+				A26157651E62842300A7E5B9 /* lightning2.mp3 in Resources */,
 				A2F7CF701E514ADC00EADAA1 /* LaunchScreen.storyboard in Resources */,
 				A261574F1E626A3900A7E5B9 /* chaining.plist in Resources */,
 				A261574E1E626A3900A7E5B9 /* bomb combo.plist in Resources */,
 				A26157511E626A3900A7E5B9 /* mission impossible.plist in Resources */,
+				A261575C1E62772600A7E5B9 /* bomb.mp3 in Resources */,
+				A26157641E62842300A7E5B9 /* lightning.mp3 in Resources */,
 				A2F7CF6D1E514ADC00EADAA1 /* Assets.xcassets in Resources */,
+				A26157611E62825600A7E5B9 /* shoot.mp3 in Resources */,
 				A26157521E626A3900A7E5B9 /* power of lightning.plist in Resources */,
 				A26157501E626A3900A7E5B9 /* full-random-easy.plist in Resources */,
+				A261575E1E62772600A7E5B9 /* same-color.mp3 in Resources */,
 				A2F7CF6B1E514ADC00EADAA1 /* Main.storyboard in Resources */,
 				A26157561E626CAE00A7E5B9 /* bgm.mp3 in Resources */,
 			);
