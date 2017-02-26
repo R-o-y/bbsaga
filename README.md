@@ -220,7 +220,124 @@ Please save your diagram as `class-diagram.png` in the root directory of the rep
 >     
 > -------------------------------------
 > #### ------ White-box testing ------
-> 
+> White-box testing
+> ##### designer
+> * test BubbleGridController()
+>        - setUpEmptyBubbleGridModel
+>            - after the method finishes, the bubble2dArray property of currentBubbleGrid should be a 2d array
+>            whose odd rows contain numCellsPerOddRow number of nil
+>            whose even rows contain numCellsPerOddRow - 1 number of nil
+>        - numOfSections(in collectionView)
+>            - the return value should equal to numRows after setUpEmptyBubbleGridModel is called
+>        - cleanAllCells()
+>            - the bubble2dArray property of currentBubbleGrid should be a 2d array
+>            whose odd rows contain numCellsPerOddRow number of nil
+>            whose even rows contain numCellsPerOddRow - 1 number of nil              
+> * test StorageManager
+>        - loadBubbleGridURLs()
+>            - the return values should be the list of urls of the files and directories at gridDesignDirURL
+>        - createEmptyBubbleGridPlistFile(ofName name)
+>            - case: name is an empty string
+>                expected: there is no new file created at gridDesignDirURL, that is, .count will not change 
+>            - case: name already appears in the return value of loadBubbleGridURLs()
+>                expected: the new empty one should overwrite the existing one
+>        - save(contentDic:, into fileURL:) and load(from fileURL)
+>            save a dictionary and then load it, the result should be the same as the original
+>    * test BubbleGrid (the following tests should be implemented as unit test using XCTAssert, becaue this is a simple ADT)
+>        - setBubbleAt(row:, col:, to bubble:)
+>            - case: valid row and col
+>                expected: after the method is called, bubble2dArray[row][col] should == bubble, but !== bubble
+>            - case: row or col out of bound
+>                expected: no change as before the method is called
+>        - appendBubble(_ newBubble:, to row:)
+>            - case: valid row
+>                expected after the method is called, the newBubble should be appended to bubble2dArray[row]
+>            - case: row out of bound
+>                expected: no change
+>        - emptyCellAt(row:, col:)
+>            - case: valid row and col
+>                expected: after the method is called, bubble2dArray[row][col] == nil
+>            - case; row or col out of bound
+>                expected: no change
+>        - appendArrayOfBubbles(_ bubbles:)
+>            - the bubbles should be appeded to the end of bubble2dArray
+>        - getBubbleAt(row:, col:)
+>            - case: valid row and col
+>                expected: return bubble2dArray[row][col]
+>            - case: row or col out of bound
+>                expected: assert false and receive error message
+>        - geNumCellsAt(row:)
+>            - case: valid row
+>                expected: return bubble2dArray[row].count
+>            - case; row out of bound
+>                expected: assert false and receive error message
+>        - isCellEmptyAt(row:, col:)
+>            - case: valid row
+>                expected: return whether bubble2dArray[row][col] equals nil or not
+>            - case: row out of bound
+>                expected: assert false and receive error message
+>        - cleanAllCells()
+>            - expected: all the entry of bubble2dArray should be set to nil
+>        - replica()
+>            - return a new BubbleGrid object which is the equal to current one (same bubble? at all entries)
+> ##### game play
+>    * test Int extension 
+>        - test randomWithinRange:
+>            expected: generate integers from lower bound (inclusive) to upper bound (inclusive) 
+>                with equal possibilities
+>    * test CGVector extension operation
+>        - the result of the operation should be the same as the mathematical definition
+>        - test divides a vector by scalar zero
+>            expected: return zero vector
+>    * test Array extension
+>        - test removeEqualItems(item: Element)
+>            expected: the method should remove all the items that is equal to the item given
+>        - test removeEqualItems(item: Element) with an empty array
+>            expected: the array should remain empty
+>        - test getAllPairs()
+>            expected: the method should return all pairs of elements in array, 
+>                excluding pairs of element at the same index and pairs of reverse order
+>    * test World
+>        - rigidBodies array should contain all bubble projectiles currently moving 
+>            when there is no bubble projectile moving, the rigidBodies array should be empty
+>        - targets array in each event detector should contain all bubble projectiles currently moving
+>            when there is no bubble projectile moving, the targets array should be empty
+>        - targets array in each collision detector should be empty (it is implemented but not used yet)
+>        - test removeBody(_ rigidBody: RigidBody)
+>            expected: this method should remove the target from its rigidBodies array
+>                Besides, it should also remove the target from its collision detectors and event detectors
+>    * test Renderer
+>        - bodyViewMappng array should contain all bubble projectiles and their corresponding view currently moving
+>            when there is no bubble projectile moving, the bodyViewMappng array should eb empty
+>        - register should add 
+>    * test GamePlayController
+>        - the positionsOfGridBubbles array should contains the centers of all the non-empty bubbleGridCells
+>            if all the cells are emtpy, positionsOfGridBubbles array should be empty
+>    * test BubbleGrid
+>        - test connectedIndexPathsOfSameColor(from indexPath: IndexPath) -> [IndexPath]
+>            expected: it should returns the index paths of
+>                 all the connected bubble grid cells with bubble of the same color originated from the given index path 
+>        - test unconnectedIndexPaths() -> [IndexPath]
+>            expected: it should returns the index paths of 
+>                all the unattached bubbles in the bubble grid
+>    * test CircleShape
+>        - test overlap(at myPosition: CGVector, with shape: Shape, at position: CGVector) -> Bool
+>            expected: if shape (the other shape) is neither a CircleShape nor a SegmentShape, return false
+>                else, return whether this circle overlaps with shape (the other shape, line segment or circle)
+>                the center of this circle is myPosition + self.offset
+>                the center of the other circle is position + shape.offset
+>    * test SegmentShape
+>        - test overlap
+>            expected: if the other shape is not a circle, return false
+>                else, return whether this line segment overlaps with the circle
+>    * test GameEngine
+>        - test removeRigidBody(_ target: RigidBody)
+>            expected: this method should remove the target from its renderer and world (physics engine)
+>    * test velocity after collision with the side wall
+>        - expected: after the bubble collide with the side wall, the x component of the velocity should be the opposite
+>        the y component of the velocity should remain no change
+>    * test velocity after collision between bubbles
+
        
 ### Problem 9: The Bells & Whistles
 
@@ -246,8 +363,15 @@ Please save your diagram as `class-diagram.png` in the root directory of the rep
 > #### about MVC design (not including the MVC for game play)
 > Through PS3 to PS5, I did not change my MVC design.
 > for the MVC design, I think my design is generally fine. but there are one problem:
-> - problem description: I have a controller (BBSagaDesignController) which has 2 child controllers (BubbleGridController and StoragePanel Controller), the 2 child controller are literally separate in jobs, but they still have certain connection for instance, when loading and saving storage panel controller need to communicate with bubble grid controller. but these 2 child controllers can only access each other through their shared parent controllers. such weird communication (child1 -> parent -> child2) is not a good design. Besides, sometimes, the child controller needs to access the parent controller, such 2-way association might not be a good design also. I should make these 3 controllers less coupling.
+> - problem description: I have a controller (BBSagaDesignController) which has 2 child controllers (BubbleGridController and StoragePanel Controller), the 2 child controllers are separate in jobs, but they still have certain connection. For instance, when loading and saving storage panel controller need to communicate with bubble grid controller. but these 2 child controllers can only access each other through their shared parent controllers. such weird communication (child1 -> parent -> child2) is not a good design. 
+> Besides, sometimes, the child controller needs to access the parent controller, such 2-direction association might not be a good design also. I should redesign to make these 3 controllers less coupling.
 > #### about Game Engine design
 > as described above, I think my physics engine is flexible and extensible and general enough, however, my renderer works in a restricted way (update representative UIView according to corresponding rigid body), which is however, sufficient for this project.
 > Another problem is I put my game logic into a single controller, which makes the file very long, I think one of the solution is to assign different, separate functionalities to several delegates. The current solution I do is to divide the controller into several extensions, each taking charge of a single functionality. I think this is a workable but not best solution. I somehow write in a structural programming way rather than the OOP way. I could have designed more ""OOP-ly" 
 > I think I am still not quite clear about the role of the controller because I am still not clear why custom gameplay logic should be separated from GamePlayController to put into game engine. Also, what is the role of game engine with game play logic, controller? model? or others
+> #### To summarize: 
+> the following points could be improved:
+> - the child2-parent-child2 communication is not a good design
+> - the child-parent parent-child 2-way association is not a good design
+> - writing all the custom gameplay logic in a single controller is NOT A GOOD design. maybe try using delegate?
+> - should separate out gameplay logic into "game engine"? (maybe check the game engine in the market?)
