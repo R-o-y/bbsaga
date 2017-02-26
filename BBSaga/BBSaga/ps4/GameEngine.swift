@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import PhysicsEngine
 
 class GameEngine {
     private(set) var world: World

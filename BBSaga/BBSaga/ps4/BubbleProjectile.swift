@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import PhysicsEngine
 
 class BubbleProjectile: RigidBody {
     private var bubble: Bubble

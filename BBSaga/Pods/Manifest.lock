@@ -11,7 +11,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   PhysicsEngine:
-    :commit: e3c79c4c60b4413e3ac626cccc44f95f81078e47
+    :commit: 9d9297b2b514399dbedb524e1494343e86304586
     :git: https://royl8@bitbucket.org/cs3217/2017-ps5-a0147980u.git
 
 SPEC CHECKSUMS:

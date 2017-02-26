@@ -11,7 +11,7 @@ import Foundation
 extension Array where Element: Equatable {
     /// removing all the items that is equal to the given element
     /// for instance, [1,2,1].removeEqualItems(item: 1) will get [2]
-    mutating func removeEqualItems(item: Element) {
+    public mutating func removeEqualItems(item: Element) {
         while let index = index(of: item) {
             remove(at: index)
         }
@@ -20,7 +20,7 @@ extension Array where Element: Equatable {
     /// get an array of all pairs of elements in array, 
     /// excluding pairs of element at the same index and pairs of reverse order
     /// for instance, [1,2,3].getAllPairs() will return [(1,2), (1,3), (2,3)]
-    func getAllPairs() -> [(Element, Element)] {
+    public func getAllPairs() -> [(Element, Element)] {
         var allPairs: [(Element, Element)] = []
         var i = 0
         while i < self.count {

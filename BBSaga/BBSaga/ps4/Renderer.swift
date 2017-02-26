@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import PhysicsEngine
 
 /**
  the Renderer class keeps an array of (RigiBody, UIView) pair

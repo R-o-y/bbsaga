@@ -358,6 +358,8 @@
 		A2F7CF931E514B4600EADAA1 /* supporting files */ = {
 			isa = PBXGroup;
 			children = (
+				A2E349641E5ABC60008FECD7 /* physicsEgin */,
+				A2E349621E5ABC23008FECD7 /* supporting extensions */,
 				A2F7CF651E514ADC00EADAA1 /* AppDelegate.swift */,
 				A2F7CF6E1E514ADC00EADAA1 /* LaunchScreen.storyboard */,
 				A2F7CF711E514ADC00EADAA1 /* Info.plist */,
@@ -386,8 +388,6 @@
 				A261572C1E61B57000A7E5B9 /* EndingSceneController.swift */,
 				A2E3493A1E5ABB28008FECD7 /* GamePlayController.swift */,
 				A2E349631E5ABC3E008FECD7 /* renderer */,
-				A2E349641E5ABC60008FECD7 /* physicsEgin */,
-				A2E349621E5ABC23008FECD7 /* supporting extensions */,
 			);
 			name = Player;
 			sourceTree = "<group>";

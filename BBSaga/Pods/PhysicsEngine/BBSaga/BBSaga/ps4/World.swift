@@ -10,9 +10,11 @@ import Foundation
 import UIKit
 
 public class World {
-    private(set) var rigidBodies: [RigidBody] = []
-    private(set) var eventDetectors: [EventDetector] = []
-    private(set) var collisionDetectors: [CollisionDetector] = []
+    public private(set) var rigidBodies: [RigidBody] = []
+    public private(set) var eventDetectors: [EventDetector] = []
+    public private(set) var collisionDetectors: [CollisionDetector] = []
+    
+    public init() {}
     
     /// for every time step, this method will be called
     /// it will:
@@ -20,7 +22,7 @@ public class World {
     /// 2. detect collisions and invoke callback if collisions are detected
     /// 3. update the physics property of all the RigidBody it keeps track of
     /// - Parameter timeInterval: the length of the time step
-    func update(timeInterval: TimeInterval) {
+    public func update(timeInterval: TimeInterval) {
         for eventDetector in eventDetectors {
             eventDetector.check()
         }
@@ -34,7 +36,7 @@ public class World {
         }
     }
 
-    func addBody(_ rigidBody: RigidBody) {
+    public func addBody(_ rigidBody: RigidBody) {
         if !rigidBodies.contains(rigidBody) {
             rigidBodies.append(rigidBody)
         }
@@ -43,7 +45,7 @@ public class World {
     /// remove the specifed rigidBody from the world
     /// after this, the world will not update its physics propert such as position and velocity
     /// this will also trigger EventDetector and CollisionDetector to remove this rigidBody
-    func removeBody(_ rigidBody: RigidBody) {
+    public func removeBody(_ rigidBody: RigidBody) {
         for eventDetector in eventDetectors {
             eventDetector.removeTarget(rigidBody)
         }
@@ -55,11 +57,11 @@ public class World {
         rigidBodies.removeEqualItems(item: rigidBody)
     }
     
-    func addEventDetector(_ eventDetector: EventDetector) {
+    public func addEventDetector(_ eventDetector: EventDetector) {
         eventDetectors.append(eventDetector)
     }
     
-    func addCollisionDetector(_ collisionDetector: CollisionDetector) {
+    public func addCollisionDetector(_ collisionDetector: CollisionDetector) {
         collisionDetectors.append(collisionDetector)
     }
 }

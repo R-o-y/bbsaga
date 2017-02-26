@@ -13,25 +13,25 @@ public class EventDetector {
     private var callback: ((RigidBody) -> Void)
     private var detectEvent: ((RigidBody) -> Bool)
     
-    init(detectEvent: @escaping (((RigidBody)) -> Bool),
+    public init(detectEvent: @escaping (((RigidBody)) -> Bool),
          callback: @escaping (((RigidBody)) -> Void)) {
         self.detectEvent = detectEvent
         self.callback = callback
     }
     
-    func addTarget(_ target: RigidBody) {
+    public func addTarget(_ target: RigidBody) {
         if !targets.contains(target) {
             targets.append(target)
         }
     }
     
-    func removeTarget(_ target: RigidBody) {
+    public func removeTarget(_ target: RigidBody) {
         targets.removeEqualItems(item: target)
     }
     
     /// check whether the event happens (detectEvent returns true)
     /// if so, trigger callback function on them
-    func check() {
+    public func check() {
         for body in targets {
             if detectEvent(body) {
                 callback(body)
