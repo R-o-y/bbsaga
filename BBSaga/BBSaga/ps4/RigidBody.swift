@@ -10,11 +10,11 @@ import Foundation
 import UIKit
 
 public class RigidBody: Hashable {
-    var acceleration = CGVector(dx: 0, dy: 0)
-    var velocity = CGVector(dx: 0, dy: 0)
-    var position = CGVector(dx: 0, dy: 0)
-    var shape: Shape!
-    var mass: Double
+    public var acceleration = CGVector(dx: 0, dy: 0)
+    public var velocity = CGVector(dx: 0, dy: 0)
+    public var position = CGVector(dx: 0, dy: 0)
+    public var shape: Shape!
+    public var mass: Double
     
     public var hashValue: Int {
         return position.dx.hashValue ^ position.dy.hashValue
