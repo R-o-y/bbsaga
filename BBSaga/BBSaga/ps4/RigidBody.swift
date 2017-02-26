@@ -10,13 +10,13 @@ import Foundation
 import UIKit
 
 open class RigidBody: Hashable {
-    public var acceleration = CGVector(dx: 0, dy: 0)
-    public var velocity = CGVector(dx: 0, dy: 0)
-    public var position = CGVector(dx: 0, dy: 0)
-    public var shape: Shape!
-    public var mass: Double
+    open var acceleration = CGVector(dx: 0, dy: 0)
+    open var velocity = CGVector(dx: 0, dy: 0)
+    open var position = CGVector(dx: 0, dy: 0)
+    open var shape: Shape!
+    open var mass: Double
     
-    public var hashValue: Int {
+    open var hashValue: Int {
         return position.dx.hashValue ^ position.dy.hashValue
     }
     
@@ -26,14 +26,14 @@ open class RigidBody: Hashable {
     
     /// Update the physics property of this RigidBody.
     /// This method will be called by World.update(timeInterval: TimeInterval)
-    public func update(timeInterval: TimeInterval) {
+    open func update(timeInterval: TimeInterval) {
         let nextVelocity = velocity + timeInterval * acceleration
         let averageVelocity = (velocity + nextVelocity) / 2
         position = position + timeInterval * averageVelocity
         velocity = nextVelocity
     }
     
-    public static func ==(lhs: RigidBody, rhs: RigidBody) -> Bool {
+    open static func ==(lhs: RigidBody, rhs: RigidBody) -> Bool {
         return lhs === rhs
     }
 }

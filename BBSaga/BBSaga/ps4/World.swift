@@ -14,6 +14,8 @@ public class World {
     public private(set) var eventDetectors: [EventDetector] = []
     public private(set) var collisionDetectors: [CollisionDetector] = []
     
+    public init() {}
+    
     /// for every time step, this method will be called
     /// it will:
     /// 1. detect events and invoke callback if events are detected
