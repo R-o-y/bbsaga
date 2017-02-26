@@ -8,7 +8,8 @@ CS3217 Problem Set 5
 **Tutor:** Zheng Yi Tham
 
 ### Notes of the glossary:
-> in the following description, "level", "grid", "bubble grid" most likely refer to the same thing
+> - in the following description, "level", "grid", "bubble grid" most likely refer to the same thing
+> - my gameplay logic are in "GamePlayeController". GameEngine takes charge of the general game loop
 
 ### Rules of Your Game
 > - the game start with the menu scene, there are 3 buttons, play button goes to the level selection scene, design button goes to the level design scene, setting button toggle displaying the setting panel. 
@@ -34,7 +35,7 @@ CS3217 Problem Set 5
 > after the player tap at a position on the screen, the cannon will rotate towards that position, and the bubble projectile will shoot toward that positions 
 > 2. pan gesture
 > when the player place a finger on the screen and move a very short distance (if the player put the finger on the screen without moving it, it will not be considered as a pan gesture), the cannon will start tracking the position of the finger, that is, whenever the player move the finger, the cannon will rotate towards that position. Also an aiming beam will be shown and track the position of the finger, similar to the cannon.           
-when the player lift off the finger from the screen, the bubble projectile will be shot towards the position where the finger is lifted off (the same direction as the aiming beam and the cannon point to).
+> when the player lift off the finger from the screen, the bubble projectile will be shot towards the position where the finger is lifted off (the same direction as the aiming beam and the cannon point to).
  
 ### Problem 2: Upcoming Bubbles
 
@@ -51,13 +52,33 @@ when the player lift off the finger from the screen, the bubble projectile will 
 
 ### Problem 3: Integration
 
-Your answer here
+> - **how my design support integrating the game engine:** the main objects dealt with by the game engine (physics engine and renderer) is RigidBody, I define a subclass of RigidBody called BubbleProjectile to represent the bubble projectile. This subclass has a Bubble property to indicate which type of bubble this projectile is. By doing this, I can use my game engine to do the updating view, collision detection, event detection and update physics property such as position and velocity to the bubble projectile. 
+> I define a Shape property for RigidBody, currently circle and line segment are supported. so i can have rigid bodies of different shape. For instance, the lightning obstacles are also rigid body, but with line segment shape while bubble projectile has circle shape. This also allows me to detect collision between bubble projectiles and lightning obstacles using the physics engine.
+> Render is done by let the Renderer keep track of the RigidBody-UIView pair, and update UIView property based on the RigidBody physics property updated by the physics engine. This is how the UIView representing the projectiles and lightning obstacles are represent 
+> - **advantage, disadvantage, alternatives** 
+>     - advan:  
+>         - the physics engine is completely independent, it can be used in any game with the same rigid body physics law, same for the renderer.
+>         - the physics engine is extensible. for instance, i add circle-segment collision detection in ps5, i can further add polygon-circle collision detection. this is because the class defined in physics is general enough
+>     - disadv: 
+>         - since my custom gameplay-logic is written in a single controller, the controller is long. i currently solve by divide the controller into several extension according to the functionality it implements (shoot bubbles, remove grid bubbles ...)
+>         - the render job is done by directly modifying the corresponding UIView, such requirement for the UIViews is restrictive, while most formal renderers use underlying graphics api to "draw", which is more flexible.
+>     - alternative: 
+>         - alternative 1: put custom logic in game engine
+>         I put custom game logic in the GamePlayController, so GamePlayController communication with physics engine and renderer directly while my game engine is general, it only keeps a game loop for physics engine to update and renderer to draw. However, alternative is to place custom game logic in GameEngine. I feed both ways are not that different. gameplay logic is to link between model and view (such as calculating score, and update the corresponding score label), this is exactly what controller does. a separate gameplay-logic engine is no different from a gameplay-logic delegate of the controller, or even no different from a gameplay-logic extension of the controller. Thus, I do not fell it is a must to write custom gameplay-game logic into the so-called "game engine". one of the benefit is that if write all the game logic inside a single controller, it will be very long. But, this could also be solved by using delegate or extensions 
+>         - alternative 2: let bubbles in the grid and walls also be rigid body
+>         currently, i did not has corresponding rigid body for grid bubbles and walls. the "collision detection" is done using a more general "event detection", which allow users to define the trigger condition by defining the closure themselves. the reason I did in this way is in ps4, i have not written the general collision detection between circles and lines, between dynamic bodies and static bodies, so in order to be general and extensible, i use event detector. the advantage of defining bubbles and walls to be rigid body is it makes the design more structural.  the disadvantage is that i might bring more computation burden. finally, in this game, there is no really need to make the wall and grid bubbles to be rigid body since the collision can be easily hard-coded and they are static. there is no need for physics engine and renderer to track them. however, if there shape are complex and vary a lot, or if they have other impact on the game rather than the collision that can be easily handled using event detector, such as influence the shadow rendering in 3D game, I will define them as rigid bodies.
 
 
 ### Problem 4.3
 
-Your answer here
-
+> - **implementation of power bubbles:** the power behaviors are done in 2 steps, first GamePlayController (controller) call BubbleGrid (model) to get all the index paths of the grid bubbles that should be removed by the power bubbles, then GamePlayController call BubbleGridViewController to remove the corresponding view of all those grid bubbles with animation by giving it these index paths, and also call audioPlayer to play the corresponding sound effects.
+> - **implementation of chaining:** the chaining is done using recursion. As described above, GamePlayController will call BubbleGrid to get all the index paths of the gird bubbles to be removed in "triggerXXXSuperPower" method, after get this index paths, it will check whether there are also special power bubble in it, if so, then call "triggerXXXSuperPower" on those super power bubbles.
+> - **best among alternatives?**
+>     - as described above, an alternative can be putting game logic in "game engine", which i feel is no different from a game logic delegate or even an game logic extension of controller. and as explained above, i cannot claim one is better than the other
+>     - using recursion to do the chaining is intuitive and understandable. which is the good point. 
+>     - if there is a sleep/pause method, then using recursion can do the chaining delay easily. however, I have not found such methods in Swift
+>     - using dispatch_after cannot implement the chaining delay for recursion.
+>     - **the above are some discussion, but I cannot prove my implementation is the best among alternatives**
 
 ### Problem 7: Class Diagram
 
@@ -222,4 +243,11 @@ Please save your diagram as `class-diagram.png` in the root directory of the rep
 
 ### Problem 10: Final Reflection
 
-Your answer here
+> #### about MVC design (not including the MVC for game play)
+> Through PS3 to PS5, I did not change my MVC design.
+> for the MVC design, I think my design is generally fine. but there are one problem:
+> - problem description: I have a controller (BBSagaDesignController) which has 2 child controllers (BubbleGridController and StoragePanel Controller), the 2 child controller are literally separate in jobs, but they still have certain connection for instance, when loading and saving storage panel controller need to communicate with bubble grid controller. but these 2 child controllers can only access each other through their shared parent controllers. such weird communication (child1 -> parent -> child2) is not a good design. Besides, sometimes, the child controller needs to access the parent controller, such 2-way association might not be a good design also. I should make these 3 controllers less coupling.
+> #### about Game Engine design
+> as described above, I think my physics engine is flexible and extensible and general enough, however, my renderer works in a restricted way (update representative UIView according to corresponding rigid body), which is however, sufficient for this project.
+> Another problem is I put my game logic into a single controller, which makes the file very long, I think one of the solution is to assign different, separate functionalities to several delegates. The current solution I do is to divide the controller into several extensions, each taking charge of a single functionality. I think this is a workable but not best solution. I somehow write in a structural programming way rather than the OOP way. I could have designed more ""OOP-ly" 
+> I think I am still not quite clear about the role of the controller because I am still not clear why custom gameplay logic should be separated from GamePlayController to put into game engine. Also, what is the role of game engine with game play logic, controller? model? or others

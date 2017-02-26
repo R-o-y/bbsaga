@@ -70,6 +70,7 @@ extension GamePlayController {
                 let bubble = body1.shape is CircleShape ? body1 : body2
                 if let bubbleFrame = weakSelf.renderer.getCorrespondingView(of: bubble)?.frame {
                     Animation.animateLightningDisappear(within: bubbleFrame, in: weakSelf.view)
+                    audioPlayer.playLightningSoundEffect()
                 }
                 weakSelf.gameEngine.removeRigidBody(bubble)
                 if weakSelf.leftProjectileCount < 0 {
