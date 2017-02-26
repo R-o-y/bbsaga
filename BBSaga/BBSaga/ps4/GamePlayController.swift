@@ -125,17 +125,13 @@ class GamePlayController: UIViewController {
         bubbleRadius = view.bounds.width / (2 * CGFloat(Setting.numCellsPerOddRow))
         bubbleShooterPosition = CGVector(dx: view.frame.width / 2, dy: view.frame.height - 1.2 * bubbleRadius)
         
-        if let color = BubbleColor(rawValue: Int.randomWithinRange(lower: 0, upper: Setting.numBubbleColor - 1)) {
-            pendingBubble.setColor(color)
-        }
+        pendingBubble.setColor(nextColor())
         pendingBubbleView.image = Setting.imageOfBubble(pendingBubble)
         pendingBubbleView.frame.size = CGSize(width:  bubbleRadius, height: bubbleRadius)
         pendingBubbleView.center = bubbleShooterPosition.toCGPoint()
         view.addSubview(pendingBubbleView)
         
-        if let color = BubbleColor(rawValue: Int.randomWithinRange(lower: 0, upper: Setting.numBubbleColor - 1)) {
-            nextBubble.setColor(color)
-        }
+        nextBubble.setColor(nextColor())
         nextBubbleView.image = Setting.imageOfBubble(nextBubble)
         
         cannonView = UIImageView(frame: CGRect(x: view.bounds.width / 2 - 44, y: view.bounds.height - 138, width: 88, height: 180))

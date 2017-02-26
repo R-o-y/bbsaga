@@ -104,10 +104,6 @@ extension GamePlayController {
     /// create a body to represent the projectile ball in the world (physical engine)
     /// add this pair to the renderer
     private func shoot(bubble: Bubble, velocity: CGVector) {
-        guard let color = BubbleColor(rawValue: Int.randomWithinRange(lower: 0, upper: 3)) else {
-            return
-        }
-        
         // create projectile bubble body
         let bubbleProjectile = BubbleProjectile(of: pendingBubble.replica(),
                                                 radius: bubbleRadius)
@@ -141,7 +137,7 @@ extension GamePlayController {
         pendingBubble.setColor(nextBubble.getColor())
         pendingBubbleView.image = Setting.imageOfBubble(nextBubble)
         
-        nextBubble.setColor(color)
+        nextBubble.setColor(nextColor())
         nextBubbleView.image = Setting.imageOfBubble(nextBubble)
         countDownProjectilesLeft()
         if leftProjectileCount <= 0 {
@@ -159,7 +155,7 @@ extension GamePlayController {
         var angle = atan(y / x)
         if angle < 0 { angle = angle + CGFloat(M_PI) }
         
-        UIView.animate(withDuration: 0.08, animations: { [weak self] _ in
+        UIView.animate(withDuration: Setting.cannonRotationDuration, animations: { [weak self] _ in
             self?.cannonView.transform = CGAffineTransform(rotationAngle: angle - CGFloat(M_PI / 2))
         })
     }
@@ -167,10 +163,9 @@ extension GamePlayController {
     private func animateCannon() {
         cannonView.animationImages = Animation.cutSequenceImageIntoImages(named: Setting.cannonSpriteSheetName,
                                                                           numRows: 2, numCols: 6)
-        cannonView.animationDuration = 0.38
-        cannonView.animationRepeatCount = 0
+        cannonView.animationDuration = Setting.cannonAnimationDuration
         cannonView.startAnimating()
-        delay(0.38) {
+        delay(cannonView.animationDuration) {
             self.cannonView.stopAnimating()
         }
     }
@@ -181,4 +176,64 @@ extension GamePlayController {
             leftProjectileCountLabel.text = String(leftProjectileCount)
         }
     }
+    
+    private func getColorsOnGridState() -> [BubbleColor: Bool] {
+        var colorsOnGridStateDic: [BubbleColor: Bool] = [:]
+        let bubbleGrid = bubbleGridController.currentBubbleGrid
+        for row in 0 ..< bubbleGrid.getNumRows() {
+            for col in 0 ..< bubbleGrid.getNumCellsAt(row: row) {
+                if let colorBubble = bubbleGrid.getBubbleAt(row: row, col: col) as? ColorBubble {
+                    colorsOnGridStateDic[colorBubble.getColor()] = true
+                }
+            }
+        }
+        return colorsOnGridStateDic
+    }
+    
+    private func randomColor() -> BubbleColor {
+        if let color = BubbleColor(rawValue: Int.randomWithinRange(lower: 0, upper: Setting.numBubbleColor - 1)) {
+            return color
+        }
+        return Setting.defaultBubbleColor
+    }
+    
+    func nextColor() -> BubbleColor {
+        let stateDic = getColorsOnGridState()
+        var inGridColor: [BubbleColor] = []
+        var outGridColor: [BubbleColor] = []
+        for i in 0 ..< Setting.numBubbleColor {
+            guard let color = BubbleColor(rawValue: i) else {
+                break
+            }
+            if stateDic[color] == true {
+                inGridColor.append(color)
+            } else {
+                outGridColor.append(color)
+            }
+        }
+        let shreshold = Double(Setting.randomRange) * Setting.colorInGridPossibility
+        if Double(Int.randomWithinRange(lower: 1, upper: Setting.randomRange)) <= shreshold {
+            guard !inGridColor.isEmpty else {
+                return randomColor()
+            }
+            let randomIndex = Int.randomWithinRange(lower: 0, upper: inGridColor.count - 1)
+            return inGridColor[randomIndex]
+        } else {
+            guard !outGridColor.isEmpty else {
+                return randomColor()
+            }
+            let randomIndex = Int.randomWithinRange(lower: 0, upper: outGridColor.count - 1)
+            return outGridColor[randomIndex]
+        }
+    }
 }
+
+
+
+
+
+
+
+
+
+

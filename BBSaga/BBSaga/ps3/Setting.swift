@@ -206,6 +206,13 @@ extension Setting {
     static let cannonSpriteSheetName = "cannon"
     static let cannonBaseSpriteSheetName = "cannon-base"
     static let cannonAnchorPoint = CGPoint(x: 0.5, y: 0.8)
+    static let cannonRotationDuration: TimeInterval = 0.08
+    static let cannonAnimationDuration: TimeInterval = 0.38
+    
+    static let colorInGridPossibility = 0.8
+    static let randomRange = 100
+    
+    static let defaultBubbleColor = BubbleColor.blue
 }
 
 

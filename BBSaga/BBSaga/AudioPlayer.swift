@@ -13,13 +13,20 @@ class AudioPlayer {
     private var avAudioPlayer = AVAudioPlayer()  // this is to play background music
     private var avPlayer = AVPlayer()  // this is to play sound effect
     
-    func prepareBgm() {
+    func prepare() {
+        // prepare background audio player
         if let path = Bundle.main.path(forResource: "bgm", ofType: "mp3") {
             let url = URL(fileURLWithPath: path)
             do {
                 try avAudioPlayer = AVAudioPlayer(contentsOf: url)
             } catch {}
         }
+        // prepare sound effects player
+        guard let path = Bundle.main.path(forResource: "shoot", ofType: "mp3") else {
+            return
+        }
+        let url = URL(fileURLWithPath: path)
+        avPlayer.replaceCurrentItem(with: AVPlayerItem(url: url))
     }
     
     func playBgm() {

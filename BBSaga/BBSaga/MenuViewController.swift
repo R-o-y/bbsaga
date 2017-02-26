@@ -17,7 +17,7 @@ class MenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        audioPlayer.prepareBgm()
+        audioPlayer.prepare()
         audioPlayer.playBgm()
         titleLabel.transform = CGAffineTransform(rotationAngle: -0.08)
         settingView.layer.cornerRadius = settingView.bounds.width * Setting.cellCornerRadiusWidthRate
