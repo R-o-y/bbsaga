@@ -44,19 +44,19 @@ class AudioPlayer {
     }
     
     func playShootSoundEffect() {
-        avPlayerPlay(name: "shoot", ofType: "mp3")
+//        avPlayerPlay(name: "shoot", ofType: "mp3")
     }
     
     func playBombSoundEffect() {
-        avPlayerPlay(name: "bomb", ofType: "mp3")
+//        avPlayerPlay(name: "bomb", ofType: "mp3")
     }
     
     func playLightningSoundEffect() {
-        avPlayerPlay(name: "lightning2", ofType: "mp3")
+//        avPlayerPlay(name: "lightning2", ofType: "mp3")
     }
     
     func playSameColorSoundEffect() {
-        avPlayerPlay(name: "same-color", ofType: "mp3")
+//        avPlayerPlay(name: "same-color", ofType: "mp3")
     }
     
     private func avPlayerPlay(name: String, ofType extensionName: String) {
