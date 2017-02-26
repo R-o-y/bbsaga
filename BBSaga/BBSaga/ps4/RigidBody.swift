@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public class RigidBody: Hashable {
+open class RigidBody: Hashable {
     public var acceleration = CGVector(dx: 0, dy: 0)
     public var velocity = CGVector(dx: 0, dy: 0)
     public var position = CGVector(dx: 0, dy: 0)
