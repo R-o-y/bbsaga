@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A261572D1E61B57000A7E5B9 /* EndingSceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A261572C1E61B57000A7E5B9 /* EndingSceneController.swift */; };
 		A261574E1E626A3900A7E5B9 /* bomb combo.plist in Resources */ = {isa = PBXBuildFile; fileRef = A26157481E626A3900A7E5B9 /* bomb combo.plist */; };
 		A261574F1E626A3900A7E5B9 /* chaining.plist in Resources */ = {isa = PBXBuildFile; fileRef = A26157491E626A3900A7E5B9 /* chaining.plist */; };
 		A26157501E626A3900A7E5B9 /* full-random-easy.plist in Resources */ = {isa = PBXBuildFile; fileRef = A261574A1E626A3900A7E5B9 /* full-random-easy.plist */; };
@@ -20,6 +19,9 @@
 		A26157611E62825600A7E5B9 /* shoot.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A26157601E62825600A7E5B9 /* shoot.mp3 */; };
 		A26157641E62842300A7E5B9 /* lightning.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A26157621E62842300A7E5B9 /* lightning.mp3 */; };
 		A26157651E62842300A7E5B9 /* lightning2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A26157631E62842300A7E5B9 /* lightning2.mp3 */; };
+		A261577D1E62AE1A00A7E5B9 /* GamePlayControllerShootExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A261577C1E62AE1A00A7E5B9 /* GamePlayControllerShootExtension.swift */; };
+		A261577F1E62B03600A7E5B9 /* GamePlayControllerLightningObstaclesExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A261577E1E62B03600A7E5B9 /* GamePlayControllerLightningObstaclesExtension.swift */; };
+		A26157811E62B0EE00A7E5B9 /* GamePlayControllerRemoveBubblesExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26157801E62B0EE00A7E5B9 /* GamePlayControllerRemoveBubblesExtension.swift */; };
 		A2E349101E5AB7B5008FECD7 /* BBSagaDesignController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E348FD1E5AB7B4008FECD7 /* BBSagaDesignController.swift */; };
 		A2E349111E5AB7B5008FECD7 /* Bubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E348FE1E5AB7B4008FECD7 /* Bubble.swift */; };
 		A2E349121E5AB7B5008FECD7 /* BubbleGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E348FF1E5AB7B4008FECD7 /* BubbleGrid.swift */; };
@@ -84,7 +86,6 @@
 /* Begin PBXFileReference section */
 		232FD3DADAD3073D6BD0105E /* Pods_BBSaga.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BBSaga.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BF41692A11DFF257A42FA88 /* Pods-BBSaga.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BBSaga.release.xcconfig"; path = "Pods/Target Support Files/Pods-BBSaga/Pods-BBSaga.release.xcconfig"; sourceTree = "<group>"; };
-		A261572C1E61B57000A7E5B9 /* EndingSceneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndingSceneController.swift; sourceTree = "<group>"; };
 		A26157481E626A3900A7E5B9 /* bomb combo.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "bomb combo.plist"; sourceTree = "<group>"; };
 		A26157491E626A3900A7E5B9 /* chaining.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = chaining.plist; sourceTree = "<group>"; };
 		A261574A1E626A3900A7E5B9 /* full-random-easy.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "full-random-easy.plist"; sourceTree = "<group>"; };
@@ -97,6 +98,9 @@
 		A26157601E62825600A7E5B9 /* shoot.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = shoot.mp3; sourceTree = "<group>"; };
 		A26157621E62842300A7E5B9 /* lightning.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lightning.mp3; sourceTree = "<group>"; };
 		A26157631E62842300A7E5B9 /* lightning2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lightning2.mp3; sourceTree = "<group>"; };
+		A261577C1E62AE1A00A7E5B9 /* GamePlayControllerShootExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePlayControllerShootExtension.swift; sourceTree = "<group>"; };
+		A261577E1E62B03600A7E5B9 /* GamePlayControllerLightningObstaclesExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePlayControllerLightningObstaclesExtension.swift; sourceTree = "<group>"; };
+		A26157801E62B0EE00A7E5B9 /* GamePlayControllerRemoveBubblesExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePlayControllerRemoveBubblesExtension.swift; sourceTree = "<group>"; };
 		A2E348FD1E5AB7B4008FECD7 /* BBSagaDesignController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BBSagaDesignController.swift; path = ps3/BBSagaDesignController.swift; sourceTree = "<group>"; };
 		A2E348FE1E5AB7B4008FECD7 /* Bubble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Bubble.swift; path = ps3/Bubble.swift; sourceTree = "<group>"; };
 		A2E348FF1E5AB7B4008FECD7 /* BubbleGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BubbleGrid.swift; path = ps3/BubbleGrid.swift; sourceTree = "<group>"; };
@@ -247,6 +251,17 @@
 			name = "sound effects";
 			sourceTree = "<group>";
 		};
+		A261577B1E62ADE900A7E5B9 /* GamePlayController */ = {
+			isa = PBXGroup;
+			children = (
+				A2E3493A1E5ABB28008FECD7 /* GamePlayController.swift */,
+				A261577C1E62AE1A00A7E5B9 /* GamePlayControllerShootExtension.swift */,
+				A261577E1E62B03600A7E5B9 /* GamePlayControllerLightningObstaclesExtension.swift */,
+				A26157801E62B0EE00A7E5B9 /* GamePlayControllerRemoveBubblesExtension.swift */,
+			);
+			name = GamePlayController;
+			sourceTree = "<group>";
+		};
 		A2E349621E5ABC23008FECD7 /* supporting extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -381,12 +396,11 @@
 		A2F7CF951E5152F500EADAA1 /* Player */ = {
 			isa = PBXGroup;
 			children = (
-				A2E349391E5ABB28008FECD7 /* GameEngine.swift */,
-				A2E349331E5ABB28008FECD7 /* BubbleProjectile.swift */,
+				A261577B1E62ADE900A7E5B9 /* GamePlayController */,
 				A2E349321E5ABB28008FECD7 /* BubbleGridExtension.swift */,
 				A2E349301E5ABB28008FECD7 /* BubbleGridControllerExtension.swift */,
-				A261572C1E61B57000A7E5B9 /* EndingSceneController.swift */,
-				A2E3493A1E5ABB28008FECD7 /* GamePlayController.swift */,
+				A2E349391E5ABB28008FECD7 /* GameEngine.swift */,
+				A2E349331E5ABB28008FECD7 /* BubbleProjectile.swift */,
 				A2E349631E5ABC3E008FECD7 /* renderer */,
 			);
 			name = Player;
@@ -650,12 +664,14 @@
 				A2E3495D1E5ABB28008FECD7 /* RigidBody.swift in Sources */,
 				A2F7CF661E514ADC00EADAA1 /* AppDelegate.swift in Sources */,
 				A2F7CFA71E5441EA00EADAA1 /* Animation.swift in Sources */,
+				A26157811E62B0EE00A7E5B9 /* GamePlayControllerRemoveBubblesExtension.swift in Sources */,
+				A261577D1E62AE1A00A7E5B9 /* GamePlayControllerShootExtension.swift in Sources */,
 				A2E349121E5AB7B5008FECD7 /* BubbleGrid.swift in Sources */,
 				A2E349601E5ABB28008FECD7 /* Shape.swift in Sources */,
 				A2F7CFA11E52252B00EADAA1 /* AudioPlayer.swift in Sources */,
 				A2E349131E5AB7B5008FECD7 /* BubbleGridCell.swift in Sources */,
+				A261577F1E62B03600A7E5B9 /* GamePlayControllerLightningObstaclesExtension.swift in Sources */,
 				A2E349171E5AB7B5008FECD7 /* BubbleGridForDesignController.swift in Sources */,
-				A261572D1E61B57000A7E5B9 /* EndingSceneController.swift in Sources */,
 				A2F7CFA91E54420800EADAA1 /* DropView.swift in Sources */,
 				A2E3491F1E5AB7B5008FECD7 /* StoragePanelCell.swift in Sources */,
 				A2E349571E5ABB28008FECD7 /* GameEngine.swift in Sources */,
