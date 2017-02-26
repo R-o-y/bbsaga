@@ -26,6 +26,7 @@ class AudioPlayer {
         bgmPlayer.volume = Setting.bgmVolumn
         bombPlayer.volume = Setting.bombVolumn
         shootPlayer.volume = Setting.shootVolumn
+        sameColorPlayer.volume = Setting.sameColorVolumn
     }
     
     func playBgm() {

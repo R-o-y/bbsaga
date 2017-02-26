@@ -227,9 +227,10 @@ extension Setting {
 
 /// audio player:
 extension Setting {
-    static let bgmVolumn: Float = 0.6
-    static let bombVolumn: Float = 0.6
-    static let shootVolumn: Float = 0.66
+    static let bgmVolumn: Float = 0.38
+    static let bombVolumn: Float = 0.38
+    static let shootVolumn: Float = 0.38
+    static let sameColorVolumn: Float = 0.8
 }
 
 
