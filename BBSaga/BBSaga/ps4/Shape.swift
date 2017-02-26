@@ -14,8 +14,8 @@ public protocol Shape {
 }
 
 public class CircleShape: Shape {
-    private(set) var offset: CGVector
-    private(set) var radius: CGFloat
+    public private(set) var offset: CGVector
+    public private(set) var radius: CGFloat
 
     public init(radius: CGFloat) {
         self.radius = radius
@@ -69,8 +69,8 @@ public class CircleShape: Shape {
 }
 
 public class SegmentShape: Shape {
-    private(set) var p1: CGVector  // in local coordinate
-    private(set) var p2: CGVector
+    public private(set) var p1: CGVector  // in local coordinate
+    public private(set) var p2: CGVector
     
     public init(from p1: CGVector, to p2: CGVector) {
         self.p1 = p1

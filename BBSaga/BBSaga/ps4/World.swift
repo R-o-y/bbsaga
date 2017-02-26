@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 
 public class World {
-    private(set) var rigidBodies: [RigidBody] = []
-    private(set) var eventDetectors: [EventDetector] = []
-    private(set) var collisionDetectors: [CollisionDetector] = []
+    public private(set) var rigidBodies: [RigidBody] = []
+    public private(set) var eventDetectors: [EventDetector] = []
+    public private(set) var collisionDetectors: [CollisionDetector] = []
     
     /// for every time step, this method will be called
     /// it will:
